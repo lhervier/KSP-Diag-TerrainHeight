@@ -34,6 +34,6 @@ these saves only load there. The protocol is [the loading protocol](../docs/the-
 Copy a save into the folder of a sandbox game and load it from that game.
 
 - [`runs/reload-moon-rss-stock.log`](runs/reload-moon-rss-stock.log) — six loads of
-  `reload-moon-rss-resave.sfs`, with Terrain Precision Fix Diag 1 open as well.
+  `reload-moon-rss-resave.sfs`.
 - [`runs/reload-earth-rss-stock.log`](runs/reload-earth-rss-stock.log) — six loads of
-  `reload-earth-rss-resave.sfs`, with Terrain Precision Fix Diag 1 open as well.
+  `reload-earth-rss-resave.sfs`.

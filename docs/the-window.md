@@ -24,5 +24,10 @@ The bottom line is measured afresh every frame, so it follows your craft: drive 
 both heights change as the ground under it changes. What you record has to be taken standing still —
 stop, wait for the digits to stop moving, then press *Record*.
 
+**A craft that jumped or tipped over is read somewhere else.** The reading is taken where the craft
+came to rest, so a craft that jumped or tipped over at a loading gives a line for another spot. The
+table does not say so, but **Ground KSP computes** does: it follows the spot, and a line where it reads
+differently from the others was taken somewhere else. Note what you saw next to each line.
+
 That wait is short. It is the craft settling, not the ground: the terrain is built when the scene
 opens and does not move afterwards. Once the craft is still, the numbers are still.

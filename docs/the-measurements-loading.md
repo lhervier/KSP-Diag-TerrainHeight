@@ -1,6 +1,6 @@
 # The measurements: loading the same save
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the readings taken with this instrument, on four worlds, then on two much larger ones. The steps that produced them are in [The protocol: loading the same save](the-protocol-loading.md). The other series are in [The measurements: coming back to a craft you left](the-measurements-approach.md) and [The measurements: switching to a craft far away](the-measurements-switching.md).
+Part of [Terrain Precision Fix Diag 2](../README.md): the readings taken with this instrument, on the four worlds of stock KSP and on two much larger ones, the Moon and Earth of Real Solar System. The steps that produced them are in [The protocol: loading the same save](the-protocol-loading.md). The other series are in [The measurements: coming back to a craft you left](the-measurements-approach.md) and [The measurements: switching to a craft far away](the-measurements-switching.md).
 
 The experiment is one thing, repeated. Park a craft on bare ground, let it settle, save once — then
 load that same save, press *Record*, load it again, record again, and keep going until you have five
@@ -13,6 +13,15 @@ the same question, asked again. (Step by step, with screenshots, in
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1 and this mod, and
 nothing else — what most players run, give or take their other mods.
+
+The Moon and Earth are measured on an install of their own: the one above, plus
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) 20.1.3.0 and what it requires
+(Kopernicus, Modular Flight Integrator, KSPTextureLoader, the RSS textures).
+Real Solar System replaces the planets with the real ones: the Moon is more than three times the radius
+of Kerbin, Earth more than ten times. It is installed as released, and it ships a workaround of its own
+that moves landed craft at loading; what that does to the readings is in
+[Real Solar System's own workaround](#real-solar-systems-own-workaround). The saves are in
+[`diag`](../diag/README.md#on-real-solar-system); they only load there.
 
 ## The readings
 
@@ -31,52 +40,58 @@ Then the same campaign on the Mun, on Minmus and on Gilly:
 
 ![Six loadings of the same save, on Gilly](../imgs/measures/reload/30-gilly.png)
 
+And on the Moon and Earth, with a capsule on an empty fuel tank: six loadings of
+`reload-moon-rss-resave.sfs` on flat ground on the Moon, and six of `reload-earth-rss-resave.sfs` on
+the grass about 1.4 km west of the KSC on Earth.
+
+![Six loadings of the same save, on the Moon](../imgs/measures/reload/40-moon.png)
+
+![Six loadings of the same save, on Earth](../imgs/measures/reload/50-earth.png)
+
 *Difference* is one column minus the other, so it carries the whole of the movement of either; the
-four campaigns side by side on that column, in millimetres:
+six campaigns side by side on that column, in millimetres:
 
-| loading | Kerbin | Mun | Minmus | Gilly |
-|---|---|---|---|---|
-| 1 | +307.930 | −23.958 | −12.291 | +37.426 |
-| 2 | +199.797 | −29.285 | −14.912 | +40.165 |
-| 3 | +255.620 | −38.925 | −15.107 | +39.150 |
-| 4 | +290.055 | −24.506 | −14.351 | +39.019 |
-| 5 | +273.017 | −36.386 | −13.981 | +38.896 |
-| 6 | +224.774 | −33.521 | −16.351 | +40.391 |
-| **lowest to highest** | **108.1** | **15.0** | **4.1** | **3.0** |
-| *the same, for* **Ground KSP computes** | *0.039* | *0.015* | *0.000* | *0.018* |
+| loading | Kerbin | Mun | Minmus | Gilly | the Moon | Earth |
+|---|---|---|---|---|---|---|
+| 1 | +307.930 | −23.958 | −12.291 | +37.426 | −87.885 **(jumped)** | +338.605 |
+| 2 | +199.797 | −29.285 | −14.912 | +40.165 | +101.023 | +354.781 |
+| 3 | +255.620 | −38.925 | −15.107 | +39.150 | −146.273 | +159.878 **(jumped)** |
+| 4 | +290.055 | −24.506 | −14.351 | +39.019 | −18.607 **(tipped over)** | +105.929 |
+| 5 | +273.017 | −36.386 | −13.981 | +38.896 | −102.050 | +798.985 |
+| 6 | +224.774 | −33.521 | −16.351 | +40.391 | +63.715 | +223.312 |
+| **lowest to highest** | **108.1** | **15.0** | **4.1** | **3.0** | **247.3** | **693.1** |
+| *the same, for* **Ground KSP computes** | *0.039* | *0.015* | *0.000* | *0.018* | *10.184* | *0.994* |
 
-## On Real Solar System
+**(jumped)**, **(tipped over)**: what the craft was seen to do at that loading. A craft that tipped over
+came to rest somewhere else, and the line was read there: on the Moon, *Ground KSP computes* reads
+10 mm higher at the fourth loading than at the five others, which stay within 0.035 mm of each other.
+The line stays between the lowest and the highest of the other five, so it does not change the spread
+of *Difference*.
 
-The same campaign on two bodies of [Real Solar System](https://github.com/KSP-RO/RealSolarSystem), a
-mod that replaces the planets with the real ones: the Moon, more than three times the radius of Kerbin,
-and Earth, more than ten times.
+The sessions on the Moon and Earth are logged in [`diag/runs`](../diag/README.md#on-real-solar-system).
 
-**The install.** The one above, plus Real Solar System 20.1.3.0 and what it requires (Kopernicus,
-Modular Flight Integrator, KSPTextureLoader, the RSS textures), on an install of its own, with
-[Terrain Precision Fix Diag 1](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag) open as well.
-The saves are in [`diag`](../diag/README.md#on-real-solar-system); they only load there. The craft is a
-capsule on an empty fuel tank: six loadings of `reload-moon-rss-resave.sfs` on flat ground on the Moon,
-and six of `reload-earth-rss-resave.sfs` on the grass about 1.4 km west of the KSC on Earth.
+## Real Solar System's own workaround
 
+**Real Solar System already moves landed craft at loading.** It ships a component,
+`VesselGroundPositionEnhancer`, which runs the stock repositioning pass on every landed craft it
+unpacks: a craft found more than 10 cm off the ground, inside it or above it, is moved onto it before
+its physics starts, in one block, and `KSP.log` gets a `Moving Vessel` line. Under 10 cm, the pass
+leaves the craft where it is. The component only acts on a *landed* craft. On Earth, near the KSC, the
+craft is in the *prelaunch* situation instead, where the component does not run; there, stock KSP runs
+the same pass on its own, at every loading.
 
-![Six loadings of the same save, on the Moon](../imgs/measures/reload/rss/10-moon.png)
+**It moves the craft, not the ground this instrument reads.** The pass moves the craft straight up or
+down, so the spot under it stays the same, and both heights are read at that spot. `KSP.log` shows the
+pass at two of the six loadings on the Moon, the second and sixth (`Moving Vessel up` 0.216 and
+0.178 m), and *Ground KSP computes* reads 7,298,397.116 and 7,298,397.114 mm there, the same point as
+the third loading, where the craft was not moved, to within two thousandths of a millimetre. On Earth, stock's pass moved the craft up at the first, second, fifth
+and sixth loadings (0.217, 0.234, 0.678 and 0.102 m), and *Ground KSP computes* stays there within
+0.076 mm of the fourth loading, which it did not touch. What does move that column is a craft coming to
+rest somewhere else: see [What the numbers say](#what-the-numbers-say).
 
-![Six loadings of the same save, on Earth](../imgs/measures/reload/rss/20-earth.png)
-
-*Difference*, in millimetres:
-
-| loading | the Moon | Earth |
-|---|---|---|
-| 1 | −104.234 | +380.241 |
-| 2 | −140.221 | +301.892 |
-| 3 | +101.001 | +79.086 |
-| 4 | −100.073 | +208.610 |
-| 5 | −8.524 | +79.367 |
-| 6 | +42.588 | +271.121 |
-| **lowest to highest** | **241.2** | **301.2** |
-| *the same, for* **Ground KSP computes** | *0.541* | *2.067* |
-
-The sessions are logged in [`diag/runs`](../diag/README.md#on-real-solar-system).
+What the craft itself does under that workaround — when it is moved, when it jumps, when it tips over,
+and what happens with the workaround turned off — is measured by Terrain Precision Fix Diag 1, in
+[Real Solar System's own workaround](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag/blob/main/docs/the-measurements-loading.md#real-solar-systems-own-workaround).
 
 ## What the numbers say
 
@@ -85,19 +100,20 @@ plain as this argument gets. Everywhere else it wanders by a few hundredths of a
 on ground that is not level, a craft that settles a hair to one side is asking for the height of a
 slightly different point, and on a slope that shows. Nothing surprising in any of it. That height is
 worked out from the formulas the world is made of, and reloading a save does not change the world. On
-Real Solar System it moved a little more, for the same reason: on the Moon at the first and fourth
-loadings, where the craft came to rest a little to one side; on Earth, the 2 mm all come from the
-fourth loading, where the craft jumped and landed elsewhere.
+Real Solar System it moved more, for the same reason: on the Moon, the 10 mm all come from the fourth
+loading, where the craft tipped over and came to rest elsewhere; on Earth, nearly all of its 0.994 mm
+comes from the third loading, where the craft jumped and landed elsewhere.
 
 **Ground under craft moves every time.** On Kerbin it lands somewhere else on each of the six lines,
 over a range of ten centimetres, and on none of the six bodies does it come back to the same place:
-3.0 mm on Gilly, 4.1 mm on Minmus, 15.0 mm on the Mun, 108.1 mm on Kerbin, then 241.2 mm on the Moon
-of Real Solar System and 301.2 mm on its Earth. Smaller world, smaller spread — but it never goes away.
+3.0 mm on Gilly, 4.1 mm on Minmus, 15.0 mm on the Mun, 108.1 mm on Kerbin, then 247.3 mm on the Moon
+of Real Solar System and 693.1 mm on its Earth. Smaller world, smaller spread — but it never goes away.
 
-The bottom two rows of each table are the argument entire. The craft's save never changed and the spot
+The bottom two rows of the table are the argument entire. The craft's save never changed and the spot
 never changed, so nothing about that patch of ground was different from one loading to the next — and
 yet one of the two heights held still while the other wandered, by two to three orders of magnitude
-more, world after world. The one that moved is the one that is wrong, and it is the one that describes
+more, world after world — on the Moon, once the loading where the craft tipped over and was read
+somewhere else is set aside. The one that moved is the one that is wrong, and it is the one that describes
 the surface your landing legs actually touch: it was simply not built in the same place twice.
 
 On Kerbin, *Difference* sits two to three hundred millimetres away from zero on every line. That

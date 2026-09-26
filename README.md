@@ -105,14 +105,17 @@ press *Record* again. Then load the same save again, six times in all.
 
 Taken in an install with Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
-with this mod added.
+with this mod added. The first series also goes to the Moon and to Earth, in that install with
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save,
-loaded six times, on Kerbin, on the Mun, on Minmus and on Gilly. The computed height comes back with
-the same digits every time — spread over 0.000 mm on Minmus, four hundredths of a millimetre at worst
-on sloping ground. The ground the craft is standing on never comes back twice: lowest to highest,
-108.1 mm on Kerbin, 15.0 mm on the Mun, 4.1 mm on Minmus, 3.0 mm on Gilly. One held still and the
-other wandered, with nothing changed in between.
+loaded six times, on Kerbin, on the Mun, on Minmus and on Gilly, then on the Moon and Earth of Real
+Solar System, much larger. The computed height comes back with the same digits every time — spread
+over 0.000 mm on Minmus, under a tenth of a millimetre everywhere else, as long as the craft is read
+where it came back; on the Moon and Earth, a craft that jumped or tipped over came to rest elsewhere.
+The ground the craft is standing on never comes back twice: lowest to highest, 108.1 mm on Kerbin,
+15.0 mm on the Mun, 4.1 mm on Minmus, 3.0 mm on Gilly, then 247.3 mm on the Moon and 693.1 mm on
+Earth. One held still and the other wandered, with nothing changed in between.
 
 **→ Full chapter: [The measurements: loading the same save](docs/the-measurements-loading.md)**
 
