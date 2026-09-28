@@ -1,20 +1,26 @@
 # The saves and the runs
 
 Part of [Terrain Precision Fix Diag 2](../README.md): the saves and the logs of
-[the approach protocol](../docs/the-protocol-approach.md) and
-[the switching protocol](../docs/the-protocol-switching.md), and of loadings on Real Solar System. What their readings say is in
-[The measurements: coming back to a craft you left](../docs/the-measurements-approach.md) and
-[The measurements: switching to a craft far away](../docs/the-measurements-switching.md).
+[the approach protocol](../docs/the-protocol-approach.md),
+[the switching protocol](../docs/the-protocol-switching.md) and
+[the runway protocol](../docs/the-protocol-runway.md), and of loadings on Real Solar System. What their readings say is in
+[The measurements: coming back to a craft you left](../docs/the-measurements-approach.md),
+[The measurements: switching to a craft far away](../docs/the-measurements-switching.md) and
+[The measurements: the runway and the grass beside it](../docs/the-measurements-runway.md).
 
 - [`approach-kerbin.sfs`](approach-kerbin.sfs) — the save the approach protocol uses: a capsule
   landed on the flat grass west of the KSC, and a rover 26 m from it.
 - [`switch-kerbin.sfs`](switch-kerbin.sfs) — the save the switching protocol uses: a capsule landed
   on the same grass, and a rover 1.97 km to the south of it.
+- [`runway-kerbin.sfs`](runway-kerbin.sfs) — the save the runway protocol uses: two identical craft,
+  one on the grass beside the runway and one on the runway, 152 m apart.
 
 Copy a save into the folder of a sandbox game and load it from that game.
 
 - [`runs/switching-stock.log`](runs/switching-stock.log) — the `KSP.log` of the session the six
   switching rounds were taken in.
+- [`runs/runway-stock.log`](runs/runway-stock.log) — the `KSP.log` of the session the six loadings
+  of the runway protocol were taken in.
 
 ## On Real Solar System
 

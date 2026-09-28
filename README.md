@@ -78,8 +78,8 @@ table. The table survives scene changes, lives in memory only, and is gone when 
 
 ## The protocol
 
-Three protocols, one for each way the game can set a craft down on the ground. All three fill the
-same window.
+Three protocols, one for each way the game can set a craft down on the ground, and a fourth for the
+runway, which is not the ground. All four fill the same window.
 
 **Loading the same save.** Launch a craft, move it off the runway onto bare ground with the debug
 menu, let it settle and save once — then load that same save, wait for the digits to stop moving,
@@ -100,6 +100,13 @@ mod. Load the save while flying one, press *Record*, switch to the other with th
 press *Record* again. Then load the same save again, six times in all.
 
 **→ Full chapter: [The protocol: switching to a craft far away](docs/the-protocol-switching.md)**
+
+**The runway and the grass beside it.** Where the first protocol tells you not to fire the ray. Two
+craft, one on the runway and one on the grass beside it. Load the save while flying the one on the
+grass, press *Record*, switch to the other with the game's own key, and press *Record* again. Then load
+the same save again, six times in all.
+
+**→ Full chapter: [The protocol: the runway and the grass beside it](docs/the-protocol-runway.md)**
 
 ## The measurements
 
@@ -133,6 +140,14 @@ every loading, over 120.4 mm, and switching to the capsule does not move it: the
 agree to within five thousandths of a millimetre.
 
 **→ Full chapter: [The measurements: switching to a craft far away](docs/the-measurements-switching.md)**
+
+**The runway and the grass beside it** ([the protocol in full](docs/the-protocol-runway.md)). Six
+loadings on Kerbin, two craft 152 m apart. The computed height reads the same digits every time, at
+both spots. The grass comes back somewhere else at every loading, over 88.3 mm, and so does the runway
+deck, over 130.1 mm: the runway is a structure, not the terrain, and it moves just the same. And not
+together: the step between the grass and the runway spreads over 81.7 mm.
+
+**→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
 
 ## Get it
 

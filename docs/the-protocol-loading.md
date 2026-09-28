@@ -13,7 +13,9 @@ switch to — [The protocol: switching to a craft far away](the-protocol-switchi
 (The probe window is draggable — drop it wherever it does not get in the way.)
 
 Note what it reads there: **+4,262.636 mm**. The ray is hitting the runway, and the runway deck sits
-four metres above the terrain the game computes underneath it. Which is what the next step is about.
+four metres above the terrain the game computes underneath it. The deck is a structure, not the terrain,
+and its height has a wobble of its own — [The measurements: the runway and the grass beside it](the-measurements-runway.md).
+Which is what the next step is about.
 
 **2. Move it off onto bare ground.** `Alt+F12 → Cheats → Set Position`. Tick *Use middle click to set
 position*, set *Pitch* to 90 so the craft comes down upright, then middle-click a patch of grass just
