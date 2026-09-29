@@ -31,8 +31,14 @@ off the end of the runway. No need to go far, but you do have to be off the tarm
 
 ![Loading the save](../imgs/protocols/reload/30-load.png)
 
-**5. Wait for the digits to stop moving, then press *Record*.** They stop when the craft does — on a
-slope it may still be creeping downhill, and the readings creep with it.
+**5. Wait for the digits to stop moving, then press *Record*.** They stop when the craft does.
+
+⚠️ **Do not touch the throttle.** A landed craft at rest is held in place by the game, but only while
+its throttle is closed. Open it, even by a few percent, and on a slope the craft creeps downhill, and
+the readings creep with it. The throttle stays where you left it: a single press of Shift is enough,
+and only `X` closes it again. On some of the screenshots of this page, the throttle gauge left of the
+navball is not at zero: they were taken with Shift+Win+S, and its Shift opened the throttle. Take
+yours with F1 or Print Screen, which leave the throttle alone.
 
 ![The craft settled, about to record](../imgs/protocols/reload/40-record.png)
 
