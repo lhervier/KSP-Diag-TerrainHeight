@@ -104,7 +104,8 @@ press *Record* again. Then load the same save again, six times in all.
 **The runway and the grass beside it.** Where the first protocol tells you not to fire the ray. Two
 craft, one on the runway and one on the grass beside it. Load the save while flying the one on the
 grass, press *Record*, switch to the other with the game's own key, and press *Record* again. Then load
-the same save again, six times in all.
+the same save again, six times in all. A second save does the same on the Mun, beside a runway placed
+by Kerbal Konstructs.
 
 **→ Full chapter: [The protocol: the runway and the grass beside it](docs/the-protocol-runway.md)**
 
@@ -113,7 +114,8 @@ the same save again, six times in all.
 Taken in an install with Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
 with this mod added. The first series also goes to the Moon and to Earth, in that install with
-[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added.
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, and the last to the Mun, with
+[Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save,
 loaded six times, on Kerbin, on the Mun, on Minmus and on Gilly, then on the Moon and Earth of Real
@@ -145,7 +147,10 @@ agree to within five thousandths of a millimetre.
 loadings on Kerbin, two craft 152 m apart. The computed height reads the same digits every time, at
 both spots. The grass comes back somewhere else at every loading, over 88.3 mm, and so does the runway
 deck, over 130.1 mm: the runway is a structure, not the terrain, and it moves just the same. And not
-together: the step between the grass and the runway spreads over 81.7 mm.
+together: the step between the grass and the runway spreads over 81.7 mm. The same on the Mun, beside a
+runway placed by [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs): over 24.2 mm on the
+ground, 33.5 mm on the runway deck, 43.0 mm for the step. Whether the game or a mod places it, a
+structure behaves the same.
 
 **→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
 
