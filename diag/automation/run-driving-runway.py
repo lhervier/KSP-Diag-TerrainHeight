@@ -9,7 +9,7 @@ Diag 3 installed, wait for the main menu, then run:
 For each move of the floating origin it does what the protocol asks a player to do, in the same order:
 record at G (grass) and P (deck), come back to both with no move, drive on until the origin moves, come
 back to both again. It records in both Diag windows at every stop, takes a screenshot of each table after
-each move, and prints what it read.
+each move, prints what it read, and quits KSP at the end (unless --keep-running is given).
 """
 import argparse
 import json
@@ -63,7 +63,7 @@ def offset(lat, lon, north_m, east_m):
 
 
 def difference_in_progress():
-    line = call("diag_read", diag=2)["live"]
+    line = call("diag2_read")["returned"]["live"]
     return line["CollisionSurfaceMm"] - line["ComputedTerrainMm"]
 
 
@@ -81,8 +81,8 @@ def wait_for_digits_to_settle():
 def record(tag, rows):
     """Presses Record in Diag 2, then in Diag 3."""
     wait_for_digits_to_settle()
-    line2 = call("diag_record", diag=2)["line"]
-    line3 = call("diag_record", diag=3)["line"]
+    line2 = call("diag2_record")["returned"]
+    line3 = call("diag3_record")["returned"]
     difference = line2["CollisionSurfaceMm"] - line2["ComputedTerrainMm"]
     rows.append(dict(tag=tag, difference=difference, computed=line2["ComputedTerrainMm"],
                      origin_distance=line3["OriginDistance"], shifts=line3["Shifts"]))
@@ -97,19 +97,17 @@ def go(spot, name):
 
 def screenshots(directory, move):
     """One screenshot per Diag table, each window alone in the middle of the screen."""
-    diag2 = "com.github.lhervier.ksp.terrainprecisionfixdiag2.TerrainPrecisionFixDiag2Mod"
-    diag3 = "com.github.lhervier.ksp.terrainprecisionfixdiag3.TerrainPrecisionFixDiag3Mod"
-    rect2 = call("get_member", type=diag2, member="windowRect")["value"]
-    rect3 = call("get_member", type=diag3, member="windowRect")["value"]
     width = 1280
-    for shown, hidden, rect, name in ((diag3, diag2, rect3, "diag3"), (diag2, diag3, rect2, "diag2")):
-        call("set_member", type=hidden, member="windowRect",
-             value=dict(rect2 if hidden == diag2 else rect3, x=-3000))
-        call("set_member", type=shown, member="windowRect", value=dict(rect, x=(width - rect["width"]) / 2, y=60))
+    off_screen = -3000
+    for shown, hidden in (("diag3", "diag2"), ("diag2", "diag3")):
+        call(hidden + "_move_window", x=off_screen, y=60)
+        size = call(shown + "_move_window", x=0, y=60)["returned"]
+        call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
         call("wait", seconds=1)
-        call("screenshot", path=os.path.join(os.path.abspath(directory), "move%d-%s.png" % (move, name)),
+        call("screenshot", path=os.path.join(os.path.abspath(directory), "move%d-%s.png" % (move, shown)),
              return_image=False)
-    call("set_member", type=diag3, member="windowRect", value=dict(rect3, x=(width - rect3["width"]) / 2, y=60))
+    size = call("diag3_move_window", x=0, y=60)["returned"]
+    call("diag3_move_window", x=(width - size["width"]) / 2, y=60)
 
 
 def main():
@@ -120,14 +118,15 @@ def main():
     parser.add_argument("--moves", type=int, default=2, help="how many moves of the floating origin")
     parser.add_argument("--out", default="screenshots", help="where the screenshots go")
     parser.add_argument("--port", type=int, default=8770, help="the port of KSP-MCPServer")
+    parser.add_argument("--keep-running", action="store_true", help="leave KSP running at the end")
     options = parser.parse_args()
     URL = "http://127.0.0.1:%d/mcp/" % options.port
     os.makedirs(options.out, exist_ok=True)
 
     call("load_save", folder=options.folder, save=options.save)
     call("wait", seconds=5)
-    call("diag_clear", diag=2)
-    call("diag_clear", diag=3)
+    call("diag2_clear")
+    call("diag3_clear")
     rows = []
     for move in range(1, options.moves + 1):
         # East along the north edge of the runway, then a quarter turn south. The origin lies (n0, e0)
@@ -164,12 +163,14 @@ def main():
         go(g, "G")
 
         screenshots(options.out, move)
-        call("diag_clear", diag=2)
-        call("diag_clear", diag=3)
+        call("diag2_clear")
+        call("diag3_clear")
 
     with open(os.path.join(options.out, "lines.json"), "w") as f:
         json.dump(rows, f, indent=1)
     log("done")
+    if not options.keep_running:
+        call("quit_game")
 
 
 if __name__ == "__main__":

@@ -201,9 +201,12 @@ Either way you end up with the same `GameData/TerrainPrecisionFixDiag2Mod/` fold
 [latest release](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2/releases/latest).
 
 **Or compile it** — clone this repository, set `KSPDIR` to your KSP install folder and run
-`build.bat`. It needs the .NET SDK, takes a few seconds, reads the KSP assemblies straight from your
-install, and puts the DLL in `GameData/TerrainPrecisionFixDiag2Mod/` inside the repository. It does
-not install anything. Worth doing if you would rather not run a binary you have no source for while
+`build.bat`. It needs the .NET SDK and
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer) installed in that KSP, takes a few seconds,
+reads the KSP assemblies straight from your install, and puts the DLL in
+`GameData/TerrainPrecisionFixDiag2Mod/` inside the repository. It does not install anything.
+KSP-MCPServer is only needed to compile: it provides the attribute that marks what this mod offers to
+it, and this mod runs the same without it. Worth doing if you would rather not run a binary you have no source for while
 reporting a measurement.
 
 ## Install

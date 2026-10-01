@@ -201,16 +201,7 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
             );
             if (GUILayout.Button("Record", GUILayout.Width(Constants.COL_BUTTON)))
             {
-                // A line with nothing to read is worth freezing too: recorded while the vessel is out
-                // of reach, it marks in the table that the two lines around it are separated by a real
-                // trip away, and not by two readings taken where the player stood.
-                READINGS.Add(
-                    new Reading
-                    {
-                        CollisionSurfaceMm = live.CollisionSurfaceMm,
-                        ComputedTerrainMm = live.ComputedTerrainMm
-                    }
-                );
+                Record();
             }
             GUILayout.EndHorizontal();
 
@@ -226,11 +217,54 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
             GUILayout.Space(10f);
             if (GUILayout.Button("Clear table"))
             {
-                READINGS.Clear();
+                Clear();
             }
 
             GUILayout.EndVertical();
             GUI.DragWindow();
+        }
+
+        /// <summary>
+        /// Freezes the line in progress into the table, as the Record button does, and returns the line
+        /// recorded.
+        /// </summary>
+        internal Reading Record()
+        {
+            // A line with nothing to read is worth freezing too: recorded while the vessel is out of reach,
+            // it marks in the table that the two lines around it are separated by a real trip away, and
+            // not by two readings taken where the player stood.
+            Reading reading = new Reading
+            {
+                CollisionSurfaceMm = live.CollisionSurfaceMm,
+                ComputedTerrainMm = live.ComputedTerrainMm
+            };
+            READINGS.Add(reading);
+            return reading;
+        }
+
+        /// <summary>Empties the table, as the Clear table button does.</summary>
+        internal void Clear()
+        {
+            READINGS.Clear();
+        }
+
+        /// <summary>The recorded lines, oldest first.</summary>
+        internal IList<Reading> Lines
+        {
+            get { return READINGS; }
+        }
+
+        /// <summary>The line in progress.</summary>
+        internal Reading Live
+        {
+            get { return live; }
+        }
+
+        /// <summary>Where the window is on the screen, and how big.</summary>
+        internal Rect WindowRect
+        {
+            get { return windowRect; }
+            set { windowRect = value; }
         }
 
         /// <summary>Draws the four columns of one line. The caller owns the surrounding horizontal group,

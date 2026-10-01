@@ -124,8 +124,9 @@ It loads the save, then for each move: drives east until the origin of the world
 turns south, puts G on the flat grass 12 m north of where the turn ends and P on the deck 52 m south of
 G, and drives between them in a straight line, forward and in reverse. It waits for the digits to stop
 moving before each record (within a hundredth of a millimetre over three seconds), records in both
-windows, and takes a screenshot of each table after each move. It prints every line it records, and
-writes them to `lines.json` next to the screenshots.
+windows, and takes a screenshot of each table after each move. It prints every line it records, writes
+them to `lines.json` next to the screenshots, and quits KSP at the end — give it `--keep-running` to
+leave KSP open. Save `KSP.log` before starting KSP again: KSP writes it anew at every start.
 
 It parks the rover 13 to 15 cm from each spot, at the same place to within a millimetre from one visit
 to the next: the lines taken twice at a spot agree to a few hundredths of a millimetre, before the move
