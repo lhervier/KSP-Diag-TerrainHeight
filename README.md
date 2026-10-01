@@ -79,8 +79,9 @@ table. The table survives scene changes, lives in memory only, and is gone when 
 
 ## The protocol
 
-Three protocols, one for each way the game can set a craft down on the ground, and a fourth for the
-runway, which is not the ground. All four fill the same window.
+Three protocols, one for each way the game can set a craft down on the ground, a fourth for the
+runway, which is not the ground, and a fifth for a rover that keeps driving while the game moves its
+world. All five fill the same window.
 
 **Loading the same save.** Launch a craft, move it off the runway onto bare ground with the debug
 menu, let it settle and save once — then load that same save, wait for the digits to stop moving,
@@ -110,13 +111,24 @@ by Kerbal Konstructs.
 
 **→ Full chapter: [The protocol: the runway and the grass beside it](docs/the-protocol-runway.md)**
 
+**Driving on while the world moves.** Every 500 m the craft you fly travels, the game moves its whole
+world back under it, the ground included. A rover alone on flat grass, read just before such a move and
+just after, a few metres apart, then the same few metres farther on with no move in between. One single
+flight, three records per move, with
+[Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3) beside this
+mod to tell when the world moves.
+
+**→ Full chapter: [The protocol: driving on while the world moves](docs/the-protocol-driving.md)**
+
 ## The measurements
 
 Taken in an install with Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
 with this mod added. The first series also goes to the Moon and to Earth, in that install with
-[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, and the last to the Mun, with
-[Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added.
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, the runway series to the Mun,
+with [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added, and the last one is read
+with [Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3) beside
+this mod.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save,
 loaded six times, on Kerbin, on the Mun, on Minmus and on Gilly, then on the Moon and Earth of Real
@@ -154,6 +166,15 @@ ground, 33.5 mm on the runway deck, 43.0 mm for the step. Whether the game or a 
 structure behaves the same.
 
 **→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
+
+**Driving on while the world moves** ([the protocol in full](docs/the-protocol-driving.md)). Two runs on
+Kerbin, a rover alone on the flat grass south of the runway, five moves of the world kept. Across each
+move, the ground under the rover changes by 4.2 to 11.8 mm; across the same few metres with no move, by
+1.2 mm at most. The computed height reads the same digits throughout: the ground moves in the middle of
+a drive, with nothing loaded. Two more moves are shown and left out, on ground where a few metres
+change the reading as much as a move does.
+
+**→ Full chapter: [The measurements: driving on while the world moves](docs/the-measurements-driving.md)**
 
 ## Get it
 

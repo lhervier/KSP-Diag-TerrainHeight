@@ -2,14 +2,18 @@
 
 Part of [Terrain Precision Fix Diag 2](../README.md): the saves and the logs of
 [the approach protocol](../docs/the-protocol-approach.md),
-[the switching protocol](../docs/the-protocol-switching.md) and
-[the runway protocol](../docs/the-protocol-runway.md), and of loadings on Real Solar System. What their readings say is in
+[the switching protocol](../docs/the-protocol-switching.md),
+[the runway protocol](../docs/the-protocol-runway.md) and
+[the driving protocol](../docs/the-protocol-driving.md), and of loadings on Real Solar System. What their readings say is in
 [The measurements: coming back to a craft you left](../docs/the-measurements-approach.md),
-[The measurements: switching to a craft far away](../docs/the-measurements-switching.md) and
-[The measurements: the runway and the grass beside it](../docs/the-measurements-runway.md).
+[The measurements: switching to a craft far away](../docs/the-measurements-switching.md),
+[The measurements: the runway and the grass beside it](../docs/the-measurements-runway.md) and
+[The measurements: driving on while the world moves](../docs/the-measurements-driving.md).
 
 - [`approach-kerbin.sfs`](approach-kerbin.sfs) — the save the approach protocol uses: a capsule
   landed on the flat grass west of the KSC, and a rover 26 m from it.
+- [`driving-kerbin.sfs`](driving-kerbin.sfs) — the save the driving protocol uses:
+  [`Diag2-Rover`](../craft/Diag2-Rover.craft), alone on the grass south of the runway.
 - [`switch-kerbin.sfs`](switch-kerbin.sfs) — the save the switching protocol uses: a capsule landed
   on the same grass, and a rover 1.97 km to the south of it.
 - [`runway-kerbin.sfs`](runway-kerbin.sfs) — the save the runway protocol uses: two identical craft,
@@ -28,6 +32,9 @@ Copy a save into the folder of a sandbox game and load it from that game.
   of the runway protocol were taken in.
 - [`runs/runway-mun-kk-stock.log`](runs/runway-mun-kk-stock.log) — the `KSP.log` of the session the six
   loadings on the Mun, beside the runway placed by Kerbal Konstructs, were taken in.
+- [`runs/driving-stock-1.log`](runs/driving-stock-1.log) and
+  [`runs/driving-stock-2.log`](runs/driving-stock-2.log) — the `KSP.log` of the sessions the two runs of
+  the driving protocol were taken in.
 
 ## On Real Solar System
 
