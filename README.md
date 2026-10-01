@@ -80,8 +80,8 @@ table. The table survives scene changes, lives in memory only, and is gone when 
 ## The protocol
 
 Three protocols, one for each way the game can set a craft down on the ground, a fourth for the
-runway, which is not the ground, and a fifth for a rover that keeps driving while the game moves its
-world. All five fill the same window.
+runway, which is not the ground, a fifth for a rover that keeps driving while the game moves its world,
+and a sixth for the runway and the grass while it does. All six fill the same window.
 
 **Loading the same save.** Launch a craft, move it off the runway onto bare ground with the debug
 menu, let it settle and save once — then load that same save, wait for the digits to stop moving,
@@ -119,6 +119,14 @@ flight, three records per move, with
 mod to tell when the world moves.
 
 **→ Full chapter: [The protocol: driving on while the world moves](docs/the-protocol-driving.md)**
+
+**The runway and the grass, while the world moves.** A rover alone by the runway reads a spot on the
+grass and a spot on the deck, comes back to both, drives on until the world moves, and comes back to
+both again. Played by hand, or by a Python script that drives the rover through
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer) and parks it on the same spots to within a
+centimetre — the way to trust the numbers.
+
+**→ Full chapter: [The protocol: the runway and the grass, while the world moves](docs/the-protocol-driving-runway.md)**
 
 ## The measurements
 
@@ -176,6 +184,14 @@ ground moves in the middle of a drive, with nothing loaded. The moves left out a
 reason.
 
 **→ Full chapter: [The measurements: driving on while the world moves](docs/the-measurements-driving.md)**
+
+**The runway and the grass, while the world moves** ([the protocol in full](docs/the-protocol-driving-runway.md)).
+One run by the script on Kerbin, two moves of the world kept. The runway moves at each move, by −8.85
+and +48.47 mm, and the grass beside it by the same amount, to within four hundredths of a millimetre:
+across a move of the world, the runway and the ground are carried together — unlike at a loading,
+where each draws a placement of its own.
+
+**→ Full chapter: [The measurements: the runway and the grass, while the world moves](docs/the-measurements-driving-runway.md)**
 
 ## Get it
 

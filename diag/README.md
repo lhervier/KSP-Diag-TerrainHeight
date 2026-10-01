@@ -3,17 +3,24 @@
 Part of [Terrain Precision Fix Diag 2](../README.md): the saves and the logs of
 [the approach protocol](../docs/the-protocol-approach.md),
 [the switching protocol](../docs/the-protocol-switching.md),
-[the runway protocol](../docs/the-protocol-runway.md) and
-[the driving protocol](../docs/the-protocol-driving.md), and of loadings on Real Solar System. What their readings say is in
+[the runway protocol](../docs/the-protocol-runway.md),
+[the driving protocol](../docs/the-protocol-driving.md) and
+[the protocol of the runway and the grass while the world moves](../docs/the-protocol-driving-runway.md),
+and of loadings on Real Solar System. What their readings say is in
 [The measurements: coming back to a craft you left](../docs/the-measurements-approach.md),
 [The measurements: switching to a craft far away](../docs/the-measurements-switching.md),
-[The measurements: the runway and the grass beside it](../docs/the-measurements-runway.md) and
-[The measurements: driving on while the world moves](../docs/the-measurements-driving.md).
+[The measurements: the runway and the grass beside it](../docs/the-measurements-runway.md),
+[The measurements: driving on while the world moves](../docs/the-measurements-driving.md) and
+[The measurements: the runway and the grass, while the world moves](../docs/the-measurements-driving-runway.md).
 
 - [`approach-kerbin.sfs`](approach-kerbin.sfs) — the save the approach protocol uses: a capsule
   landed on the flat grass west of the KSC, and a rover 26 m from it.
 - [`driving-kerbin.sfs`](driving-kerbin.sfs) — the save the driving protocol uses:
   [`Diag2-Rover`](../craft/Diag2-Rover.craft), alone on the grass south of the runway.
+- [`driving-runway-kerbin.sfs`](driving-runway-kerbin.sfs) — the save of the protocol of the runway and
+  the grass while the world moves: the same rover, alone on the grass by the north edge of the runway.
+- [`automation/run-driving-runway.py`](automation/run-driving-runway.py) — the script that plays that
+  protocol through [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), with Python 3 alone.
 - [`switch-kerbin.sfs`](switch-kerbin.sfs) — the save the switching protocol uses: a capsule landed
   on the same grass, and a rover 1.97 km to the south of it.
 - [`runway-kerbin.sfs`](runway-kerbin.sfs) — the save the runway protocol uses: two identical craft,
@@ -35,6 +42,10 @@ Copy a save into the folder of a sandbox game and load it from that game.
 - [`runs/driving-stock-1.log`](runs/driving-stock-1.log) and
   [`runs/driving-stock-2.log`](runs/driving-stock-2.log) — the `KSP.log` of the sessions the two runs of
   the driving protocol were taken in.
+- [`runs/driving-runway-stock.log`](runs/driving-runway-stock.log) — the `KSP.log` of the session the
+  script played the protocol of the runway and the grass in; what the script printed in
+  [`runs/driving-runway-stock-script.txt`](runs/driving-runway-stock-script.txt), and every line it
+  recorded in [`runs/driving-runway-stock-lines.json`](runs/driving-runway-stock-lines.json).
 
 ## On Real Solar System
 
