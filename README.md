@@ -167,12 +167,13 @@ structure behaves the same.
 
 **→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
 
-**Driving on while the world moves** ([the protocol in full](docs/the-protocol-driving.md)). Two runs on
-Kerbin, a rover alone on the flat grass south of the runway, five moves of the world kept. Across each
-move, the ground under the rover changes by 4.2 to 11.8 mm; across the same few metres with no move, by
-1.2 mm at most. The computed height reads the same digits throughout: the ground moves in the middle of
-a drive, with nothing loaded. Two more moves are shown and left out, on ground where a few metres
-change the reading as much as a move does.
+**Driving on while the world moves** ([the protocol in full](docs/the-protocol-driving.md)). A rover
+alone on the grass south of the runway, two runs on Kerbin and two on Earth in Real Solar System. On
+Kerbin, across each of five moves of the world kept, the ground under the rover changes by 4.2 to
+11.8 mm; across the same few metres with no move, by 1.2 mm at most. On Earth, by 142 to 421 mm across
+three moves kept, 15 mm at most with no move, and the rover jumps when the ground rises under it. The
+ground moves in the middle of a drive, with nothing loaded. The moves left out are shown, each with the
+reason.
 
 **→ Full chapter: [The measurements: driving on while the world moves](docs/the-measurements-driving.md)**
 

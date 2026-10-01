@@ -50,6 +50,16 @@ You can make your own: copy [`craft/Diag2-Rover.craft`](../craft/Diag2-Rover.cra
 `Ships/SPH` folder of a sandbox game, launch it from the Spaceplane Hangar onto the runway, and drive
 due south until it is off the runway and on the grass. Stop, put the brakes on, and save once.
 
+### The same on Earth, in Real Solar System
+
+[`driving-earth-rss.sfs`](../diag/driving-earth-rss.sfs) holds the same rover on Earth, on the grass
+south of the runway of the KSC at Cape Canaveral, at latitude 28.6119°, longitude −80.6176°. It only
+loads in an install with [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) and what it
+requires. It was made the same way, from the Spaceplane Hangar of that install.
+
+Real Solar System keeps the origin of the world from moving while a craft rolls on the runway of the KSC:
+the whole series is driven on the grass.
+
 ## The protocol
 
 Load the save and **do not change scene again** — no save, no load, no trip back to the space centre.
@@ -58,19 +68,19 @@ Diag 3 reads an **Origin distance** near zero: the origin of the world is on the
 Drive due south across the flat grass, away from the runway and the buildings. Then, for each
 move of the world, three records.
 
-**1. Just before.** Stop when **Origin distance** reads about 490 m. Wait for the digits of this mod to
-stop moving, then record.
+**1. Just before.** Stop when **Origin distance** reads about 490 m — between 498 and 500 m on Earth.
+Wait for the digits of this mod to stop moving, then record.
 
 **2. Just after.** Creep forward until **Origin distance** drops back near zero: the world has moved.
-Stop a few metres on, wait, and record. Diag 3's line reads 1 in **Shifts**.
+Stop a few metres on — within 2 m on Earth — wait, and record. Diag 3's line reads 1 in **Shifts**.
 
-**3. The same distance again.** Creep forward about as far as from 1 to 2, stop, wait, and record. Diag
-3's line reads 0 in **Shifts**.
+**3. The same distance again.** Creep forward about as far as from 1 to 2 — another 2 m on Earth — stop,
+wait, and record. Diag 3's line reads 0 in **Shifts**.
 
 Then drive on to the next move, 500 m farther, and do it again, three moves in all.
 
-**Three moves, and no more**, because the grass south of the runway is flat for about a kilometre and a
-half only. Beyond, the ground slopes down, and on a slope a few metres change **Difference** far more
+**Three moves, and no more**, because on Kerbin the grass south of the runway is flat for about a
+kilometre and a half only. Beyond, the ground slopes down, and on a slope a few metres change **Difference** far more
 than a move does: the third line, with no move, shows it. A fourth move, about two kilometres south of
 the runway, gave a computed height dropping by 15 to 29 cm from one line to the next, and a
 **Difference** changing by 176 mm with no move at all.
@@ -90,12 +100,13 @@ the ground is built out of flat triangles that do not follow its curve exactly
 piece of the ground to the next. Line 3 measures what the few metres do on their own, with no move in
 between.
 
-⚠️ **Leave out a move whose third line changes as much as its second.** Then a few metres change the
-reading as much as the move does, and the move cannot be told apart.
+⚠️ **Keep a move only when its second line changes at least three times as much as its third.** Below
+that, a few metres change the reading nearly as much as the move does, and the move cannot be told
+apart.
 
-⚠️ **Check that the ground is flat where you read it.** On the three lines of a move, **Ground KSP
-computes** reads the same digits, to a few thousandths of a millimetre. If it changes by a millimetre or
-more, the ground slopes there, and that move says nothing.
+**Ground KSP computes** says how much the ground's own shape changes between the lines. On the grass of
+Kerbin, it reads the same digits to a few thousandths of a millimetre. On Earth, around the KSC, it
+changes by about a centimetre per metre: hence the closer stops there, which keep the third line small.
 
 ⚠️ **Compare only lines a few metres apart.** Between line 3 of one move and line 1 of the next, the
 rover drives about 480 m: **Difference** can change by several centimetres over that distance, with no

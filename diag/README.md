@@ -40,7 +40,8 @@ Copy a save into the folder of a sandbox game and load it from that game.
 
 Taken on [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) 20.1.3.0 and what it requires
 (Kopernicus, Modular Flight Integrator, KSPTextureLoader, the RSS textures), on an install of their own:
-these saves only load there. The protocol is [the loading protocol](../docs/the-protocol-loading.md).
+these saves only load there. The protocol is [the loading protocol](../docs/the-protocol-loading.md),
+except for the last one.
 
 - [`reload-moon-rss.sfs`](reload-moon-rss.sfs) — a capsule on an empty FL-T100, landed on flat ground
   on the Moon.
@@ -50,6 +51,9 @@ these saves only load there. The protocol is [the loading protocol](../docs/the-
   about 1.4 km west of the KSC on Earth.
 - [`reload-earth-rss-landed.sfs`](reload-earth-rss-landed.sfs) — the save above, with one line changed
   in the file: the situation of the craft, from `PRELAUNCH` to `LANDED`.
+- [`driving-earth-rss.sfs`](driving-earth-rss.sfs) — for [the driving protocol](../docs/the-protocol-driving.md):
+  [`Diag2-Rover`](../craft/Diag2-Rover.craft), alone on the grass south of the runway of the KSC on
+  Earth.
 
 Copy a save into the folder of a sandbox game and load it from that game.
 
