@@ -1,6 +1,6 @@
 # The measurements: the runway and the grass beside it
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the readings taken with
+Part of [KSP Diag - Terrain Height](../README.md): the readings taken with
 [the runway protocol](the-protocol-runway.md) — one craft on the grass and one on the runway, 152 m
 apart, the ground under both read at each of six loadings of the same save; then the same on the Mun,
 beside a runway placed by a mod. The other series are in

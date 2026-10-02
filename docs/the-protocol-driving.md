@@ -1,6 +1,6 @@
 # The protocol: driving on while the world moves
 
-Part of [Terrain Precision Fix Diag 2](../README.md): how to read the ground under a rover that keeps
+Part of [KSP Diag - Terrain Height](../README.md): how to read the ground under a rover that keeps
 driving, just before and just after the game moves its whole world. Nothing is loaded here — from the
 first line to the last, it is one single flight. The columns it fills are in [The window](the-window.md),
 and what it reads is in [The measurements: driving on while the world moves](the-measurements-driving.md).
@@ -13,15 +13,15 @@ physics: what changes is the world around it.
 
 KSP keeps the craft you fly near the centre of Unity's world. Every 500 m it drives, the game moves the
 whole world back under it, the ground included: this is called the *floating origin*, and
-[Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3) explains it
+[KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) explains it
 and counts those moves
-([What it measures](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3/blob/master/docs/what-it-measures.md)).
+([What it measures](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/what-it-measures.md)).
 This protocol reads the ground on either side of one such move, a few metres apart, then the same few
 metres farther on, with no move in between, to tell what the move does from what the few metres do.
 
 ## Two instruments
 
-This protocol needs Diag 3 in the same install as this mod. Diag 3 only reads; it is there to tell you
+This protocol needs Diag FloatingOrigin in the same install as this mod. Diag FloatingOrigin only reads; it is there to tell you
 when the world moves, through two of its columns:
 
 - **Origin distance (m)**, how far the rover is from the origin of the world. It grows as you drive,
@@ -29,8 +29,8 @@ when the world moves, through two of its columns:
 - **Shifts**, how many times the world moved since its previous line. The game moves it once as the
   scene opens, so the first line of the series reads 1 although the rover has not driven 500 m yet.
 
-Every record below is taken in both windows: press *Record* in this mod's window, then in Diag 3's,
-without moving in between. The two tables then have the same number of lines, and each line of Diag 3
+Every record below is taken in both windows: press *Record* in this mod's window, then in Diag FloatingOrigin's,
+without moving in between. The two tables then have the same number of lines, and each line of Diag FloatingOrigin
 says whether the world moved since the line before.
 
 ## The save
@@ -43,7 +43,7 @@ longitude −74.7241°, facing due south. No target is set.
 
 **The rover is alone, and has to be.** While another landed craft is loaded nearby, the game does not
 move the world at all, however far the rover drives; it only catches up when that craft is unloaded,
-2500 m away ([Diag 3, case 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3/blob/master/docs/the-measurements.md#case-3-a-rover-near-a-parked-craft-then-on-its-own)).
+2500 m away ([Diag FloatingOrigin, case 3](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/the-measurements.md#case-3-a-rover-near-a-parked-craft-then-on-its-own)).
 With a second craft parked nearby, nothing on this page would happen.
 
 You can make your own: copy [`craft/Diag2-Rover.craft`](../craft/Diag2-Rover.craft) into the
@@ -63,7 +63,7 @@ the whole series is driven on the grass.
 ## The protocol
 
 Load the save and **do not change scene again** — no save, no load, no trip back to the space centre.
-Diag 3 reads an **Origin distance** near zero: the origin of the world is on the rover.
+Diag FloatingOrigin reads an **Origin distance** near zero: the origin of the world is on the rover.
 
 Drive due south across the flat grass, away from the runway and the buildings. Then, for each
 move of the world, three records.
@@ -72,10 +72,10 @@ move of the world, three records.
 Wait for the digits of this mod to stop moving, then record.
 
 **2. Just after.** Creep forward until **Origin distance** drops back near zero: the world has moved.
-Stop a few metres on — within 2 m on Earth — wait, and record. Diag 3's line reads 1 in **Shifts**.
+Stop a few metres on — within 2 m on Earth — wait, and record. Diag FloatingOrigin's line reads 1 in **Shifts**.
 
 **3. The same distance again.** Creep forward about as far as from 1 to 2 — another 2 m on Earth — stop,
-wait, and record. Diag 3's line reads 0 in **Shifts**.
+wait, and record. Diag FloatingOrigin's line reads 0 in **Shifts**.
 
 Then drive on to the next move, 500 m farther, and do it again, three moves in all.
 

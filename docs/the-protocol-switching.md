@@ -1,6 +1,6 @@
 # The protocol: switching to a craft far away
 
-Part of [Terrain Precision Fix Diag 2](../README.md): how to read the ground under a craft you switch
+Part of [KSP Diag - Terrain Height](../README.md): how to read the ground under a craft you switch
 to, without driving anywhere. The columns it fills are in [The window](the-window.md), and what it
 reads is in [The measurements: switching to a craft far away](the-measurements-switching.md).
 

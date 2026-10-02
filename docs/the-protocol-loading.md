@@ -1,6 +1,6 @@
 # The protocol: loading the same save
 
-Part of [Terrain Precision Fix Diag 2](../README.md): how to take the reading yourself, step by step. The columns it fills are in [The window](the-window.md), and the readings it produced are in [The measurements: loading the same save](the-measurements-loading.md).
+Part of [KSP Diag - Terrain Height](../README.md): how to take the reading yourself, step by step. The columns it fills are in [The window](the-window.md), and the readings it produced are in [The measurements: loading the same save](the-measurements-loading.md).
 
 The two other protocols read the ground under a craft you drive away from and back to —
 [The protocol: coming back to a craft you left](the-protocol-approach.md) — and under a craft you

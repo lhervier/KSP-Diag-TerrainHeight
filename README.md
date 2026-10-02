@@ -1,4 +1,4 @@
-# Terrain Precision Fix - Diagnostic Mod 2
+# KSP Diag - Terrain Height
 
 **⚠️ Work in progress.** This is an active investigation, not a finished mod. The figures, the code and the conclusions on this page can still change, and several questions are still open.
 
@@ -115,7 +115,7 @@ by Kerbal Konstructs.
 world back under it, the ground included. A rover alone on flat grass, read just before such a move and
 just after, a few metres apart, then the same few metres farther on with no move in between. One single
 flight, three records per move, with
-[Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3) beside this
+[KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) beside this
 mod to tell when the world moves.
 
 **→ Full chapter: [The protocol: driving on while the world moves](docs/the-protocol-driving.md)**
@@ -135,7 +135,7 @@ Taken in an install with Harmony, ModuleManager and
 with this mod added. The first series also goes to the Moon and to Earth, in that install with
 [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, the runway series to the Mun,
 with [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added, and the last one is read
-with [Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3) beside
+with [KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) beside
 this mod.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save,
@@ -196,24 +196,24 @@ placement of its own.
 
 ## Get it
 
-Either way you end up with the same `GameData/TerrainPrecisionFixDiag2Mod/` folder.
+Either way you end up with the same `GameData/KSPDiagTerrainHeight/` folder.
 
 **Download it** — from the assets of the
-[latest release](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2/releases/latest).
+[latest release](https://github.com/lhervier/KSP-Diag-TerrainHeight/releases/latest).
 
 **Or compile it** — clone this repository, set `KSPDIR` to your KSP install folder and run
 `build.bat`. It needs the .NET SDK and
 [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer) installed in that KSP, takes a few seconds,
 reads the KSP assemblies straight from your install, and puts the DLL in
-`GameData/TerrainPrecisionFixDiag2Mod/` inside the repository. It does not install anything.
+`GameData/KSPDiagTerrainHeight/` inside the repository. It does not install anything.
 KSP-MCPServer is only needed to compile: it provides the attribute that marks what this mod offers to
 it, and this mod runs the same without it. Worth doing if you would rather not run a binary you have no source for while
 reporting a measurement.
 
 ## Install
 
-Drop `GameData/TerrainPrecisionFixDiag2Mod` into the `GameData` of KSP, so that you end up with
-`GameData/TerrainPrecisionFixDiag2Mod/TerrainPrecisionFixDiag2Mod.dll`. It runs on a stock install:
+Drop `GameData/KSPDiagTerrainHeight` into the `GameData` of KSP, so that you end up with
+`GameData/KSPDiagTerrainHeight/KSPDiagTerrainHeight.dll`. It runs on a stock install:
 no Harmony, no ModuleManager, no dependency of any kind.
 
 It reads the world and writes nothing at all: the table lives in memory and is gone when you close the

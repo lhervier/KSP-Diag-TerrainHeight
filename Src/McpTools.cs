@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using com.github.lhervier.ksp.mcpserver;
 
-namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
+namespace com.github.lhervier.ksp.diag.terrainheight
 {
     /// <summary>
     /// What KSP-MCPServer, when it is installed, offers of this mod as tools: its buttons, the reading of
@@ -13,20 +13,20 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
     /// </summary>
     internal static class McpTools
     {
-        [McpTool("diag2_record",
-            "Presses Record in the window of Terrain Precision Fix Diag 2: freezes the line in progress into " +
+        [McpTool("terrainheight_record",
+            "Presses Record in the window of KSP Diag - Terrain Height: freezes the line in progress into " +
                 "its table, and returns it (CollisionSurfaceMm, ComputedTerrainMm, in millimetres above sea level).")]
         internal static object Record()
         {
             return Window().Record();
         }
 
-        [McpTool("diag2_read",
-            "Reads the window of Terrain Precision Fix Diag 2: its recorded lines and the line in " +
+        [McpTool("terrainheight_read",
+            "Reads the window of KSP Diag - Terrain Height: its recorded lines and the line in " +
                 "progress (CollisionSurfaceMm, ComputedTerrainMm, in millimetres above sea level).")]
         internal static object Read()
         {
-            TerrainPrecisionFixDiag2Mod window = Window();
+            KSPDiagTerrainHeight window = Window();
             return new Dictionary<string, object>
             {
                 { "lines", new List<Reading>(window.Lines) },
@@ -34,18 +34,18 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
             };
         }
 
-        [McpTool("diag2_clear", "Presses Clear table in the window of Terrain Precision Fix Diag 2.")]
+        [McpTool("terrainheight_clear", "Presses Clear table in the window of KSP Diag - Terrain Height.")]
         internal static void Clear()
         {
             Window().Clear();
         }
 
-        [McpTool("diag2_move_window",
-            "Moves the window of Terrain Precision Fix Diag 2, as dragging it does: x and y in pixels from " +
+        [McpTool("terrainheight_move_window",
+            "Moves the window of KSP Diag - Terrain Height, as dragging it does: x and y in pixels from " +
             "the top left corner of the screen. Returns its position and size (x, y, width, height).")]
         internal static object MoveWindow(double x, double y)
         {
-            TerrainPrecisionFixDiag2Mod window = Window();
+            KSPDiagTerrainHeight window = Window();
             Rect rect = window.WindowRect;
             rect.x = (float)x;
             rect.y = (float)y;
@@ -60,12 +60,12 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
         }
 
         // The window of this mod in the current scene; the window only exists in flight.
-        private static TerrainPrecisionFixDiag2Mod Window()
+        private static KSPDiagTerrainHeight Window()
         {
-            TerrainPrecisionFixDiag2Mod window = UnityEngine.Object.FindObjectOfType<TerrainPrecisionFixDiag2Mod>();
+            KSPDiagTerrainHeight window = UnityEngine.Object.FindObjectOfType<KSPDiagTerrainHeight>();
             if (window == null)
             {
-                throw new InvalidOperationException("The window of Terrain Precision Fix Diag 2 only exists in flight");
+                throw new InvalidOperationException("The window of KSP Diag - Terrain Height only exists in flight");
             }
             return window;
         }

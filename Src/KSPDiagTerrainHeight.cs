@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
+namespace com.github.lhervier.ksp.diag.terrainheight
 {
     /// <summary>
     /// Ground recorder. Follows the ground under a craft -- the one being flown, or the target when one
@@ -13,7 +13,7 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
     /// Reads the world, nothing else: it moves no vessel and touches no setting.
     /// </summary>
     [KSPAddon(KSPAddon.Startup.Flight, false)]
-    public class TerrainPrecisionFixDiag2Mod : MonoBehaviour
+    public class KSPDiagTerrainHeight : MonoBehaviour
     {
         private static readonly List<Reading> READINGS = new List<Reading>();
 
@@ -149,7 +149,7 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
                 Constants.WINDOW_ID,
                 windowRect,
                 DrawWindow,
-                "Terrain Precision Fix Diag 2"
+                "KSP Diag - Terrain Height"
             );
         }
 

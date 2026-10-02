@@ -1,6 +1,6 @@
 using System.Reflection;
 
-[assembly: AssemblyTitle("TerrainPrecisionFixDiag2Mod")]
+[assembly: AssemblyTitle("KSPDiagTerrainHeight")]
 [assembly: AssemblyDescription("Compares the ground a craft rests on with the ground KSP computes for the same spot")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

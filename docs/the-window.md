@@ -1,6 +1,6 @@
 # The window
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the table the mod shows in flight, column by column. What the two heights are, and why they differ, is in [This mod's demonstration](this-mods-demonstration.md).
+Part of [KSP Diag - Terrain Height](../README.md): the table the mod shows in flight, column by column. What the two heights are, and why they differ, is in [This mod's demonstration](this-mods-demonstration.md).
 
 In flight, a window shows a table with one line per loading. The **bottom line is the reading in
 progress**: it carries `--` where the others carry a record number, since it is not a record until the

@@ -1,6 +1,6 @@
 # This mod's demonstration
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the two heights the mod reads at every loading, and why a correct reading is not zero.
+Part of [KSP Diag - Terrain Height](../README.md): the two heights the mod reads at every loading, and why a correct reading is not zero.
 
 There are two grounds in KSP, and they are not the same object.
 
@@ -61,7 +61,7 @@ in double precision from end to end, because reading a few millimetres out of si
 leaves no room for anything less.
 
 It is the second instrument for the same problem. The first,
-[Terrain Precision Fix Diag](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag), measures the
+[KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel), measures the
 **craft**: it shows that a craft set down on the ground does not come to rest where the save left it,
 one loading to the next. This one measures **the ground** itself, and does not care what the craft
 does.

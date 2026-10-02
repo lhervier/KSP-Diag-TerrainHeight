@@ -1,6 +1,6 @@
 # The measurements: loading the same save
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the readings taken with this instrument, on the four worlds of stock KSP and on two much larger ones, the Moon and Earth of Real Solar System. The steps that produced them are in [The protocol: loading the same save](the-protocol-loading.md). The other series are in [The measurements: coming back to a craft you left](the-measurements-approach.md) and [The measurements: switching to a craft far away](the-measurements-switching.md).
+Part of [KSP Diag - Terrain Height](../README.md): the readings taken with this instrument, on the four worlds of stock KSP and on two much larger ones, the Moon and Earth of Real Solar System. The steps that produced them are in [The protocol: loading the same save](the-protocol-loading.md). The other series are in [The measurements: coming back to a craft you left](the-measurements-approach.md) and [The measurements: switching to a craft far away](the-measurements-switching.md).
 
 The experiment is one thing, repeated. Park a craft on bare ground, let it settle, save once — then
 load that same save, press *Record*, load it again, record again, and keep going until you have five
@@ -90,8 +90,8 @@ and sixth loadings (0.217, 0.234, 0.678 and 0.102 m), and *Ground KSP computes* 
 rest somewhere else: see [What the numbers say](#what-the-numbers-say).
 
 What the craft itself does under that workaround — when it is moved, when it jumps, when it tips over,
-and what happens with the workaround turned off — is measured by Terrain Precision Fix Diag 1, in
-[Real Solar System's own workaround](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag/blob/main/docs/the-measurements-loading.md#real-solar-systems-own-workaround).
+and what happens with the workaround turned off — is measured by KSP Diag - Landed Vessel, in
+[Real Solar System's own workaround](https://github.com/lhervier/KSP-Diag-LandedVessel/blob/main/docs/the-measurements-loading.md#real-solar-systems-own-workaround).
 
 ## What the numbers say
 

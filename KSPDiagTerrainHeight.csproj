@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>TerrainPrecisionFixDiag2Mod</AssemblyName>
-    <RootNamespace>com.github.lhervier.ksp.terrainprecisionfixdiag2</RootNamespace>
+    <AssemblyName>KSPDiagTerrainHeight</AssemblyName>
+    <RootNamespace>com.github.lhervier.ksp.diag.terrainheight</RootNamespace>
     <OutputType>Library</OutputType>
     <OutputPath>Output\bin</OutputPath>
     <IntermediateOutputPath>Output\obj</IntermediateOutputPath>

@@ -1,6 +1,6 @@
 # The protocol: the runway and the grass, while the world moves
 
-Part of [Terrain Precision Fix Diag 2](../README.md): how to read the runway deck and the grass beside
+Part of [KSP Diag - Terrain Height](../README.md): how to read the runway deck and the grass beside
 it, at the same two spots, just before and just after the game moves its whole world. Nothing is loaded
 here — from the first line to the last, it is one single flight. The columns it fills are in
 [The window](the-window.md), and what it reads is in
@@ -15,7 +15,7 @@ at every loading, with two craft.
 This protocol asks whether the runway moves when the world moves, and whether it moves with the ground
 beside it. It cannot use two craft: while another landed craft is loaded, the game does not move the
 world at all (`Krakensbane.SafeToEngage`, and
-[Diag 3, case 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3/blob/master/docs/the-measurements.md#case-3-a-rover-near-a-parked-craft-then-on-its-own)),
+[Diag FloatingOrigin, case 3](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/the-measurements.md#case-3-a-rover-near-a-parked-craft-then-on-its-own)),
 whether that craft stands still or rolls. So a single rover reads both spots in turn: before the move,
 then after it. Once the world has moved, its origin is on the rover, so the rover can drive back a few
 tens of metres to the two spots without moving it again.
@@ -61,18 +61,18 @@ edge, in the way. Stop, put the brakes on, and save once.
 ## The protocol
 
 Load the save and **do not change scene again** — no save, no load, no trip back to the space centre.
-Every record is taken in both windows, this mod's and Diag 3's, as in
+Every record is taken in both windows, this mod's and Diag FloatingOrigin's, as in
 [the driving protocol](the-protocol-driving.md#two-instruments).
 
 Then, for each move of the world:
 
-**1. Drive east along the edge**, on the grass, until **Origin distance** in Diag 3 reads about 480 m.
+**1. Drive east along the edge**, on the grass, until **Origin distance** in Diag FloatingOrigin reads about 480 m.
 
 ![Stopped on the grass by the runway, Origin distance at 485 m](../imgs/protocols/driving-runway/010-stop-at-480m.png)
 
 **2. The two spots, before the move.** Turn to face the runway: G is where you stand. Record at G, then
 drive onto the deck — P — and record there. Then back to G, record; P, record; and G once more, record.
-Diag 3 reads 0 on each of these lines, but the first line of a series, which reads the move the game
+Diag FloatingOrigin reads 0 on each of these lines, but the first line of a series, which reads the move the game
 makes as the scene opens.
 
 ![Facing the runway from the grass, at G](../imgs/protocols/driving-runway/020-head-south-and-record.png)
@@ -84,7 +84,7 @@ moved. Stop; no record here.
 
 ![Driving east past 500 m](../imgs/protocols/driving-runway/120-head-east-past-500m.png)
 
-**4. The two spots, after the move.** Drive back to G, record; P, record; G, record; P, record. Diag 3
+**4. The two spots, after the move.** Drive back to G, record; P, record; G, record; P, record. Diag FloatingOrigin
 reads 1 on the first of these lines and 0 on the others.
 
 ![Back at G after the move](../imgs/protocols/driving-runway/130-head-north-and-record.png)
@@ -123,7 +123,7 @@ above, step for step, and takes the screenshots. It drives KSP through
 HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
 install. Anyone can read it top to bottom: it follows the four steps above in the same order.
 
-1. Install KSP-MCPServer next to this mod and Diag 3, copy the save into a sandbox game, start KSP and
+1. Install KSP-MCPServer next to this mod and Diag FloatingOrigin, copy the save into a sandbox game, start KSP and
    wait for the main menu.
 2. Run `python run-driving-runway.py --folder <your sandbox game> --moves 2 --out screenshots`. On
    Earth, add `--save driving-runway-earth-rss --radius 6371000`: the radius of the body turns the

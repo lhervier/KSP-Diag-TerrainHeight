@@ -1,6 +1,6 @@
 # The protocol: the runway and the grass beside it
 
-Part of [Terrain Precision Fix Diag 2](../README.md): how to read the runway itself, where
+Part of [KSP Diag - Terrain Height](../README.md): how to read the runway itself, where
 [the loading protocol](the-protocol-loading.md) tells you not to fire the ray. The columns it fills are
 in [The window](the-window.md), and the readings it produced are in
 [The measurements: the runway and the grass beside it](the-measurements-runway.md).

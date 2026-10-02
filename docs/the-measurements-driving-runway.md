@@ -1,6 +1,6 @@
 # The measurements: the runway and the grass, while the world moves
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the readings taken with
+Part of [KSP Diag - Terrain Height](../README.md): the readings taken with
 [the protocol](the-protocol-driving-runway.md) — a rover alone by the runway of the KSC, reading a spot
 on the grass and a spot on the deck just before and just after the game moves its whole world. Nothing
 is loaded at any point: from the first line to the last, it is one single flight. The grass alone, read
@@ -12,7 +12,7 @@ and the runway and the grass at every loading in
 
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod,
-[Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3) and
+[KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) and
 [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), which only read the game and drive the
 rover, and nothing else. On Earth, [Real Solar System](https://github.com/KSP-RO/RealSolarSystem)
 20.1.3.0 and what it requires as well (Kopernicus 248, Modular Flight Integrator, KSPTextureLoader, the
@@ -26,7 +26,7 @@ One run, played by [the script](the-protocol-driving-runway.md#played-by-a-scrip
 [`driving-runway-stock-script.txt`](../diag/runs/driving-runway-stock-script.txt), and every line it
 recorded in [`driving-runway-stock-lines.json`](../diag/runs/driving-runway-stock-lines.json). It was played with an earlier setting of the script, stopping 468 m from the origin of the world
 before the turn instead of 455 m: G stood 489 to 493 m from it before each move, instead of about 480 m.
-The rover stopped 13 to 16 cm from each spot. On every line, Diag 3 reads 1 in **Shifts** on the first
+The rover stopped 13 to 16 cm from each spot. On every line, Diag FloatingOrigin reads 1 in **Shifts** on the first
 line after a move, with a **Last shift** of 500.0 m to within four centimetres, and 0 on the others.
 
 In *Difference*, in millimetres:
@@ -46,17 +46,17 @@ Across each move, the mean of the lines after minus the mean of the lines before
 **Ground KSP computes** reads the same digits at a spot on every line of a move, to within a thousandth
 of a millimetre: the rover was read on the same spots before and after.
 
-The first move, Diag 3 then Diag 2:
+The first move, Diag FloatingOrigin then Diag TerrainHeight:
 
-![The first move, read by Diag 3](../imgs/measures/driving-runway/move1-diag3.png)
+![The first move, read by Diag FloatingOrigin](../imgs/measures/driving-runway/move1-diag3.png)
 
-![The first move, read by Diag 2](../imgs/measures/driving-runway/move1-diag2.png)
+![The first move, read by Diag TerrainHeight](../imgs/measures/driving-runway/move1-diag2.png)
 
 The second move:
 
-![The second move, read by Diag 3](../imgs/measures/driving-runway/move2-diag3.png)
+![The second move, read by Diag FloatingOrigin](../imgs/measures/driving-runway/move2-diag3.png)
 
-![The second move, read by Diag 2](../imgs/measures/driving-runway/move2-diag2.png)
+![The second move, read by Diag TerrainHeight](../imgs/measures/driving-runway/move2-diag2.png)
 
 ### The move left out
 
@@ -66,9 +66,9 @@ next by up to 15 mm: the grass is no longer flat, and the lines taken at a spot 
 — as much as a move does. That move is why [the protocol](the-protocol-driving-runway.md#the-protocol)
 stops at two.
 
-![The third move, read by Diag 3](../imgs/measures/driving-runway/move3-diag3.png)
+![The third move, read by Diag FloatingOrigin](../imgs/measures/driving-runway/move3-diag3.png)
 
-![The third move, read by Diag 2](../imgs/measures/driving-runway/move3-diag2.png)
+![The third move, read by Diag TerrainHeight](../imgs/measures/driving-runway/move3-diag2.png)
 
 ## On Earth
 
@@ -89,7 +89,7 @@ the script printed is in
 and every line it recorded in
 [`driving-runway-earth-rss-stock-lines.json`](../diag/runs/driving-runway-earth-rss-stock-lines.json).
 G stood 476 to 479 m from the origin of the world before each move. The rover stopped 14 to 15 cm from
-each spot. Diag 3 reads 1 in **Shifts** on the first line after a move, with a **Last shift** of 500.0 m
+each spot. Diag FloatingOrigin reads 1 in **Shifts** on the first line after a move, with a **Last shift** of 500.0 m
 to within five centimetres, and 0 on the others.
 
 In *Difference*, in millimetres:
@@ -109,17 +109,17 @@ Across each move, the mean of the lines after minus the mean of the lines before
 **Ground KSP computes** reads the same digits at a spot on every line of a move, to within three
 hundredths of a millimetre.
 
-The first move, Diag 3 then Diag 2:
+The first move, Diag FloatingOrigin then Diag TerrainHeight:
 
-![The first move on Earth, read by Diag 3](../imgs/measures/driving-runway-earth/move1-diag3.png)
+![The first move on Earth, read by Diag FloatingOrigin](../imgs/measures/driving-runway-earth/move1-diag3.png)
 
-![The first move on Earth, read by Diag 2](../imgs/measures/driving-runway-earth/move1-diag2.png)
+![The first move on Earth, read by Diag TerrainHeight](../imgs/measures/driving-runway-earth/move1-diag2.png)
 
 The second move:
 
-![The second move on Earth, read by Diag 3](../imgs/measures/driving-runway-earth/move2-diag3.png)
+![The second move on Earth, read by Diag FloatingOrigin](../imgs/measures/driving-runway-earth/move2-diag3.png)
 
-![The second move on Earth, read by Diag 2](../imgs/measures/driving-runway-earth/move2-diag2.png)
+![The second move on Earth, read by Diag TerrainHeight](../imgs/measures/driving-runway-earth/move2-diag2.png)
 
 ## What the readings say
 

@@ -1,4 +1,4 @@
-namespace com.github.lhervier.ksp.terrainprecisionfixdiag2
+namespace com.github.lhervier.ksp.diag.terrainheight
 {
     /// <summary>
     /// One line of the table: the ground at one spot, read the two ways the ground exists in KSP, both as

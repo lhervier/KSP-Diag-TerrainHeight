@@ -1,6 +1,6 @@
 # The measurements: driving on while the world moves
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the readings taken with
+Part of [KSP Diag - Terrain Height](../README.md): the readings taken with
 [the driving protocol](the-protocol-driving.md) — a rover alone on the grass, read just before and
 just after the game moves its whole world, then the same few metres farther on with no move. Nothing is
 loaded at any point: from the first line to the last of a run, it is one single flight. The series runs
@@ -18,14 +18,14 @@ The saves the protocol uses are [`diag/driving-kerbin.sfs`](../diag/driving-kerb
 
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod and
-[Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3), which only
+[KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin), which only
 reads, and nothing else. On Earth, that install with
 [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) 20.1.3.0 and what it requires added
 (Kopernicus 1.12.1.248, Modular Flight Integrator, KSPTextureLoader, the RSS textures).
 
 ## The readings
 
-Each run starts from the save and drives due south. On every line, Diag 3 confirms what the protocol
+Each run starts from the save and drives due south. On every line, Diag FloatingOrigin confirms what the protocol
 expects: 1 in **Shifts** on each line taken just after a move, with a **Last shift** of 500.0 m to
 within five centimetres, and 0 on each line taken with no move — except the first line of a run, which
 reads the moves the game makes as the scene opens: one on Kerbin, two on Earth.
@@ -49,17 +49,17 @@ lines are read on the same flat ground.
 | 2, 1 | +47.858 | +36.076 | +35.848 | **−11.782** | −0.228 |
 | 2, 2 | +69.161 | +79.910 | +79.434 | **+10.749** | −0.476 |
 
-The first run, Diag 3 then Diag 2:
+The first run, Diag FloatingOrigin then Diag TerrainHeight:
 
-![The first run on Kerbin, read by Diag 3: twelve lines, four moves](../imgs/measures/driving/run1-diag3.png)
+![The first run on Kerbin, read by Diag FloatingOrigin: twelve lines, four moves](../imgs/measures/driving/run1-diag3.png)
 
-![The first run on Kerbin, read by Diag 2: twelve lines, four moves](../imgs/measures/driving/run1-diag2.png)
+![The first run on Kerbin, read by Diag TerrainHeight: twelve lines, four moves](../imgs/measures/driving/run1-diag2.png)
 
-The second run, Diag 3 then Diag 2:
+The second run, Diag FloatingOrigin then Diag TerrainHeight:
 
-![The second run on Kerbin, read by Diag 3: nine lines, three moves](../imgs/measures/driving/run2-diag3.png)
+![The second run on Kerbin, read by Diag FloatingOrigin: nine lines, three moves](../imgs/measures/driving/run2-diag3.png)
 
-![The second run on Kerbin, read by Diag 2: nine lines, three moves](../imgs/measures/driving/run2-diag2.png)
+![The second run on Kerbin, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/run2-diag2.png)
 
 Two moves are in the screenshots and left out, both by their own third line:
 
@@ -90,24 +90,24 @@ record, the 500 m passed without stopping; the run starts at the second load.
 | 2, 2 | +341.392 | +199.603 | +206.949 | **−141.789** | +7.346 | yes |
 | 2, 3 | −427.147 | −277.381 | — | +149.766 | — | no |
 
-In the third move of the second run, line 9 of this mod was recorded without a line in Diag 3, at the
+In the third move of the second run, line 9 of this mod was recorded without a line in Diag FloatingOrigin, at the
 same **Origin distance** as line 8, and **Ground KSP computes** moved by 16.9 mm between them: the
 rover had shifted where it stood, not driven 2 m on. That move has no third line, and is not kept.
 
 **The rover was seen to jump** twice, at the second move of the first run and the third of the second:
 the two moves where the ground under it rose, by 156 and 150 mm.
 
-The first run, Diag 3 then Diag 2:
+The first run, Diag FloatingOrigin then Diag TerrainHeight:
 
-![The first run on Earth, read by Diag 3: nine lines, three moves](../imgs/measures/driving/earth-run1-diag3.png)
+![The first run on Earth, read by Diag FloatingOrigin: nine lines, three moves](../imgs/measures/driving/earth-run1-diag3.png)
 
-![The first run on Earth, read by Diag 2: nine lines, three moves](../imgs/measures/driving/earth-run1-diag2.png)
+![The first run on Earth, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/earth-run1-diag2.png)
 
-The second run, Diag 3 then Diag 2:
+The second run, Diag FloatingOrigin then Diag TerrainHeight:
 
-![The second run on Earth, read by Diag 3: eight lines, three moves](../imgs/measures/driving/earth-run2-diag3.png)
+![The second run on Earth, read by Diag FloatingOrigin: eight lines, three moves](../imgs/measures/driving/earth-run2-diag3.png)
 
-![The second run on Earth, read by Diag 2: nine lines, three moves](../imgs/measures/driving/earth-run2-diag2.png)
+![The second run on Earth, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/earth-run2-diag2.png)
 
 ## What the readings say
 

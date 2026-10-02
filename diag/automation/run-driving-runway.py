@@ -1,8 +1,8 @@
-"""Plays "The protocol: the runway and the grass, while the world moves" of Terrain Precision Fix Diag 2.
+"""Plays "The protocol: the runway and the grass, while the world moves" of KSP Diag - Terrain Height.
 
 It drives KSP through KSP-MCPServer, a mod that answers HTTP requests on 127.0.0.1, and needs nothing but
-Python 3: no AI, no package to install. Start KSP with KSP-MCPServer, Terrain Precision Fix Diag 2 and
-Diag 3 installed, wait for the main menu, then run:
+Python 3: no AI, no package to install. Start KSP with KSP-MCPServer, KSP Diag - Terrain Height and
+Diag FloatingOrigin installed, wait for the main menu, then run:
 
     python run-driving-runway.py --folder <your sandbox game> --moves 2 --out screenshots
 
@@ -64,7 +64,7 @@ def offset(lat, lon, north_m, east_m):
 
 
 def difference_in_progress():
-    line = call("diag2_read")["returned"]["live"]
+    line = call("terrainheight_read")["returned"]["live"]
     return line["CollisionSurfaceMm"] - line["ComputedTerrainMm"]
 
 
@@ -80,10 +80,10 @@ def wait_for_digits_to_settle():
 
 
 def record(tag, rows):
-    """Presses Record in Diag 2, then in Diag 3."""
+    """Presses Record in Diag TerrainHeight, then in Diag FloatingOrigin."""
     wait_for_digits_to_settle()
-    line2 = call("diag2_record")["returned"]
-    line3 = call("diag3_record")["returned"]
+    line2 = call("terrainheight_record")["returned"]
+    line3 = call("floatingorigin_record")["returned"]
     difference = line2["CollisionSurfaceMm"] - line2["ComputedTerrainMm"]
     rows.append(dict(tag=tag, difference=difference, computed=line2["ComputedTerrainMm"],
                      origin_distance=line3["OriginDistance"], shifts=line3["Shifts"]))
@@ -107,8 +107,8 @@ def screenshots(directory, move):
         call("wait", seconds=1)
         call("screenshot", path=os.path.join(os.path.abspath(directory), "move%d-%s.png" % (move, shown)),
              return_image=False)
-    size = call("diag3_move_window", x=0, y=60)["returned"]
-    call("diag3_move_window", x=(width - size["width"]) / 2, y=60)
+    size = call("floatingorigin_move_window", x=0, y=60)["returned"]
+    call("floatingorigin_move_window", x=(width - size["width"]) / 2, y=60)
 
 
 def main():
@@ -129,8 +129,8 @@ def main():
 
     call("load_save", folder=options.folder, save=options.save)
     call("wait", seconds=5)
-    call("diag2_clear")
-    call("diag3_clear")
+    call("terrainheight_clear")
+    call("floatingorigin_clear")
     rows = []
     for move in range(1, options.moves + 1):
         # East along the north edge of the runway, then a quarter turn south. The origin lies (n0, e0)
@@ -167,8 +167,8 @@ def main():
         go(g, "G")
 
         screenshots(options.out, move)
-        call("diag2_clear")
-        call("diag3_clear")
+        call("terrainheight_clear")
+        call("floatingorigin_clear")
 
     with open(os.path.join(options.out, "lines.json"), "w") as f:
         json.dump(rows, f, indent=1)

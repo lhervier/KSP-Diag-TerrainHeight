@@ -1,6 +1,6 @@
 # The saves and the runs
 
-Part of [Terrain Precision Fix Diag 2](../README.md): the saves and the logs of
+Part of [KSP Diag - Terrain Height](../README.md): the saves and the logs of
 [the approach protocol](../docs/the-protocol-approach.md),
 [the switching protocol](../docs/the-protocol-switching.md),
 [the runway protocol](../docs/the-protocol-runway.md),
