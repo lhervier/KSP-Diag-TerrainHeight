@@ -18,8 +18,9 @@ import os
 import time
 import urllib.request
 
-# Kerbin's radius, only to turn the metres between the waypoints below into degrees.
-KERBIN_RADIUS = 600000.0
+# The radius of the body, only to turn the metres between the waypoints below into degrees: Kerbin's unless
+# --radius says otherwise.
+radius = 600000.0
 
 # Where the spots lie, in metres. The quarter turn south from the edge of the runway ends on the bank that
 # rises to the deck: G is put back on the flat grass north of it, and P on the deck, south of G.
@@ -58,8 +59,8 @@ def log(*parts):
 
 def offset(lat, lon, north_m, east_m):
     """A point a few metres north and east of another, in degrees."""
-    return (lat + math.degrees(north_m / KERBIN_RADIUS),
-            lon + math.degrees(east_m / (KERBIN_RADIUS * math.cos(math.radians(lat)))))
+    return (lat + math.degrees(north_m / radius),
+            lon + math.degrees(east_m / (radius * math.cos(math.radians(lat)))))
 
 
 def difference_in_progress():
@@ -111,16 +112,19 @@ def screenshots(directory, move):
 
 
 def main():
-    global URL
+    global URL, radius
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--folder", required=True, help="the sandbox game under saves/ the save was copied into")
     parser.add_argument("--save", default="driving-runway-kerbin", help="the save, without .sfs")
     parser.add_argument("--moves", type=int, default=2, help="how many moves of the floating origin")
     parser.add_argument("--out", default="screenshots", help="where the screenshots go")
     parser.add_argument("--port", type=int, default=8770, help="the port of KSP-MCPServer")
+    parser.add_argument("--radius", type=float, default=600000.0,
+                        help="the radius of the body in metres (default Kerbin's; 6371000 for Earth in Real Solar System)")
     parser.add_argument("--keep-running", action="store_true", help="leave KSP running at the end")
     options = parser.parse_args()
     URL = "http://127.0.0.1:%d/mcp/" % options.port
+    radius = options.radius
     os.makedirs(options.out, exist_ok=True)
 
     call("load_save", folder=options.folder, save=options.save)

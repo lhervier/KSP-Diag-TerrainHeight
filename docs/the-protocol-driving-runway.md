@@ -45,6 +45,13 @@ move, where the script, parking on the same spots, finds no change at all.
 [`Diag2-Rover`](../craft/Diag2-Rover.craft) alone, on the grass by the north edge of the runway of the
 KSC, near its western end, at latitude −0.0416°, longitude −74.7263°, facing east. No target is set.
 
+[`driving-runway-earth-rss.sfs`](../diag/driving-runway-earth-rss.sfs) is the same on Earth, in Real
+Solar System: the rover alone on the grass by the north edge of the runway of the KSC at Cape Canaveral,
+near its western end, about 65 m north of its axis, at latitude 28.6134°, longitude −80.6175°, facing
+east. Real Solar System has to be built without its runway fix, which keeps the floating origin from
+moving at 500 m once a craft has rolled onto the deck: see
+[The measurements, on Earth](the-measurements-driving-runway.md#on-earth).
+
 The rover is alone, and has to be, for the reason above.
 
 You can make your own: launch the rover from the Spaceplane Hangar onto the runway, drive off it to the
@@ -118,7 +125,9 @@ install. Anyone can read it top to bottom: it follows the four steps above in th
 
 1. Install KSP-MCPServer next to this mod and Diag 3, copy the save into a sandbox game, start KSP and
    wait for the main menu.
-2. Run `python run-driving-runway.py --folder <your sandbox game> --moves 2 --out screenshots`.
+2. Run `python run-driving-runway.py --folder <your sandbox game> --moves 2 --out screenshots`. On
+   Earth, add `--save driving-runway-earth-rss --radius 6371000`: the radius of the body turns the
+   metres between the spots into degrees.
 
 It loads the save, then for each move: drives east until the origin of the world is about 455 m away,
 turns south, puts G on the flat grass 12 m north of where the turn ends and P on the deck 52 m south of

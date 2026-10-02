@@ -14,9 +14,11 @@ KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod,
 [Terrain Precision Fix Diag 3](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag3) and
 [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), which only read the game and drive the
-rover, and nothing else.
+rover, and nothing else. On Earth, [Real Solar System](https://github.com/KSP-RO/RealSolarSystem)
+20.1.3.0 and what it requires as well (Kopernicus 248, Modular Flight Integrator, KSPTextureLoader, the
+RSS textures), built without its runway fix ([On Earth](#on-earth)).
 
-## The readings
+## On Kerbin
 
 One run, played by [the script](the-protocol-driving-runway.md#played-by-a-script) from
 [`diag/driving-runway-kerbin.sfs`](../diag/driving-runway-kerbin.sfs), three moves of the world, logged in
@@ -68,15 +70,69 @@ stops at two.
 
 ![The third move, read by Diag 2](../imgs/measures/driving-runway/move3-diag2.png)
 
+## On Earth
+
+Real Solar System ships a fix of its own for the runway of the KSC, `RSSRunwayFix`. Once a craft has
+rolled onto the deck, it raises the distance at which KSP moves the floating origin from 500 m to
+2,700 m, and keeps it there after the craft has left the deck: the rover, which reads P on the deck
+before each move, would never see the world move at 500 m. So Real Solar System is built from the
+sources of its release 20.1.3.0 with that fix kept from doing anything, the one change in
+[`rss-20.1.3-without-its-runway-fix.diff`](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/master/diag/rss-runway-fix/rss-20.1.3-without-its-runway-fix.diff);
+everything else is Real Solar System as released.
+
+One run, played by [the script](the-protocol-driving-runway.md#played-by-a-script) from
+[`diag/driving-runway-earth-rss.sfs`](../diag/driving-runway-earth-rss.sfs), with `--radius 6371000`, two
+moves of the world, logged in
+[`diag/runs/driving-runway-earth-rss-stock.log`](../diag/runs/driving-runway-earth-rss-stock.log); what
+the script printed is in
+[`driving-runway-earth-rss-stock-script.txt`](../diag/runs/driving-runway-earth-rss-stock-script.txt),
+and every line it recorded in
+[`driving-runway-earth-rss-stock-lines.json`](../diag/runs/driving-runway-earth-rss-stock-lines.json).
+G stood 476 to 479 m from the origin of the world before each move. The rover stopped 14 to 15 cm from
+each spot. Diag 3 reads 1 in **Shifts** on the first line after a move, with a **Last shift** of 500.0 m
+to within five centimetres, and 0 on the others.
+
+In *Difference*, in millimetres:
+
+| move | G before | G after | P before | P after |
+|---|---|---|---|---|
+| 1 | −31.215, −31.334, −31.289 | −407.186, −407.182 | +3741.389, +3741.414 | +3365.502, +3365.525 |
+| 2 | −697.608, −697.650, −697.659 | −652.012, −651.993 | +3263.485, +3263.486 | +3309.172, +3309.170 |
+
+Across each move, the mean of the lines after minus the mean of the lines before:
+
+| move | the grass, G | the deck, P | the step, P − G | spread at a spot, at most |
+|---|---|---|---|---|
+| 1 | **−375.905** | **−375.888** | +0.017 | 0.120 |
+| 2 | **+45.637** | **+45.685** | +0.049 | 0.051 |
+
+**Ground KSP computes** reads the same digits at a spot on every line of a move, to within three
+hundredths of a millimetre.
+
+The first move, Diag 3 then Diag 2:
+
+![The first move on Earth, read by Diag 3](../imgs/measures/driving-runway-earth/move1-diag3.png)
+
+![The first move on Earth, read by Diag 2](../imgs/measures/driving-runway-earth/move1-diag2.png)
+
+The second move:
+
+![The second move on Earth, read by Diag 3](../imgs/measures/driving-runway-earth/move2-diag3.png)
+
+![The second move on Earth, read by Diag 2](../imgs/measures/driving-runway-earth/move2-diag2.png)
+
 ## What the readings say
 
-**The runway moves when the world moves**, in the middle of a drive, with nothing loaded: by −8.85 mm at
-the first move, +48.47 mm at the second, each time hundreds of times the spread of the lines taken at
-the same spot.
+**The runway moves when the world moves**, in the middle of a drive, with nothing loaded: on Kerbin,
+by −8.85 mm at the first move and +48.47 mm at the second; on Earth, by −375.89 mm and +45.69 mm. Each
+time, hundreds or thousands of times the spread of the lines taken at the same spot.
 
-**And it moves with the ground beside it.** The grass moves by the same amount, to within four
-hundredths of a millimetre, so the step between the deck and the grass stays what it was. Across a move
-of the world, the runway and the ground are carried together.
+**And it moves with the ground beside it.** The grass moves by the same amount, to within five
+hundredths of a millimetre on both bodies, so the step between the deck and the grass stays what it was.
+Across a move of the world, the runway and the ground are carried together. On Earth, a rover rolling on
+the runway is no better off than one rolling on the grass beside it
+([The measurements: driving on while the world moves](the-measurements-driving.md#on-earth)): both see
+the ground under them move by up to several tenths of a metre.
 
 That is not what happens at a loading, where the step between the same two kinds of spot changes by up
 to 81.7 mm from one loading to the next

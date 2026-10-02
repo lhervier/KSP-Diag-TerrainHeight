@@ -52,7 +52,7 @@ Copy a save into the folder of a sandbox game and load it from that game.
 Taken on [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) 20.1.3.0 and what it requires
 (Kopernicus, Modular Flight Integrator, KSPTextureLoader, the RSS textures), on an install of their own:
 these saves only load there. The protocol is [the loading protocol](../docs/the-protocol-loading.md),
-except for the last one.
+except for the last two.
 
 - [`reload-moon-rss.sfs`](reload-moon-rss.sfs) — a capsule on an empty FL-T100, landed on flat ground
   on the Moon.
@@ -65,6 +65,11 @@ except for the last one.
 - [`driving-earth-rss.sfs`](driving-earth-rss.sfs) — for [the driving protocol](../docs/the-protocol-driving.md):
   [`Diag2-Rover`](../craft/Diag2-Rover.craft), alone on the grass south of the runway of the KSC on
   Earth.
+- [`driving-runway-earth-rss.sfs`](driving-runway-earth-rss.sfs) — for
+  [the protocol of the runway and the grass while the world moves](../docs/the-protocol-driving-runway.md):
+  the same rover, alone on the grass by the north edge of the runway of the KSC on Earth. Real Solar
+  System has to be built without its runway fix (see
+  [The measurements, on Earth](../docs/the-measurements-driving-runway.md#on-earth)).
 
 Copy a save into the folder of a sandbox game and load it from that game.
 
@@ -72,3 +77,9 @@ Copy a save into the folder of a sandbox game and load it from that game.
   `reload-moon-rss-resave.sfs`.
 - [`runs/reload-earth-rss-stock.log`](runs/reload-earth-rss-stock.log) — six loads of
   `reload-earth-rss-resave.sfs`.
+- [`runs/driving-runway-earth-rss-stock.log`](runs/driving-runway-earth-rss-stock.log) — the session
+  the script played the protocol of the runway and the grass in, on Earth, Real Solar System built
+  without its runway fix; what the script printed in
+  [`runs/driving-runway-earth-rss-stock-script.txt`](runs/driving-runway-earth-rss-stock-script.txt),
+  and every line it recorded in
+  [`runs/driving-runway-earth-rss-stock-lines.json`](runs/driving-runway-earth-rss-stock-lines.json).
