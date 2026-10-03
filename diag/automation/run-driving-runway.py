@@ -100,12 +100,15 @@ def screenshots(directory, move):
     """One screenshot per Diag table, each window alone in the middle of the screen."""
     width = 1280
     off_screen = -3000
-    for shown, hidden in (("diag3", "diag2"), ("diag2", "diag3")):
+    # The files keep the names the published pages use: diag3 for Diag FloatingOrigin, diag2 for Diag
+    # TerrainHeight.
+    for shown, hidden, name in (("floatingorigin", "terrainheight", "diag3"),
+                                ("terrainheight", "floatingorigin", "diag2")):
         call(hidden + "_move_window", x=off_screen, y=60)
         size = call(shown + "_move_window", x=0, y=60)["returned"]
         call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
         call("wait", seconds=1)
-        call("screenshot", path=os.path.join(os.path.abspath(directory), "move%d-%s.png" % (move, shown)),
+        call("screenshot", path=os.path.join(os.path.abspath(directory), "move%d-%s.png" % (move, name)),
              return_image=False)
     size = call("floatingorigin_move_window", x=0, y=60)["returned"]
     call("floatingorigin_move_window", x=(width - size["width"]) / 2, y=60)

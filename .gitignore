@@ -3,3 +3,4 @@ obj/
 GameData/KSPDiagTerrainHeight/*.dll
 GameData/KSPDiagTerrainHeight/*.zip
 CLAUDE.md
+__pycache__/
