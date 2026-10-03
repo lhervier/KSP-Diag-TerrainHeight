@@ -9,8 +9,8 @@ FloatingOrigin installed, copy driving-kerbin.sfs into a sandbox game, wait for 
 It loads the save once and never changes scene. For each move of the floating origin it does what the protocol
 asks a player to do, driving due south: stop when the rover is --before metres from the origin (490 on Kerbin,
 499 on Earth) and record; creep on until the origin moves, stop and record; creep on as far again, with no
-move, and record. Both instruments record at every stop. It prints what it read, writes it to lines.json, and
-quits KSP (unless --keep-running is given).
+move, and record. Both instruments record at every stop. At the end it takes a screenshot of each table, that
+window alone. It prints what it read, writes it to lines.json, and quits KSP (unless --keep-running is given).
 """
 import argparse
 import json
@@ -85,6 +85,20 @@ def record(tag, rows):
         % (tag, difference, terrain["ComputedTerrainMm"], origin["OriginDistance"], origin["Shifts"]))
 
 
+def screenshots(directory, name, instruments, width):
+    """One screenshot per table, each window alone in the middle of the screen."""
+    off_screen = -3000
+    for shown in instruments:
+        for hidden in instruments:
+            if hidden != shown:
+                call(hidden + "_move_window", x=off_screen, y=60)
+        size = call(shown + "_move_window", x=0, y=60)
+        call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
+        call("wait", seconds=1)
+        call("screenshot", path=os.path.join(os.path.abspath(directory), "%s-%s.png" % (name, shown)),
+             return_image=False)
+
+
 def main():
     global URL
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -95,7 +109,8 @@ def main():
                         help="how far from the origin to stop before a move, in metres (499 on Earth)")
     parser.add_argument("--radius", type=float, default=600000.0,
                         help="the radius of the body, in metres (6371000 for the Earth of Real Solar System)")
-    parser.add_argument("--out", default="out", help="where lines.json goes")
+    parser.add_argument("--out", default="out", help="where lines.json and the screenshots go")
+    parser.add_argument("--screen-width", type=float, default=1280, help="the width of KSP's window, in pixels")
     parser.add_argument("--port", type=int, default=8770, help="the port of KSP-MCPServer")
     parser.add_argument("--keep-running", action="store_true", help="leave KSP running at the end")
     options = parser.parse_args()
@@ -132,6 +147,7 @@ def main():
         log("move %d: %.2f m from 1 to 2, %.2f m from 2 to 3" % (
             move, step, metres_between(after, position(), options.radius)))
 
+    screenshots(options.out, options.save, ["terrainheight", "floatingorigin"], options.screen_width)
     with open(os.path.join(options.out, "lines.json"), "w", newline="") as f:
         json.dump(rows, f, indent=1)
     log("done")
