@@ -5,7 +5,7 @@ Part of [KSP Diag - Terrain Height](../README.md): the table the mod shows in fl
 In flight, a window shows a table with one line per loading. The **bottom line is the reading in
 progress**: it carries `--` where the others carry a record number, since it is not a record until the
 *Record* button at the end of it freezes it into the table. The table survives scene changes, so the
-lines pile up as you reload.
+lines pile up as you reload. `Alt+F6` hides the window, and shows it again.
 
 ![The window, with one loading recorded and the live line under it](../imgs/protocols/reload/50-recorded.png)
 
