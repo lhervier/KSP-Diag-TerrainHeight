@@ -62,3 +62,28 @@ drawn afresh every time, and can come out small by luck.
 
 Then install [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) and do the
 same thing again.
+
+## Played by a script
+
+[`diag/automation/run-loading.py`](../diag/automation/run-loading.py) plays steps 4 to 8 above, on a
+save already made, and takes the screenshot. It drives KSP through
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), a mod that answers requests sent to it over
+HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
+install. Anyone can read it top to bottom: it follows the steps above in the same order.
+
+The saves it was played on are in [`diag`](../diag/README.md#the-saves-of-the-loading-protocol), made
+by steps 1 to 3 on each of the four worlds of stock KSP, a lone capsule and the same capsule on a small
+flat fuel tank: `reload-kerbin-1part.sfs`, `reload-kerbin-2parts.sfs`, and the same for `mune`,
+`minmus` and `gilly`.
+
+1. Install KSP-MCPServer next to this mod, copy the save into a sandbox game, start KSP and wait for
+   the main menu.
+2. Run `python run-loading.py --folder <your sandbox game> --save reload-kerbin-2parts --loads 6 --out screenshots`.
+
+For each loading, it loads the save, waits for the digits to stop moving (within half a thousandth of a
+millimetre over two seconds), and records. If
+[KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel) is installed as well, it
+records in both windows at the same moment. It never saves the game. After the last loading it takes a
+screenshot of each table, prints every line it recorded, writes them to `lines.json` next to the
+screenshots, and quits KSP — give it `--keep-running` to leave KSP open. Save `KSP.log` before starting
+KSP again: KSP writes it anew at every start.

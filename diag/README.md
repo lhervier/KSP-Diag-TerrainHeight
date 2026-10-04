@@ -1,17 +1,68 @@
 # The saves and the runs
 
 Part of [KSP Diag - Terrain Height](../README.md): the saves and the logs of
+[the loading protocol](../docs/the-protocol-loading.md),
 [the approach protocol](../docs/the-protocol-approach.md),
 [the switching protocol](../docs/the-protocol-switching.md),
 [the runway protocol](../docs/the-protocol-runway.md),
 [the driving protocol](../docs/the-protocol-driving.md) and
 [the protocol of the runway and the grass while the world moves](../docs/the-protocol-driving-runway.md),
-and of loadings on Real Solar System. What their readings say is in
+and the scripts that play them. What their readings say is in
+[The measurements: loading the same save](../docs/the-measurements-loading.md),
 [The measurements: coming back to a craft you left](../docs/the-measurements-approach.md),
 [The measurements: switching to a craft far away](../docs/the-measurements-switching.md),
 [The measurements: the runway and the grass beside it](../docs/the-measurements-runway.md),
 [The measurements: driving on while the world moves](../docs/the-measurements-driving.md) and
 [The measurements: the runway and the grass, while the world moves](../docs/the-measurements-driving-runway.md).
+
+## The saves of the loading protocol
+
+A lone capsule, then the same capsule on a small flat fuel tank, each landed on its own spot of the four
+worlds of stock KSP, made by steps 1 to 3 of [the protocol](../docs/the-protocol-loading.md):
+
+- [`reload-kerbin-1part.sfs`](reload-kerbin-1part.sfs) and [`reload-kerbin-2parts.sfs`](reload-kerbin-2parts.sfs)
+  — on the levelled grass of the KSC, just south-west of the west end of the runway;
+- [`reload-mune-1part.sfs`](reload-mune-1part.sfs) and [`reload-mune-2parts.sfs`](reload-mune-2parts.sfs)
+  — on flat ground on the Mun;
+- [`reload-minmus-1part.sfs`](reload-minmus-1part.sfs) and [`reload-minmus-2parts.sfs`](reload-minmus-2parts.sfs)
+  — on the frozen flats of Minmus;
+- [`reload-gilly-1part.sfs`](reload-gilly-1part.sfs) and [`reload-gilly-2parts.sfs`](reload-gilly-2parts.sfs)
+  — on Gilly.
+
+Copy a save into the folder of a sandbox game and load it from that game.
+
+## The scripts
+
+Each plays a protocol through [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), with Python 3
+alone; how to run it is at the top of the file, and in the chapter *Played by a script* of its protocol.
+
+- [`automation/run-loading.py`](automation/run-loading.py) — the loading protocol.
+- [`automation/run-approach.py`](automation/run-approach.py) — the approach protocol.
+- [`automation/run-switching.py`](automation/run-switching.py) — the switching protocol.
+- [`automation/run-runway.py`](automation/run-runway.py) — the runway protocol.
+- [`automation/run-driving.py`](automation/run-driving.py) — the driving protocol.
+- [`automation/run-driving-runway.py`](automation/run-driving-runway.py) — the protocol of the runway
+  and the grass while the world moves.
+
+## The runs of the loading protocol
+
+KSP 1.12.5 with Harmony, ModuleManager, KSP Community Fixes 1.41.1, this mod,
+KSP Diag - Landed Vessel and KSP-MCPServer, every save played by `run-loading.py`, six loadings each.
+
+- [`runs/loading-stock.log`](runs/loading-stock.log) — the `KSP.log` of the session the eight saves
+  above were played in, one after the other.
+- `runs/reload-<world>-<1part|2parts>-stock-script.txt` — what the script printed for each save, and
+  `runs/reload-<world>-<1part|2parts>-stock-lines.json`, every line it recorded, in both instruments:
+  for instance [`runs/reload-kerbin-1part-stock-lines.json`](runs/reload-kerbin-1part-stock-lines.json).
+- [`runs/loading-rss-stock.log`](runs/loading-rss-stock.log) — on Real Solar System (see
+  [On Real Solar System](#on-real-solar-system)): the session `reload-moon-rss-resave.sfs` then
+  `reload-earth-rss-resave.sfs` were played in; what the script printed and the lines it recorded, in
+  [`runs/reload-moon-rss-resave-stock-script.txt`](runs/reload-moon-rss-resave-stock-script.txt),
+  [`runs/reload-moon-rss-resave-stock-lines.json`](runs/reload-moon-rss-resave-stock-lines.json),
+  [`runs/reload-earth-rss-resave-stock-script.txt`](runs/reload-earth-rss-resave-stock-script.txt) and
+  [`runs/reload-earth-rss-resave-stock-lines.json`](runs/reload-earth-rss-resave-stock-lines.json).
+
+## The saves of the other protocols
 
 - [`approach-kerbin.sfs`](approach-kerbin.sfs) — the save the approach protocol uses: a capsule
   landed on the flat grass west of the KSC, and a rover 26 m from it.
@@ -19,8 +70,6 @@ and of loadings on Real Solar System. What their readings say is in
   [`Diag2-Rover`](../craft/Diag2-Rover.craft), alone on the grass south of the runway.
 - [`driving-runway-kerbin.sfs`](driving-runway-kerbin.sfs) — the save of the protocol of the runway and
   the grass while the world moves: the same rover, alone on the grass by the north edge of the runway.
-- [`automation/run-driving-runway.py`](automation/run-driving-runway.py) — the script that plays that
-  protocol through [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), with Python 3 alone.
 - [`switch-kerbin.sfs`](switch-kerbin.sfs) — the save the switching protocol uses: a capsule landed
   on the same grass, and a rover 1.97 km to the south of it.
 - [`runway-kerbin.sfs`](runway-kerbin.sfs) — the save the runway protocol uses: two identical craft,
@@ -32,6 +81,8 @@ and of loadings on Real Solar System. What their readings say is in
   copy that `GameData` into the folder of KSP, over its own, before loading the save.
 
 Copy a save into the folder of a sandbox game and load it from that game.
+
+## The runs of the other protocols
 
 - [`runs/switching-stock.log`](runs/switching-stock.log) — the `KSP.log` of the session the six
   switching rounds were taken in.
@@ -73,10 +124,12 @@ except for the last two.
 
 Copy a save into the folder of a sandbox game and load it from that game.
 
-- [`runs/reload-moon-rss-stock.log`](runs/reload-moon-rss-stock.log) — six loads of
-  `reload-moon-rss-resave.sfs`.
-- [`runs/reload-earth-rss-stock.log`](runs/reload-earth-rss-stock.log) — six loads of
-  `reload-earth-rss-resave.sfs`.
+- [`runs/loading-rss-stock.log`](runs/loading-rss-stock.log) — six loads of `reload-moon-rss-resave.sfs`,
+  then six of `reload-earth-rss-resave.sfs`, played by `run-loading.py` (see
+  [The runs of the loading protocol](#the-runs-of-the-loading-protocol)).
+- [`runs/reload-moon-rss-stock.log`](runs/reload-moon-rss-stock.log) — an earlier session, played by
+  hand with this mod alone: six loads of `reload-moon-rss-resave.sfs`, where the craft tipped over at
+  the fourth. It is the one KSP Diag - Landed Vessel cites.
 - [`runs/driving-runway-earth-rss-stock.log`](runs/driving-runway-earth-rss-stock.log) — the session
   the script played the protocol of the runway and the grass in, on Earth, Real Solar System built
   without its runway fix; what the script printed in

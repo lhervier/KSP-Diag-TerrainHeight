@@ -140,12 +140,14 @@ this mod.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save,
 loaded six times, on Kerbin, on the Mun, on Minmus and on Gilly, then on the Moon and Earth of Real
-Solar System, much larger. The computed height comes back with the same digits every time — spread
-over 0.000 mm on Minmus, under a tenth of a millimetre everywhere else, as long as the craft is read
-where it came back; on the Moon and Earth, a craft that jumped or tipped over came to rest elsewhere.
-The ground the craft is standing on never comes back twice: lowest to highest, 108.1 mm on Kerbin,
-15.0 mm on the Mun, 4.1 mm on Minmus, 3.0 mm on Gilly, then 247.3 mm on the Moon and 693.1 mm on
-Earth. One held still and the other wandered, with nothing changed in between.
+Solar System, much larger, each with a lone capsule then with two parts, every series played by a
+script through KSP-MCPServer. The computed height comes back with the same digits every time — spread
+over 0.000 mm on Kerbin and on Minmus, a tenth of a millimetre at most on the Mun and on Gilly, as long
+as the craft is read where it came back; on the Moon and Earth, a craft pushed out of the ground came
+to rest elsewhere. The ground the craft is standing on never comes back twice: lowest to highest, with
+one part then two, 73.7 and 43.6 mm on Kerbin, 5.5 and 18.0 mm on the Mun, 4.6 and 7.3 mm on Minmus,
+1.4 and 2.3 mm on Gilly, then 48.7 mm on the Moon and 292.3 mm on Earth. One held still and the other
+wandered, with nothing changed in between.
 
 **→ Full chapter: [The measurements: loading the same save](docs/the-measurements-loading.md)**
 
