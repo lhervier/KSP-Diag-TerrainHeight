@@ -1,72 +1,67 @@
-17:26:56 run stock
-17:27:44 move 1: G -0.0413303 -74.6793066, origin distance 491.3 m
-17:27:57   at G      missed by 0.14 m
-17:28:25   record G1-b1    diff=   -44.295 computed= 64784.993 origin=  491.3 shifts=1
-17:28:55   at P      missed by 0.14 m
-17:29:25   record P1-b1    diff=  3492.283 computed= 64784.969 origin=  493.8 shifts=0
-17:29:53   at G      missed by 0.14 m
-17:30:11   record G1-b2    diff=   -44.290 computed= 64784.993 origin=  491.3 shifts=0
-17:30:41   at P      missed by 0.15 m
-17:31:07   record P1-b2    diff=  3492.293 computed= 64784.969 origin=  493.8 shifts=0
-17:31:34   at G      missed by 0.14 m
-17:31:48   record G1-b3    diff=   -44.299 computed= 64784.993 origin=  491.3 shifts=0
-17:31:57 move 1: shift, stopped because shift, last shift 500.0034813005896
-17:32:15   at N      missed by 0.14 m
-17:32:30   at G      missed by 0.14 m
-17:32:35   record G1-a1    diff=   -53.116 computed= 64784.993 origin=   10.4 shifts=1
-17:33:06   at P      missed by 0.15 m
-17:33:36   record P1-a1    diff=  3483.432 computed= 64784.969 origin=   47.3 shifts=0
-17:34:03   at G      missed by 0.14 m
-17:34:07   record G1-a2    diff=   -53.160 computed= 64784.993 origin=   10.3 shifts=0
-17:34:37   at P      missed by 0.14 m
-17:35:08   record P1-a2    diff=  3483.442 computed= 64784.969 origin=   47.3 shifts=0
-17:35:35   at G      missed by 0.15 m
-17:36:17 move 2: G -0.0423743 -74.6318074, origin distance 489.0 m
-17:36:30   at G      missed by 0.14 m
-17:36:51   record G2-b1    diff=   -44.307 computed= 64784.936 origin=  488.8 shifts=0
-17:37:21   at P      missed by 0.13 m
-17:37:32   record P2-b1    diff=  3016.140 computed= 64784.912 origin=  492.1 shifts=0
-17:37:59   at G      missed by 0.13 m
-17:38:07   record G2-b2    diff=   -44.318 computed= 64784.936 origin=  488.8 shifts=0
-17:38:37   at P      missed by 0.14 m
-17:38:48   record P2-b2    diff=  3016.146 computed= 64784.912 origin=  492.1 shifts=0
-17:39:15   at G      missed by 0.14 m
-17:39:46   record G2-b3    diff=   -44.317 computed= 64784.936 origin=  488.8 shifts=0
-17:39:55 move 2: shift, stopped because shift, last shift 500.0039750280188
-17:40:14   at N      missed by 0.14 m
-17:40:28   at G      missed by 0.14 m
-17:40:32   record G2-a1    diff=     4.214 computed= 64784.936 origin=   12.6 shifts=1
-17:41:02   at P      missed by 0.14 m
-17:41:05   record P2-a1    diff=  3064.616 computed= 64784.912 origin=   47.7 shifts=0
-17:41:32   at G      missed by 0.13 m
-17:41:36   record G2-a2    diff=     4.170 computed= 64784.936 origin=   12.4 shifts=0
-17:42:06   at P      missed by 0.13 m
-17:42:09   record P2-a2    diff=  3064.611 computed= 64784.912 origin=   47.7 shifts=0
-17:42:36   at G      missed by 0.13 m
-17:43:22 move 3: G -0.0433276 -74.5837266, origin distance 492.7 m
-17:43:34   at G      missed by 0.15 m
-17:44:04   record G3-b1    diff=  -193.959 computed= 63753.435 origin=  492.4 shifts=0
-17:44:35   at P      missed by 0.15 m
-17:44:47   record P3-b1    diff=  4369.566 computed= 63385.286 origin=  495.6 shifts=0
-17:45:14   at G      missed by 0.15 m
-17:45:27   record G3-b2    diff=  -193.866 computed= 63753.265 origin=  492.4 shifts=0
-17:45:57   at P      missed by 0.13 m
-17:46:28   record P3-b2    diff=  4367.155 computed= 63387.680 origin=  495.6 shifts=0
-17:46:55   at G      missed by 0.15 m
-17:47:03   record G3-b3    diff=  -193.889 computed= 63753.367 origin=  492.4 shifts=0
-17:47:11 move 3: shift, stopped because shift, last shift 500.03604020205154
-17:47:30   at N      missed by 0.18 m
-17:47:44   at G      missed by 0.16 m
-17:48:14   record G3-a1    diff=  -212.405 computed= 63738.787 origin=    9.3 shifts=1
-17:48:45   at P      missed by 0.14 m
-17:48:53   record P3-a1    diff=  4332.825 computed= 63387.509 origin=   47.4 shifts=0
-17:49:20   at G      missed by 0.15 m
-17:49:23   record G3-a2    diff=  -228.457 computed= 63753.470 origin=    9.1 shifts=0
-17:49:54   at P      missed by 0.15 m
-17:50:11   record P3-a2    diff=  4335.222 computed= 63385.115 origin=   47.4 shifts=0
-17:50:39   at G      missed by 0.15 m
-17:50:41 summary
-17:50:41 move 1: grass -8.844 (spread 0.009/0.044)  deck -8.851 (spread 0.011/0.009)  step -0.007
-17:50:41 move 2: grass +48.506 (spread 0.012/0.044)  deck +48.471 (spread 0.006/0.006)  step -0.035
-17:50:41 move 3: grass -26.527 (spread 0.093/16.052)  deck -34.337 (spread 2.411/2.396)  step -7.810
-17:50:41 finished
+21:18:24 move 1: G at -0.0416286, -74.6802991
+21:18:37   at G, 0.14 m from the spot
+21:18:45   G1-b1   Difference    -16.774 mm  Ground KSP computes  64784.993 mm  Origin distance  480.9 m  Shifts 1
+21:19:15   at P, 0.14 m from the spot
+21:19:45   P1-b1   Difference   3539.496 mm  Ground KSP computes  64784.969 mm  Origin distance  483.9 m  Shifts 0
+21:20:13   at G, 0.14 m from the spot
+21:20:16   G1-b2   Difference    -16.782 mm  Ground KSP computes  64784.993 mm  Origin distance  480.9 m  Shifts 0
+21:20:46   at P, 0.14 m from the spot
+21:21:17   P1-b2   Difference   3539.502 mm  Ground KSP computes  64784.969 mm  Origin distance  483.9 m  Shifts 0
+21:21:44   at G, 0.14 m from the spot
+21:21:52   G1-b3   Difference    -16.782 mm  Ground KSP computes  64784.993 mm  Origin distance  480.9 m  Shifts 0
+21:22:04 move 1: the origin moved by 500.033 m
+21:22:24   at the waypoint, 0.03 m from the spot
+21:22:38   at G, 0.14 m from the spot
+21:22:42   G1-a1   Difference    -71.576 mm  Ground KSP computes  64784.993 mm  Origin distance   19.6 m  Shifts 1
+21:23:13   at P, 0.14 m from the spot
+21:23:43   P1-a1   Difference   3484.653 mm  Ground KSP computes  64784.969 mm  Origin distance   51.5 m  Shifts 0
+21:24:10   at G, 0.14 m from the spot
+21:24:14   G1-a2   Difference    -71.649 mm  Ground KSP computes  64784.993 mm  Origin distance   19.5 m  Shifts 0
+21:24:44   at P, 0.14 m from the spot
+21:25:14   P1-a2   Difference   3484.651 mm  Ground KSP computes  64784.969 mm  Origin distance   51.5 m  Shifts 0
+21:25:42   at G, 0.14 m from the spot
+21:26:24 move 2: G at -0.0411410, -74.6332033
+21:26:36   at G, 0.14 m from the spot
+21:27:07   G2-b1   Difference    -55.219 mm  Ground KSP computes  64784.943 mm  Origin distance  474.2 m  Shifts 0
+21:27:39   at P, 0.15 m from the spot
+21:28:09   P2-b1   Difference   3025.245 mm  Ground KSP computes  64784.919 mm  Origin distance  476.1 m  Shifts 0
+21:28:37   at G, 0.14 m from the spot
+21:29:07   G2-b2   Difference    -55.205 mm  Ground KSP computes  64784.943 mm  Origin distance  474.2 m  Shifts 0
+21:29:39   at P, 0.15 m from the spot
+21:29:52   P2-b2   Difference   3025.253 mm  Ground KSP computes  64784.919 mm  Origin distance  476.1 m  Shifts 0
+21:30:20   at G, 0.14 m from the spot
+21:30:50   G2-b3   Difference    -55.208 mm  Ground KSP computes  64784.943 mm  Origin distance  474.2 m  Shifts 0
+21:31:05 move 2: the origin moved by 500.006 m
+21:31:26   at the waypoint, 0.03 m from the spot
+21:31:40   at G, 0.14 m from the spot
+21:31:46   G2-a1   Difference     -1.364 mm  Ground KSP computes  64784.943 mm  Origin distance   26.0 m  Shifts 1
+21:32:18   at P, 0.15 m from the spot
+21:32:24   P2-a1   Difference   3079.021 mm  Ground KSP computes  64784.919 mm  Origin distance   55.0 m  Shifts 0
+21:32:51   at G, 0.14 m from the spot
+21:32:54   G2-a2   Difference     -1.425 mm  Ground KSP computes  64784.943 mm  Origin distance   26.0 m  Shifts 0
+21:33:26   at P, 0.15 m from the spot
+21:33:31   P2-a2   Difference   3079.027 mm  Ground KSP computes  64784.919 mm  Origin distance   55.0 m  Shifts 0
+21:33:58   at G, 0.14 m from the spot
+21:34:41 move 3: G at -0.0409543, -74.5849264
+21:34:55   at G, 0.19 m from the spot
+21:35:10   G3-b1   Difference   -669.838 mm  Ground KSP computes  64784.936 mm  Origin distance  479.8 m  Shifts 0
+21:36:36   at P, 0.40 m from the spot
+21:36:56   P3-b1   Difference   2396.854 mm  Ground KSP computes  64784.912 mm  Origin distance  482.3 m  Shifts 0
+21:37:25   at G, 0.19 m from the spot
+21:37:55   G3-b2   Difference   -669.999 mm  Ground KSP computes  64784.936 mm  Origin distance  479.8 m  Shifts 0
+21:39:21   at P, 0.40 m from the spot
+21:39:34   P3-b2   Difference   2397.011 mm  Ground KSP computes  64784.912 mm  Origin distance  482.3 m  Shifts 0
+21:40:03   at G, 0.19 m from the spot
+21:40:33   G3-b3   Difference   -670.013 mm  Ground KSP computes  64784.936 mm  Origin distance  479.8 m  Shifts 0
+21:40:46 move 3: the origin moved by 500.018 m
+21:41:06   at the waypoint, 0.07 m from the spot
+21:41:20   at G, 0.14 m from the spot
+21:41:50   G3-a1   Difference   -707.089 mm  Ground KSP computes  64784.936 mm  Origin distance   20.6 m  Shifts 1
+21:42:32   at P, 0.17 m from the spot
+21:42:36   P3-a1   Difference   2378.413 mm  Ground KSP computes  64784.912 mm  Origin distance   52.0 m  Shifts 0
+21:43:05   at G, 0.19 m from the spot
+21:43:35   G3-a2   Difference   -715.000 mm  Ground KSP computes  64784.936 mm  Origin distance   20.6 m  Shifts 0
+21:45:01   at P, 0.41 m from the spot
+21:45:31   P3-a2   Difference   2351.755 mm  Ground KSP computes  64784.912 mm  Origin distance   51.7 m  Shifts 0
+21:46:01   at G, 0.19 m from the spot
+21:46:03 done

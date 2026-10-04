@@ -190,8 +190,9 @@ reason.
 
 **The runway and the grass, while the world moves** ([the protocol in full](docs/the-protocol-driving-runway.md)).
 One run by the script on Kerbin, two moves of the world kept, and one on Earth in Real Solar System.
-The runway moves at each move, by −8.85 and +48.47 mm on Kerbin, by −375.89 and +45.69 mm on Earth, and
-the grass beside it by the same amount, to within five hundredths of a millimetre: across a move of the
+The runway moves at each move, by −54.85 and +53.78 mm on Kerbin, by −231.84 and +33.84 mm on Earth, and
+the grass beside it by the same amount, to within four hundredths of a millimetre on Kerbin and
+0.35 mm on Earth: across a move of the
 world, the runway and the ground are carried together — unlike at a loading, where each draws a
 placement of its own.
 

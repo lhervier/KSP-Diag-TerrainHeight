@@ -1,128 +1,128 @@
 [
  {
   "tag": "G1-b1",
-  "difference": -31.214585527777672,
-  "computed": 74039.22279272228,
-  "origin_distance": 478.53738883120184,
+  "difference": 178.81312780082226,
+  "computed": 74039.22281134874,
+  "origin_distance": 476.3698697688885,
   "shifts": 2
  },
  {
   "tag": "P1-b1",
-  "difference": 3741.3894971832633,
-  "computed": 73959.43236164749,
-  "origin_distance": 481.28066952752323,
+  "difference": 4080.190507695079,
+  "computed": 74009.96097363532,
+  "origin_distance": 477.484475441533,
   "shifts": 0
  },
  {
   "tag": "G1-b2",
-  "difference": -31.33420553058386,
-  "computed": 74039.22279272228,
-  "origin_distance": 478.5355377716393,
+  "difference": 178.82898822426796,
+  "computed": 74039.22281134874,
+  "origin_distance": 476.3692732604658,
   "shifts": 0
  },
  {
   "tag": "P1-b2",
-  "difference": 3741.4135234430432,
-  "computed": 73959.40949674696,
-  "origin_distance": 481.27890143425003,
+  "difference": 4080.188171006739,
+  "computed": 74009.96311753988,
+  "origin_distance": 477.4841592683009,
   "shifts": 0
  },
  {
   "tag": "G1-b3",
-  "difference": -31.288803555071354,
-  "computed": 74039.22279272228,
-  "origin_distance": 478.5365150759045,
+  "difference": 178.91708109527826,
+  "computed": 74039.22281134874,
+  "origin_distance": 476.36695814493044,
   "shifts": 0
  },
  {
   "tag": "G1-a1",
-  "difference": -407.185822725296,
-  "computed": 74039.22279272228,
-  "origin_distance": 21.946638144472768,
+  "difference": -52.89911199361086,
+  "computed": 74039.22281228006,
+  "origin_distance": 24.13522078405458,
   "shifts": 1
  },
  {
   "tag": "P1-a1",
-  "difference": 3365.5023463070393,
-  "computed": 73959.44215822965,
-  "origin_distance": 52.41854512449307,
+  "difference": 3848.372326232493,
+  "computed": 74009.95010137558,
+  "origin_distance": 53.582009935636414,
   "shifts": 0
  },
  {
   "tag": "G1-a2",
-  "difference": -407.18236938118935,
-  "computed": 74039.22279272228,
-  "origin_distance": 21.857548190296647,
+  "difference": -53.12208831310272,
+  "computed": 74039.22281134874,
+  "origin_distance": 24.056274463236708,
   "shifts": 0
  },
  {
   "tag": "P1-a2",
-  "difference": 3365.525363944471,
-  "computed": 73959.41118244082,
-  "origin_distance": 52.42254758542546,
+  "difference": 3848.335505463183,
+  "computed": 74009.96647030115,
+  "origin_distance": 53.577948196597106,
   "shifts": 0
  },
  {
   "tag": "G2-b1",
-  "difference": -697.6082380861044,
-  "computed": 74039.2222860828,
-  "origin_distance": 476.3895305516688,
+  "difference": -127.15759221464396,
+  "computed": 74039.22230284661,
+  "origin_distance": 475.59736282740334,
   "shifts": 0
  },
  {
   "tag": "P2-b1",
-  "difference": 3263.4849287569523,
-  "computed": 74039.22223486006,
-  "origin_distance": 478.38929129320854,
+  "difference": 3680.736478418112,
+  "computed": 74039.22224976122,
+  "origin_distance": 477.6108477829846,
   "shifts": 0
  },
  {
   "tag": "G2-b2",
-  "difference": -697.649915702641,
-  "computed": 74039.2222860828,
-  "origin_distance": 476.38755239537426,
+  "difference": -127.10864562541246,
+  "computed": 74039.22230284661,
+  "origin_distance": 475.5946807280655,
   "shifts": 0
  },
  {
   "tag": "P2-b2",
-  "difference": 3263.485969044268,
-  "computed": 74039.22223486006,
-  "origin_distance": 478.3892256486573,
+  "difference": 3680.734765715897,
+  "computed": 74039.22224976122,
+  "origin_distance": 477.6108942409329,
   "shifts": 0
  },
  {
   "tag": "G2-b3",
-  "difference": -697.6593127474189,
-  "computed": 74039.2222860828,
-  "origin_distance": 476.38782123184376,
+  "difference": -127.12642271071672,
+  "computed": 74039.22230284661,
+  "origin_distance": 475.5951121212044,
   "shifts": 0
  },
  {
   "tag": "G2-a1",
-  "difference": -652.0122205838561,
-  "computed": 74039.2222860828,
-  "origin_distance": 24.085546658562986,
+  "difference": -92.80678350478411,
+  "computed": 74039.22230284661,
+  "origin_distance": 24.84130710722511,
   "shifts": 1
  },
  {
   "tag": "P2-a1",
-  "difference": 3309.1715341433883,
-  "computed": 74039.22223486006,
-  "origin_distance": 53.57717934968164,
+  "difference": 3714.5744366571307,
+  "computed": 74039.22225069255,
+  "origin_distance": 53.969840445523545,
   "shifts": 0
  },
  {
   "tag": "G2-a2",
-  "difference": -651.9929487258196,
-  "computed": 74039.2222860828,
-  "origin_distance": 24.00784978052772,
+  "difference": -93.07964704930782,
+  "computed": 74039.22230284661,
+  "origin_distance": 24.765964559332353,
   "shifts": 0
  },
  {
   "tag": "P2-a2",
-  "difference": 3309.1701474040747,
-  "computed": 74039.22223486006,
-  "origin_distance": 53.57766105623015,
+  "difference": 3714.5727798342705,
+  "computed": 74039.22225069255,
+  "origin_distance": 53.970175029767596,
   "shifts": 0
  }
 ]

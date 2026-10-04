@@ -24,24 +24,25 @@ One run, played by [the script](the-protocol-driving-runway.md#played-by-a-scrip
 [`diag/driving-runway-kerbin.sfs`](../diag/driving-runway-kerbin.sfs), three moves of the world, logged in
 [`diag/runs/driving-runway-stock.log`](../diag/runs/driving-runway-stock.log); what the script printed is in
 [`driving-runway-stock-script.txt`](../diag/runs/driving-runway-stock-script.txt), and every line it
-recorded in [`driving-runway-stock-lines.json`](../diag/runs/driving-runway-stock-lines.json). It was played with an earlier setting of the script, stopping 468 m from the origin of the world
-before the turn instead of 455 m: G stood 489 to 493 m from it before each move, instead of about 480 m.
-The rover stopped 13 to 16 cm from each spot. On every line, Diag FloatingOrigin reads 1 in **Shifts** on the first
-line after a move, with a **Last shift** of 500.0 m to within four centimetres, and 0 on the others.
+recorded in [`driving-runway-stock-lines.json`](../diag/runs/driving-runway-stock-lines.json). G stood 474
+to 481 m from the origin of the world before each move. At the first two moves, the rover stopped 14 to
+15 cm from each spot. Diag FloatingOrigin reads 1 in **Shifts** on the first line after each move, with
+a **Last shift** of 500.0 m to within four centimetres, and 0 on the others but the very first, which
+reads the move the game makes as the scene opens.
 
 In *Difference*, in millimetres:
 
 | move | G before | G after | P before | P after |
 |---|---|---|---|---|
-| 1 | −44.295, −44.290, −44.299 | −53.116, −53.160 | +3492.283, +3492.293 | +3483.432, +3483.442 |
-| 2 | −44.307, −44.318, −44.317 | +4.214, +4.170 | +3016.140, +3016.146 | +3064.616, +3064.611 |
+| 1 | −16.774, −16.782, −16.782 | −71.576, −71.649 | +3539.496, +3539.502 | +3484.653, +3484.651 |
+| 2 | −55.219, −55.205, −55.208 | −1.364, −1.425 | +3025.245, +3025.253 | +3079.021, +3079.027 |
 
 Across each move, the mean of the lines after minus the mean of the lines before:
 
 | move | the grass, G | the deck, P | the step, P − G | spread at a spot, at most |
 |---|---|---|---|---|
-| 1 | **−8.843** | **−8.851** | −0.008 | 0.044 |
-| 2 | **+48.506** | **+48.471** | −0.035 | 0.044 |
+| 1 | **−54.833** | **−54.847** | −0.014 | 0.073 |
+| 2 | **+53.816** | **+53.776** | −0.041 | 0.062 |
 
 **Ground KSP computes** reads the same digits at a spot on every line of a move, to within a thousandth
 of a millimetre: the rover was read on the same spots before and after.
@@ -60,11 +61,10 @@ The second move:
 
 ### The move left out
 
-The third move, about 1.5 km east of the save, is in the screenshots and left out. There, **Ground KSP
-computes** reads about a metre lower than at the first two, and changes from one visit of a spot to the
-next by up to 15 mm: the grass is no longer flat, and the lines taken at a spot spread over up to 16 mm
-— as much as a move does. That move is why [the protocol](the-protocol-driving-runway.md#the-protocol)
-stops at two.
+The third move, about 1.5 km east of the save, is in the screenshots and left out. There, *Difference*
+reads about 0.7 m below the computed height on the grass, the rover stopped 19 to 41 cm from the spots
+instead of 14 or 15, and the lines taken at a spot spread over up to 26.7 mm — as much as a move does.
+That move is why [the protocol](the-protocol-driving-runway.md#the-protocol) stops at two.
 
 ![The third move, read by Diag FloatingOrigin](../imgs/measures/driving-runway/move3-diag3.png)
 
@@ -88,25 +88,26 @@ the script printed is in
 [`driving-runway-earth-rss-stock-script.txt`](../diag/runs/driving-runway-earth-rss-stock-script.txt),
 and every line it recorded in
 [`driving-runway-earth-rss-stock-lines.json`](../diag/runs/driving-runway-earth-rss-stock-lines.json).
-G stood 476 to 479 m from the origin of the world before each move. The rover stopped 14 to 15 cm from
+G stood 475 to 477 m from the origin of the world before each move. The rover stopped 13 to 16 cm from
 each spot. Diag FloatingOrigin reads 1 in **Shifts** on the first line after a move, with a **Last shift** of 500.0 m
-to within five centimetres, and 0 on the others.
+to within four centimetres, and 0 on the others but the very first, which reads the two moves the game
+makes as the scene opens on Earth.
 
 In *Difference*, in millimetres:
 
 | move | G before | G after | P before | P after |
 |---|---|---|---|---|
-| 1 | −31.215, −31.334, −31.289 | −407.186, −407.182 | +3741.389, +3741.414 | +3365.502, +3365.525 |
-| 2 | −697.608, −697.650, −697.659 | −652.012, −651.993 | +3263.485, +3263.486 | +3309.172, +3309.170 |
+| 1 | +178.813, +178.829, +178.917 | −52.899, −53.122 | +4080.191, +4080.188 | +3848.372, +3848.336 |
+| 2 | −127.158, −127.109, −127.126 | −92.807, −93.080 | +3680.736, +3680.735 | +3714.574, +3714.573 |
 
 Across each move, the mean of the lines after minus the mean of the lines before:
 
 | move | the grass, G | the deck, P | the step, P − G | spread at a spot, at most |
 |---|---|---|---|---|
-| 1 | **−375.905** | **−375.888** | +0.017 | 0.120 |
-| 2 | **+45.637** | **+45.685** | +0.049 | 0.051 |
+| 1 | **−231.864** | **−231.835** | +0.028 | 0.223 |
+| 2 | **+34.188** | **+33.838** | −0.350 | 0.273 |
 
-**Ground KSP computes** reads the same digits at a spot on every line of a move, to within three
+**Ground KSP computes** reads the same digits at a spot on every line of a move, to within two
 hundredths of a millimetre.
 
 The first move, Diag FloatingOrigin then Diag TerrainHeight:
@@ -124,11 +125,12 @@ The second move:
 ## What the readings say
 
 **The runway moves when the world moves**, in the middle of a drive, with nothing loaded: on Kerbin,
-by −8.85 mm at the first move and +48.47 mm at the second; on Earth, by −375.89 mm and +45.69 mm. Each
-time, hundreds or thousands of times the spread of the lines taken at the same spot.
+by −54.85 mm at the first move and +53.78 mm at the second; on Earth, by −231.84 mm and +33.84 mm. Each
+time, a hundred to a thousand times the spread of the lines taken at the same spot.
 
-**And it moves with the ground beside it.** The grass moves by the same amount, to within five
-hundredths of a millimetre on both bodies, so the step between the deck and the grass stays what it was.
+**And it moves with the ground beside it.** The grass moves by the same amount, to within four
+hundredths of a millimetre on Kerbin and 0.35 mm on Earth — a hundredth of the move — so the step
+between the deck and the grass stays what it was.
 Across a move of the world, the runway and the ground are carried together. On Earth, a rover rolling on
 the runway is no better off than one rolling on the grass beside it
 ([The measurements: driving on while the world moves](the-measurements-driving.md#on-earth)): both see
