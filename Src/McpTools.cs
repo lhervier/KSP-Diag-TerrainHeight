@@ -59,6 +59,15 @@ namespace com.github.lhervier.ksp.diag.terrainheight
             };
         }
 
+        [McpTool("terrainheight_show_window",
+            "Shows or hides the window of KSP Diag - Terrain Height, as Mod+F6 does; what it measures goes on either " +
+            "way. Returns whether it shows (visible).")]
+        internal static object ShowWindow(bool visible)
+        {
+            KSPDiagTerrainHeight.WindowVisible = visible;
+            return new Dictionary<string, object> { { "visible", KSPDiagTerrainHeight.WindowVisible } };
+        }
+
         // The window of this mod in the current scene; the window only exists in flight.
         private static KSPDiagTerrainHeight Window()
         {
