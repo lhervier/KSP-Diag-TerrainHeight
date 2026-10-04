@@ -75,9 +75,9 @@ back more than 10 cm off the ground and was moved onto it before its physics sta
 [Real Solar System's own workaround](#real-solar-systems-own-workaround).
 
 What stands on the ground does not change what this instrument reads: the craft only marks the spot
-the ray is fired at. [KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel),
-which reads the craft itself, also loads a lone capsule on the same stock spots, a case KSP treats
-apart.
+the ray is fired at. It has two parts for the sake of
+[KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel), which reads the craft
+itself at the same moments: KSP sets a craft of a single part back onto the ground at every loading.
 
 The sessions are logged in [`diag/runs`](../diag/README.md#the-runs-of-the-loading-protocol).
 

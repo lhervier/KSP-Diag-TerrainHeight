@@ -53,8 +53,8 @@ KSP 1.12.5 with Harmony, ModuleManager, KSP Community Fixes 1.41.1, this mod,
 KSP Diag - Landed Vessel and KSP-MCPServer, every save played by `run-loading.py`, six loadings each.
 
 - [`runs/loading-stock.log`](runs/loading-stock.log) — the `KSP.log` of the session the four saves
-  above were played in, one after the other, together with the lone capsule of KSP Diag - Landed
-  Vessel on the same spots.
+  above were played in, one after the other, together with a lone capsule on the same spots, a series
+  no longer published.
 - `runs/reload-<world>-2parts-stock-script.txt` — what the script printed for each save, and
   `runs/reload-<world>-2parts-stock-lines.json`, every line it recorded, in both instruments:
   for instance [`runs/reload-kerbin-2parts-stock-lines.json`](runs/reload-kerbin-2parts-stock-lines.json).
