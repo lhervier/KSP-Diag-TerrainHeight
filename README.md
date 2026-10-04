@@ -121,7 +121,7 @@ Taken with Harmony, ModuleManager and [KSP Community Fixes](https://github.com/K
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). On the four stock
 worlds, then on the Moon and Earth of Real Solar System. On the stock worlds, the computed height comes
-back with the same digits; the ground under the craft never does: up to 73.7 mm apart on Kerbin,
+back with the same digits; the ground under the craft never does: up to 43.6 mm apart on Kerbin,
 292.3 mm on Earth.
 
 **→ Full chapter: [The measurements: loading the same save](docs/the-measurements-loading.md)**

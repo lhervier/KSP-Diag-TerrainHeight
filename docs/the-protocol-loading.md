@@ -68,9 +68,8 @@ HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — 
 install. Anyone can read it top to bottom: it follows the steps above in the same order.
 
 The saves it was played on are in [`diag`](../diag/README.md#the-saves-of-the-loading-protocol), made
-by steps 1 to 3 on each of the four worlds of stock KSP, a lone capsule and the same capsule on a small
-flat fuel tank: `reload-kerbin-1part.sfs`, `reload-kerbin-2parts.sfs`, and the same for `mune`,
-`minmus` and `gilly`. On Real Solar System, it was played on the Moon and on Earth, on
+by steps 1 to 3 on each of the four worlds of stock KSP, a capsule on a small flat fuel tank:
+`reload-kerbin-2parts.sfs`, and the same for `mune`, `minmus` and `gilly`. On Real Solar System, it was played on the Moon and on Earth, on
 [`reload-moon-rss-resave.sfs`](../diag/reload-moon-rss-resave.sfs) and
 [`reload-earth-rss-resave.sfs`](../diag/reload-earth-rss-resave.sfs), a capsule on an empty fuel tank;
 these load only on the install described in [On Real Solar System](../diag/README.md#on-real-solar-system).

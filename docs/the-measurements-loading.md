@@ -33,52 +33,31 @@ the sessions, what the script printed and every line it recorded, in [`diag/runs
 
 ## The readings
 
-On Kerbin first: one save, `reload-kerbin-1part.sfs`, a lone capsule on the levelled grass of the KSC,
-just south-west of the west end of the runway, loaded six times.
+One craft on every world, a capsule on a small flat fuel tank, set down on bare, flat ground. On Kerbin
+first: one save, `reload-kerbin-2parts.sfs`, on the levelled grass of the KSC, just south-west of the
+west end of the runway, loaded six times.
 
-![Six loadings of the same save, on Kerbin](../imgs/measures/reload/1part/00-kerbin.png)
+![Six loadings of the same save, on Kerbin](../imgs/measures/reload/2parts/00-kerbin.png)
 
 (The bottom line of the screenshot is the sixth loading, still live, not a seventh one. It carries
 `--` instead of a number, since it is not a record until you freeze it.)
 
-Then the same campaign on flat ground on the Mun, on the frozen flats of Minmus, and on Gilly:
+Then the same campaign on flat ground on the Mun, on the frozen flats of Minmus and on Gilly; and with
+the same craft on the Moon and Earth, six loadings of `reload-moon-rss-resave.sfs` on flat ground on the
+Moon, and six of `reload-earth-rss-resave.sfs` on the grass about 1.4 km west of the KSC on Earth.
 
-![Six loadings of the same save, on the Mun](../imgs/measures/reload/1part/10-mune.png)
+![Six loadings of the same save, on the Mun](../imgs/measures/reload/2parts/10-mune.png)
 
-![Six loadings of the same save, on Minmus](../imgs/measures/reload/1part/20-minmus.png)
+![Six loadings of the same save, on Minmus](../imgs/measures/reload/2parts/20-minmus.png)
 
-![Six loadings of the same save, on Gilly](../imgs/measures/reload/1part/30-gilly.png)
-
-*Difference* is one column minus the other, so it carries the whole of the movement of either; the
-four campaigns side by side on that column, in millimetres:
-
-| loading | Kerbin | Mun | Minmus | Gilly |
-|---|---|---|---|---|
-| 1 | +30.828 | −36.685 | −6.219 | +6.947 |
-| 2 | −18.431 | −35.564 | −6.544 | +6.393 |
-| 3 | −31.435 | −32.041 | −6.616 | +7.117 |
-| 4 | +5.604 | −32.253 | −8.110 | +6.835 |
-| 5 | −9.679 | −37.277 | −10.790 | +7.784 |
-| 6 | +42.293 | −37.583 | −8.465 | +7.079 |
-| **lowest to highest** | **73.7** | **5.5** | **4.6** | **1.4** |
-| *the same, for* **Ground KSP computes** | *0.000* | *0.012* | *0.000* | *0.041* |
-
-The same four saves again with another craft, the capsule sitting on a small flat fuel tank, on the same
-spots; and on the Moon and Earth, the same craft: six loadings of `reload-moon-rss-resave.sfs` on flat
-ground on the Moon, and six of `reload-earth-rss-resave.sfs` on the grass about 1.4 km west of the KSC
-on Earth.
-
-![Six loadings of the same save with two parts, on Kerbin](../imgs/measures/reload/2parts/00-kerbin.png)
-
-![Six loadings of the same save with two parts, on the Mun](../imgs/measures/reload/2parts/10-mune.png)
-
-![Six loadings of the same save with two parts, on Minmus](../imgs/measures/reload/2parts/20-minmus.png)
-
-![Six loadings of the same save with two parts, on Gilly](../imgs/measures/reload/2parts/30-gilly.png)
+![Six loadings of the same save, on Gilly](../imgs/measures/reload/2parts/30-gilly.png)
 
 ![Six loadings of the same save, on the Moon](../imgs/measures/reload/2parts/40-moon.png)
 
 ![Six loadings of the same save, on Earth](../imgs/measures/reload/2parts/50-earth.png)
+
+*Difference* is one column minus the other, so it carries the whole of the movement of either; the six
+campaigns side by side on that column, in millimetres:
 
 | loading | Kerbin | Mun | Minmus | Gilly | the Moon | Earth |
 |---|---|---|---|---|---|---|
@@ -94,6 +73,11 @@ on Earth.
 *(moved up)*, *(moved down)*: at that loading, `KSP.log` has a `Moving Vessel` line: the craft came
 back more than 10 cm off the ground and was moved onto it before its physics started — see
 [Real Solar System's own workaround](#real-solar-systems-own-workaround).
+
+What stands on the ground does not change what this instrument reads: the craft only marks the spot
+the ray is fired at. [KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel),
+which reads the craft itself, also loads a lone capsule on the same stock spots, a case KSP treats
+apart.
 
 The sessions are logged in [`diag/runs`](../diag/README.md#the-runs-of-the-loading-protocol).
 
@@ -122,9 +106,8 @@ and what happens with the workaround turned off — is measured by KSP Diag - La
 ## What the numbers say
 
 **Ground KSP computes never moves.** On the levelled grass of Kerbin and on the Minmus flats it reads
-the same digits six times over — `0.000` on Minmus, which is as plain as this argument gets. On the Mun
-and on Gilly it wanders by a few hundredths of a millimetre, a tenth at most: on ground that is not
-perfectly level, a craft that settles a hair to one side is asking for the height of a slightly
+the same digits six times over — `0.000` on Minmus, which is as plain as this argument gets. On Gilly
+it wanders by a hundredth of a millimetre, on the Mun by a tenth: on ground that is not perfectly level, a craft that settles a hair to one side is asking for the height of a slightly
 different point, and that shows. Nothing surprising in any of it. That height is worked out from the
 formulas the world is made of, and reloading a save does not change the world. On Real Solar System it
 moved more, for the same reason: on the Moon, the craft came back inside the ground at every loading
@@ -134,20 +117,19 @@ its 0.697 mm comes from the first loading, where the craft was pushed out the sa
 staying within 0.06 mm.
 
 **Ground under craft moves every time.** On Kerbin it lands somewhere else on each of the six lines,
-over a range of seven centimetres, and on none of the six bodies does it come back to the same place:
-1.4 and 2.3 mm on Gilly, 4.6 and 7.3 mm on Minmus, 5.5 and 18.0 mm on the Mun, 73.7 and 43.6 mm on
-Kerbin (a lone capsule, then two parts), then 48.7 mm on the Moon of Real Solar System and 292.3 mm on
-its Earth. Six loadings are few, and they do not rank the worlds one by one, but from Gilly to Earth
+over a range of more than four centimetres, and on none of the six bodies does it come back to the same
+place: 2.3 mm on Gilly, 7.3 mm on Minmus, 18.0 mm on the Mun, 43.6 mm on Kerbin, then 48.7 mm on the
+Moon of Real Solar System and 292.3 mm on its Earth. Six loadings are few, and they do not rank the worlds one by one, but from Gilly to Earth
 the spread grows by two orders of magnitude. Smaller world, smaller spread — but it never goes away.
 
 The bottom two rows of each table are the argument entire. The craft's save never changed and the spot
 never changed, so nothing about that patch of ground was different from one loading to the next — and
-yet one of the two heights held still while the other wandered, by one to three orders of magnitude
-more, world after world — and still by a factor of ten on the Moon, where the craft came to rest
+yet one of the two heights held still while the other wandered, by two orders of magnitude or more,
+world after world — and still by a factor of ten on the Moon, where the craft came to rest
 somewhere else each time. The one that moved is the one that is wrong, and it is the one that describes
 the surface your landing legs actually touch: it was simply not built in the same place twice.
 
-On the Mun, *Difference* sits 26 to 44 mm below zero on every line, with either craft. That offset
+On the Mun, *Difference* sits 26 to 44 mm below zero on every line. That offset
 belongs to the spot, not to the loading: the flat triangles the game collides with miss the shape of
 the terrain between their corners (see
 [Why a correct reading is not zero](this-mods-demonstration.md#why-a-correct-reading-is-not-zero)).
