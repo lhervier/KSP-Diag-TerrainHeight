@@ -120,6 +120,11 @@ def main():
     call("load_save", folder=options.folder, save=options.save)
     call("set_cheats", infinite_electricity=True)
     call("wait", seconds=5)
+    # The game moves the origin as the scene opens, more than once on Earth: wait for it to be on the rover
+    # before reading how far there is to drive.
+    start = time.time()
+    while call("get_floating_origin")["distance"] > 100 and time.time() - start < 60:
+        time.sleep(1)
     call("terrainheight_clear")
     call("floatingorigin_clear")
     call("terrainheight_move_window", x=0, y=40)
