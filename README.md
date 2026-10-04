@@ -161,8 +161,8 @@ before physics takes it over.
 
 **Switching to a craft far away** ([the protocol in full](docs/the-protocol-switching.md)). Six
 rounds on Kerbin, each starting by loading the save. The ground under the capsule is somewhere else at
-every loading, over 120.4 mm, and switching to the capsule does not move it: the two lines of a round
-agree to within five thousandths of a millimetre.
+every loading, over 112.1 mm, and switching to the capsule does not move it: the two lines of a round
+agree to within two thousandths of a millimetre.
 
 **→ Full chapter: [The measurements: switching to a craft far away](docs/the-measurements-switching.md)**
 

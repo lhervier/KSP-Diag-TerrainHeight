@@ -12,8 +12,13 @@ The save the protocol uses is [`diag/switch-kerbin.sfs`](../diag/switch-kerbin.s
 ## The install
 
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
-[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1 and this mod, and
-nothing else.
+[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod,
+[KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel), which reads the capsule
+at the same moments, and [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer),
+which plays the protocol, and nothing else.
+
+The six rounds were played by [the script of the protocol](the-protocol-switching.md#played-by-a-script),
+`run-switching.py`, in a single session.
 
 ## The readings
 
@@ -27,25 +32,25 @@ not a record.
 
 | round | as the save opens | after the switch | moved by the switch |
 |---|---|---|---|
-| 1 | −54.655 | −54.655 | 0.000 |
-| 2 | +44.378 | +44.383 | +0.005 |
-| 3 | −57.166 | −57.167 | −0.001 |
-| 4 | +63.188 | +63.189 | +0.001 |
-| 5 | −26.893 | −26.892 | +0.001 |
-| 6 | +8.032 | +8.032 | 0.000 |
-| **lowest to highest** | **120.4 mm** | **120.4 mm** | |
+| 1 | +9.821 | +9.821 | 0.000 |
+| 2 | +18.533 | +18.533 | 0.000 |
+| 3 | +46.138 | +46.136 | −0.002 |
+| 4 | −65.912 | −65.912 | 0.000 |
+| 5 | +9.744 | +9.743 | −0.001 |
+| 6 | −44.427 | −44.426 | +0.001 |
+| **lowest to highest** | **112.1 mm** | **112.0 mm** | |
 
 ## What these readings show
 
 **The height KSP computes never moves.** The same digits on all twelve lines.
 
 **The ground under the capsule is somewhere else at every loading.** From one round to the next it
-lands anywhere within 120.4 mm, upwards as well as downwards — of the same order as
+lands anywhere within 112.1 mm, upwards as well as downwards — of the same order as
 [the loading series](the-measurements-loading.md) on Kerbin, and for the same reason: every round
 starts by loading the save.
 
 **The switch does not move it.** Within a round, the line taken after the switch reads the ground the
-line before it read, to within five thousandths of a millimetre — the capsule settling a hair once
+line before it read, to within two thousandths of a millimetre — the capsule settling a hair once
 physics takes it over, and moving the spot the ray is fired at with it. Whatever the ground under the
 capsule is going to be, it already is the moment the save opens — with the capsule still two
 kilometres from the craft being flown, and not yet flown itself.
@@ -53,4 +58,6 @@ kilometres from the craft being flown, and not yet flown itself.
 ## The logs
 
 [`diag/runs/switching-stock.log`](../diag/runs/switching-stock.log) — the `KSP.log` of the session
-the six rounds were taken in.
+the six rounds were taken in; what the script printed is in
+[`switching-stock-script.txt`](../diag/runs/switching-stock-script.txt), and every line it recorded,
+in both instruments, in [`switching-stock-lines.json`](../diag/runs/switching-stock-lines.json).
