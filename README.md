@@ -168,11 +168,11 @@ agree to within two thousandths of a millimetre.
 
 **The runway and the grass beside it** ([the protocol in full](docs/the-protocol-runway.md)). Six
 loadings on Kerbin, two craft 152 m apart. The computed height reads the same digits every time, at
-both spots. The grass comes back somewhere else at every loading, over 88.3 mm, and so does the runway
-deck, over 130.1 mm: the runway is a structure, not the terrain, and it moves just the same. And not
-together: the step between the grass and the runway spreads over 81.7 mm. The same on the Mun, beside a
-runway placed by [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs): over 24.2 mm on the
-ground, 33.5 mm on the runway deck, 43.0 mm for the step. Whether the game or a mod places it, a
+both spots. The grass comes back somewhere else at every loading, over 89.5 mm, and so does the runway
+deck, over 116.5 mm: the runway is a structure, not the terrain, and it moves just the same. And not
+together: the step between the grass and the runway spreads over 38.3 mm. The same on the Mun, beside a
+runway placed by [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs): over 26.0 mm on the
+ground, 17.7 mm on the runway deck, 36.1 mm for the step. Whether the game or a mod places it, a
 structure behaves the same.
 
 **→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**

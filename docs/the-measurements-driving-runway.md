@@ -135,6 +135,6 @@ the runway is no better off than one rolling on the grass beside it
 the ground under them move by up to several tenths of a metre.
 
 That is not what happens at a loading, where the step between the same two kinds of spot changes by up
-to 81.7 mm from one loading to the next
+to 38.3 mm from one loading to the next
 ([The measurements: the runway and the grass beside it](the-measurements-runway.md)): there, the runway
 and the ground each draw a placement of their own.
