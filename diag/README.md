@@ -84,6 +84,11 @@ Copy a save into the folder of a sandbox game and load it from that game.
 
 ## The runs of the other protocols
 
+- [`runs/approach-stock.log`](runs/approach-stock.log) — the `KSP.log` of the session the six round
+  trips of the approach protocol were played in by `run-approach.py`, with KSP Diag - Landed Vessel and
+  KSP-MCPServer installed; what the script printed in
+  [`runs/approach-stock-script.txt`](runs/approach-stock-script.txt), and every line it recorded in
+  [`runs/approach-stock-lines.json`](runs/approach-stock-lines.json).
 - [`runs/switching-stock.log`](runs/switching-stock.log) — the `KSP.log` of the session the six
   switching rounds were played in by `run-switching.py`, with KSP Diag - Landed Vessel and KSP-MCPServer
   installed; what the script printed in [`runs/switching-stock-script.txt`](runs/switching-stock-script.txt),

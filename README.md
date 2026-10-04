@@ -154,7 +154,7 @@ wandered, with nothing changed in between.
 **Coming back to a craft you left** ([the protocol in full](docs/the-protocol-approach.md)). Six
 round trips in a row on Kerbin, in a single flight, with nothing loaded at any point. The computed
 height reads the same digits on every line; the ground under the craft comes back somewhere else
-every time, by 2.7 to 21.8 mm, and it has already moved by the time the craft is back in range,
+every time, by 6.4 to 37.2 mm, and it has already moved by the time the craft is back in range,
 before physics takes it over.
 
 **→ Full chapter: [The measurements: coming back to a craft you left](docs/the-measurements-approach.md)**
