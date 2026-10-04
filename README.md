@@ -132,11 +132,14 @@ centimetre — the way to trust the numbers.
 
 Taken in an install with Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
-with this mod added. The first series also goes to the Moon and to Earth, in that install with
+with this mod added. Every series is played by the script of its protocol, through
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). The first four are read with
+[KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel) beside this mod, the
+two driving series with [KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin).
+The first series also goes to the Moon and to Earth, in that install with
 [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, the runway series to the Mun,
-with [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added, and the last one is read
-with [KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) beside
-this mod.
+with [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added, and the two driving series
+to Earth as well.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save,
 loaded six times, on Kerbin, on the Mun, on Minmus and on Gilly, then on the Moon and Earth of Real
