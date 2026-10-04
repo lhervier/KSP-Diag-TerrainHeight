@@ -32,8 +32,12 @@ than 2250 m, so that the game keeps both of them loaded.
 **1. Load the save.** You are flying the rover, and the window reads the ground under its target, the
 capsule. Press *Record*.
 
+![The save just loaded: flying the rover, the capsule targeted 2.0 km away](../imgs/protocols/switch-vessel/00-load.png)
+
 **2. Switch to the capsule** with `]` — the game's default *switch to next vessel* key. You are now
 flying it. Give it three to five seconds, then press *Record*.
+
+![After the switch: flying the capsule, one line already recorded](../imgs/protocols/switch-vessel/10-switch.png)
 
 **3. Load the same save again**, and repeat steps 1 and 2 — six times in all, two lines each time.
 
