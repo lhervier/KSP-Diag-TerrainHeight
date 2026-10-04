@@ -59,17 +59,29 @@ the whole series is driven on the grass.
 Load the save and **do not change scene again** — no save, no load, no trip back to the space centre.
 Diag FloatingOrigin reads an **Origin distance** near zero: the origin of the world is on the rover.
 
+![The save just loaded: Origin distance near zero](../imgs/protocols/driving/00-load.png)
+
 Drive due south across the flat grass, away from the runway and the buildings. Then, for each
 move of the world, three records.
 
 **1. Just before.** Stop when **Origin distance** reads about 490 m — between 498 and 500 m on Earth.
 Wait for the digits of this mod to stop moving, then record.
 
+![Stopped at 490.6 m from the origin, in Diag FloatingOrigin's window](../imgs/protocols/driving/10-before-fo.png)
+
+![The same stop, in this mod's window, the digits settled](../imgs/protocols/driving/11-before-th.png)
+
 **2. Just after.** Creep forward until **Origin distance** drops back near zero: the world has moved.
 Stop a few metres on — within 2 m on Earth — wait, and record. Diag FloatingOrigin's line reads 1 in **Shifts**.
 
+![Just after the move: Origin distance back near zero, Shifts 1](../imgs/protocols/driving/20-after-fo.png)
+
 **3. The same distance again.** Creep forward about as far as from 1 to 2 — another 2 m on Earth — stop,
 wait, and record. Diag FloatingOrigin's line reads 0 in **Shifts**.
+
+![The same distance again: Shifts 0](../imgs/protocols/driving/30-again-fo.png)
+
+![The three lines of one move, in this mod's window](../imgs/protocols/driving/40-three-lines-th.png)
 
 Then drive on to the next move, 500 m farther, and do it again, three moves in all.
 
