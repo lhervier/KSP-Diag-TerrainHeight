@@ -119,3 +119,26 @@ reads a structure, not the ground.
 in the one flight the save opened.
 
 **One move says nothing on its own.** It is the series that is worth reading, not a line.
+
+## Played by a script
+
+[`diag/automation/run-driving.py`](../diag/automation/run-driving.py) plays the protocol above, step
+for step, and takes the screenshots. It drives KSP through
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), a mod that answers requests sent to it over
+HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
+install. Anyone can read it top to bottom: it follows the three records above in the same order.
+
+1. Install KSP-MCPServer next to this mod and Diag FloatingOrigin, copy the save into a sandbox game,
+   start KSP and wait for the main menu.
+2. Run `python run-driving.py --folder <your sandbox game> --moves 3 --out screenshots`. On Earth, add
+   `--save driving-earth-rss --before 499 --radius 6371000`: the rover stops 499 m from the origin
+   instead of 490 m, and the radius of the body turns metres into degrees.
+
+It loads the save once and never changes scene, then drives due south. For each move of the world, it
+stops when the rover is `--before` metres from the origin, waits for the digits to stop moving, and
+records in both windows; creeps on until the origin moves, stops and records; creeps on as far again,
+with no move, and records. It covers the last 20 m before each first stop at a walking pace: on Earth,
+from full speed, the rover would roll past the 500 m. After the last move it takes a screenshot of each table,
+prints every line it recorded, writes them to `lines.json` next to the screenshots, and quits KSP —
+give it `--keep-running` to leave KSP open. Save `KSP.log` before starting KSP again: KSP writes it anew
+at every start.

@@ -17,17 +17,21 @@ The saves the protocol uses are [`diag/driving-kerbin.sfs`](../diag/driving-kerb
 ## The install
 
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
-[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod and
+[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod,
 [KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin), which only
-reads, and nothing else. On Earth, that install with
+reads, and [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), which drives the rover, and
+nothing else. On Earth, that install with
 [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) 20.1.3.0 and what it requires added
-(Kopernicus 1.12.1.248, Modular Flight Integrator, KSPTextureLoader, the RSS textures).
+(Kopernicus 248, Modular Flight Integrator, KSPTextureLoader, the RSS textures).
+
+Each series is one run of three moves, played by
+[the script of the protocol](the-protocol-driving.md#played-by-a-script), `run-driving.py`.
 
 ## The readings
 
 Each run starts from the save and drives due south. On every line, Diag FloatingOrigin confirms what the protocol
 expects: 1 in **Shifts** on each line taken just after a move, with a **Last shift** of 500.0 m to
-within five centimetres, and 0 on each line taken with no move — except the first line of a run, which
+within three centimetres, and 0 on each line taken with no move — except the first line of a run, which
 reads the moves the game makes as the scene opens: one on Kerbin, two on Earth.
 
 A move is kept when its second line changes at least three times as much as its third
@@ -36,91 +40,61 @@ millimetres.
 
 ### On Kerbin
 
-Two runs, logged in [`diag/runs/driving-stock-1.log`](../diag/runs/driving-stock-1.log) and
-[`driving-stock-2.log`](../diag/runs/driving-stock-2.log). On the three lines of each move kept,
-**Ground KSP computes** reads the same digits to within seven thousandths of a millimetre: the three
-lines are read on the same flat ground.
+Logged in [`diag/runs/driving-stock.log`](../diag/runs/driving-stock.log); what the script printed is
+in [`driving-stock-script.txt`](../diag/runs/driving-stock-script.txt), and every line it recorded in
+[`driving-stock-lines.json`](../diag/runs/driving-stock-lines.json). On the three lines of each move,
+**Ground KSP computes** reads the same digits to within six thousandths of a millimetre: the three
+lines are read on the same flat ground. The rover drove 6 to 10 m from line 1 to line 2 of a move.
 
-| run, move | line 1, just before | line 2, just after | line 3, same distance again | 1 → 2, across the move | 2 → 3, no move |
-|---|---|---|---|---|---|
-| 1, 1 | +98.195 | +93.998 | +95.164 | **−4.197** | +1.166 |
-| 1, 2 | +110.705 | +99.013 | +98.273 | **−11.692** | −0.740 |
-| 1, 3 | −292.737 | −283.149 | −283.140 | **+9.588** | +0.009 |
-| 2, 1 | +47.858 | +36.076 | +35.848 | **−11.782** | −0.228 |
-| 2, 2 | +69.161 | +79.910 | +79.434 | **+10.749** | −0.476 |
+| move | line 1, just before | line 2, just after | line 3, same distance again | 1 → 2, across the move | 2 → 3, no move | kept |
+|---|---|---|---|---|---|---|
+| 1 | +1.091 | +2.307 | +3.663 | +1.216 | +1.356 | no |
+| 2 | −16.116 | +10.470 | +5.935 | **+26.586** | −4.535 | yes |
+| 3 | −437.069 | −461.733 | −456.077 | **−24.665** | +5.656 | yes |
 
-The first run, Diag FloatingOrigin then Diag TerrainHeight:
+Diag FloatingOrigin then Diag TerrainHeight:
 
-![The first run on Kerbin, read by Diag FloatingOrigin: twelve lines, four moves](../imgs/measures/driving/run1-diag3.png)
+![The run on Kerbin, read by Diag FloatingOrigin: nine lines, three moves](../imgs/measures/driving/run1-diag3.png)
 
-![The first run on Kerbin, read by Diag TerrainHeight: twelve lines, four moves](../imgs/measures/driving/run1-diag2.png)
-
-The second run, Diag FloatingOrigin then Diag TerrainHeight:
-
-![The second run on Kerbin, read by Diag FloatingOrigin: nine lines, three moves](../imgs/measures/driving/run2-diag3.png)
-
-![The second run on Kerbin, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/run2-diag2.png)
-
-Two moves are in the screenshots and left out, both by their own third line:
-
-- **the fourth move of the first run** (lines 10 to 12), about two kilometres south of the runway, where
-  the ground slopes down: **Ground KSP computes** drops by 153 mm from line 10 to line 11 and by 291 mm
-  from line 11 to line 12, and *Difference* changes by −70.0 mm across the move and by +175.7 mm with no
-  move. That move is why [the protocol](the-protocol-driving.md#the-protocol) stops at three on Kerbin;
-- **the third move of the second run** (lines 7 to 9): **Ground KSP computes** stays within three
-  thousandths of a millimetre, but *Difference* changes by +14.203 mm across the move and by +20.289 mm
-  with no move.
+![The run on Kerbin, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/run1-diag2.png)
 
 ### On Earth
 
-The ground around the KSC of Real Solar System is not flat to the millimetre: **Ground KSP computes**
-changes by about a centimetre per metre. Two runs, logged in
-[`diag/runs/driving-earth-rss-stock-1.log`](../diag/runs/driving-earth-rss-stock-1.log) and
-[`driving-earth-rss-stock-2.log`](../diag/runs/driving-earth-rss-stock-2.log). In the first, the rover
-stopped 2 to 4 m past each move and another 5 to 6 m on, and the third lines came out large; the second
-stopped within 2 m, as the protocol now says. The first log opens with a load given up before its first
-record, the 500 m passed without stopping; the run starts at the second load.
+The ground around the KSC of Real Solar System is not flat to the millimetre: in this run,
+**Ground KSP computes** changes by up to 86 mm between two lines of a move, which the rover reads 0.7 to
+1.4 m apart. Logged in [`diag/runs/driving-earth-rss-stock.log`](../diag/runs/driving-earth-rss-stock.log);
+what the script printed is in [`driving-earth-rss-stock-script.txt`](../diag/runs/driving-earth-rss-stock-script.txt),
+and every line it recorded in [`driving-earth-rss-stock-lines.json`](../diag/runs/driving-earth-rss-stock-lines.json).
 
-| run, move | line 1, just before | line 2, just after | line 3, same distance again | 1 → 2, across the move | 2 → 3, no move | kept |
+| move | line 1, just before | line 2, just after | line 3, same distance again | 1 → 2, across the move | 2 → 3, no move | kept |
 |---|---|---|---|---|---|---|
-| 1, 1 | +1123.743 | +703.235 | +688.538 | **−420.508** | −14.697 | yes |
-| 1, 2 | +621.690 | +777.789 | +715.352 | +156.099 | −62.437 | no |
-| 1, 3 | +612.857 | +500.095 | +574.100 | −112.762 | +74.005 | no |
-| 2, 1 | +311.825 | +10.179 | −0.915 | **−301.646** | −11.094 | yes |
-| 2, 2 | +341.392 | +199.603 | +206.949 | **−141.789** | +7.346 | yes |
-| 2, 3 | −427.147 | −277.381 | — | +149.766 | — | no |
+| 1 | +426.907 | +267.768 | +243.492 | **−159.139** | −24.276 | yes |
+| 2 | +311.326 | +68.345 | −12.779 | −242.981 | −81.124 | no, 2.995 times |
+| 3 | −507.817 | −276.286 | −194.253 | +231.530 | +82.033 | no, 2.8 times |
 
-In the third move of the second run, line 9 of this mod was recorded without a line in Diag FloatingOrigin, at the
-same **Origin distance** as line 8, and **Ground KSP computes** moved by 16.9 mm between them: the
-rover had shifted where it stood, not driven 2 m on. That move has no third line, and is not kept.
+Diag FloatingOrigin then Diag TerrainHeight:
 
-**The rover was seen to jump** twice, at the second move of the first run and the third of the second:
-the two moves where the ground under it rose, by 156 and 150 mm.
+![The run on Earth, read by Diag FloatingOrigin: nine lines, three moves](../imgs/measures/driving/earth-run1-diag3.png)
 
-The first run, Diag FloatingOrigin then Diag TerrainHeight:
+![The run on Earth, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/earth-run1-diag2.png)
 
-![The first run on Earth, read by Diag FloatingOrigin: nine lines, three moves](../imgs/measures/driving/earth-run1-diag3.png)
-
-![The first run on Earth, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/earth-run1-diag2.png)
-
-The second run, Diag FloatingOrigin then Diag TerrainHeight:
-
-![The second run on Earth, read by Diag FloatingOrigin: eight lines, three moves](../imgs/measures/driving/earth-run2-diag3.png)
-
-![The second run on Earth, read by Diag TerrainHeight: nine lines, three moves](../imgs/measures/driving/earth-run2-diag2.png)
+**The rover was seen to jump** in two earlier runs of the same save, played by hand and watched
+(logged in [`driving-earth-rss-stock-1.log`](../diag/runs/driving-earth-rss-stock-1.log) and
+[`driving-earth-rss-stock-2.log`](../diag/runs/driving-earth-rss-stock-2.log)): at the two moves where
+the ground under it rose, by 156 and 150 mm.
 
 ## What the readings say
 
-**The ground moves when the world moves.** On Kerbin, across each of the five moves kept, *Difference*
-changes by 4.2 to 11.8 mm, upwards or downwards; across the same few metres with no move, by 1.2 mm at
-most. On Earth, across the three moves kept, by 142 to 421 mm; with no move, by 15 mm at most. The ground
-under the rover moves in the middle of a drive, with nothing loaded, and on Earth enough for the rover to
-jump when it rises.
+**The ground moves when the world moves.** On Kerbin, across the two moves kept, *Difference* changes
+by 26.6 and 24.7 mm, upwards and downwards; across the same few metres with no move, by 5.7 mm at most.
+On Earth, across each of the three moves, by 159 to 243 mm, against 24 to 82 mm with no move, on a
+slope: one move kept, the two others just short of the rule. The ground under the rover moves in the
+middle of a drive, with nothing loaded, and on Earth enough for the rover to jump when it rises.
 
-**How far it moves is drawn afresh at every move**, so one move says little on its own. It is the series
-that is worth reading, not a line.
+**How far it moves is drawn afresh at every move**, so one move says little on its own — the first move
+on Kerbin moved it by about a millimetre, less than its third line. It is the series that is worth
+reading, not a line.
 
-**Line 7 of both runs on Kerbin reads almost 30 cm below the computed height** (−292.737 and
-−284.904 mm), at the same spot, about a kilometre and a half south of the runway, where every other line
-kept reads between +36 and +111 mm. This page does not explain it. It does not change the reading of the
-move there in the first run, whose third line holds within nine thousandths of a millimetre.
+**Line 7 on Kerbin reads almost half a metre below the computed height** (−437.069 mm), about a
+kilometre and a half south of the runway, where the lines of the first two moves read between −17 and
++11 mm. This page does not explain it.

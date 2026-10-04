@@ -101,9 +101,10 @@ Copy a save into the folder of a sandbox game and load it from that game.
   beside the runway placed by Kerbal Konstructs; what the script printed in
   [`runs/runway-mun-kk-stock-script.txt`](runs/runway-mun-kk-stock-script.txt), and every line it
   recorded in [`runs/runway-mun-kk-stock-lines.json`](runs/runway-mun-kk-stock-lines.json).
-- [`runs/driving-stock-1.log`](runs/driving-stock-1.log) and
-  [`runs/driving-stock-2.log`](runs/driving-stock-2.log) — the `KSP.log` of the sessions the two runs of
-  the driving protocol were taken in.
+- [`runs/driving-stock.log`](runs/driving-stock.log) — the `KSP.log` of the session the run of the
+  driving protocol was played in by `run-driving.py`, with Diag FloatingOrigin and KSP-MCPServer
+  installed; what the script printed in [`runs/driving-stock-script.txt`](runs/driving-stock-script.txt),
+  and every line it recorded in [`runs/driving-stock-lines.json`](runs/driving-stock-lines.json).
 - [`runs/driving-runway-stock.log`](runs/driving-runway-stock.log) — the `KSP.log` of the session the
   script played the protocol of the runway and the grass in; what the script printed in
   [`runs/driving-runway-stock-script.txt`](runs/driving-runway-stock-script.txt), and every line it
@@ -141,6 +142,13 @@ Copy a save into the folder of a sandbox game and load it from that game.
 - [`runs/reload-moon-rss-stock.log`](runs/reload-moon-rss-stock.log) — an earlier session, played by
   hand with this mod alone: six loads of `reload-moon-rss-resave.sfs`, where the craft tipped over at
   the fourth. It is the one KSP Diag - Landed Vessel cites.
+- [`runs/driving-earth-rss-stock.log`](runs/driving-earth-rss-stock.log) — the session the script played the
+  driving protocol in, on Earth; what it printed in
+  [`runs/driving-earth-rss-stock-script.txt`](runs/driving-earth-rss-stock-script.txt), and every line
+  it recorded in [`runs/driving-earth-rss-stock-lines.json`](runs/driving-earth-rss-stock-lines.json).
+- [`runs/driving-earth-rss-stock-1.log`](runs/driving-earth-rss-stock-1.log) and
+  [`runs/driving-earth-rss-stock-2.log`](runs/driving-earth-rss-stock-2.log) — two earlier runs of the
+  driving protocol on Earth, played by hand, where the rover was seen to jump.
 - [`runs/driving-runway-earth-rss-stock.log`](runs/driving-runway-earth-rss-stock.log) — the session
   the script played the protocol of the runway and the grass in, on Earth, Real Solar System built
   without its runway fix; what the script printed in
