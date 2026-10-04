@@ -123,7 +123,7 @@ above, step for step, and takes the screenshots. It drives KSP through
 HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
 install. Anyone can read it top to bottom: it follows the four steps above in the same order.
 
-1. Install KSP-MCPServer next to this mod and Diag FloatingOrigin, copy the save into a sandbox game, start KSP and
+1. Install KSP-MCPServer next to this mod and Diag FloatingOrigin, copy [the save](../diag/driving-runway-kerbin.sfs) into a sandbox game, start KSP and
    wait for the main menu.
 2. Run `python run-driving-runway.py --folder <your sandbox game> --moves 2 --out screenshots`. On
    Earth, add `--save driving-runway-earth-rss --radius 6371000`: the radius of the body turns the

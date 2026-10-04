@@ -3,10 +3,7 @@
 Part of [KSP Diag - Terrain Height](../README.md): the readings taken with
 [the protocol](the-protocol-driving-runway.md) — a rover alone by the runway of the KSC, reading a spot
 on the grass and a spot on the deck just before and just after the game moves its whole world. Nothing
-is loaded at any point: from the first line to the last, it is one single flight. The grass alone, read
-the same way, is in [The measurements: driving on while the world moves](the-measurements-driving.md),
-and the runway and the grass at every loading in
-[The measurements: the runway and the grass beside it](the-measurements-runway.md).
+is loaded at any point: from the first line to the last, it is one single flight.
 
 ## The install
 

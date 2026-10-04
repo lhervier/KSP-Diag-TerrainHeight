@@ -5,12 +5,6 @@ driving, just before and just after the game moves its whole world. Nothing is l
 first line to the last, it is one single flight. The columns it fills are in [The window](the-window.md),
 and what it reads is in [The measurements: driving on while the world moves](the-measurements-driving.md).
 
-The other protocols read the ground under a craft the game sets down: handed back by a save —
-[The protocol: loading the same save](the-protocol-loading.md) — loaded again as you come back to it —
-[The protocol: coming back to a craft you left](the-protocol-approach.md) — or flown after a switch —
-[The protocol: switching to a craft far away](the-protocol-switching.md). Here the rover never leaves
-physics: what changes is the world around it.
-
 KSP keeps the craft you fly near the centre of Unity's world. Every 500 m it drives, the game moves the
 whole world back under it, the ground included: this is called the *floating origin*, and
 [KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) explains it
@@ -128,7 +122,7 @@ for step, and takes the screenshots. It drives KSP through
 HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
 install. Anyone can read it top to bottom: it follows the three records above in the same order.
 
-1. Install KSP-MCPServer next to this mod and Diag FloatingOrigin, copy the save into a sandbox game,
+1. Install KSP-MCPServer next to this mod and Diag FloatingOrigin, copy [the save](../diag/driving-kerbin.sfs) into a sandbox game,
    start KSP and wait for the main menu.
 2. Run `python run-driving.py --folder <your sandbox game> --moves 3 --out screenshots`. On Earth, add
    `--save driving-earth-rss --before 499 --radius 6371000`: the rover stops 499 m from the origin

@@ -29,6 +29,12 @@ worlds of stock KSP, made by steps 1 to 3 of [the protocol](../docs/the-protocol
 - [`reload-gilly-1part.sfs`](reload-gilly-1part.sfs) and [`reload-gilly-2parts.sfs`](reload-gilly-2parts.sfs)
   — on Gilly.
 
+On the Moon and on Earth, in Real Solar System, the saves are
+[`reload-moon-rss.sfs`](reload-moon-rss.sfs), [`reload-moon-rss-resave.sfs`](reload-moon-rss-resave.sfs),
+[`reload-earth-rss-resave.sfs`](reload-earth-rss-resave.sfs) and
+[`reload-earth-rss-landed.sfs`](reload-earth-rss-landed.sfs): they load only on the install described
+in [On Real Solar System](#on-real-solar-system), which says what each one holds.
+
 Copy a save into the folder of a sandbox game and load it from that game.
 
 ## The scripts
@@ -79,6 +85,11 @@ KSP Diag - Landed Vessel and KSP-MCPServer, every save played by `run-loading.py
   the ground 42 m away. The runway itself is in the two files of
   [`runway-mun-kk/GameData/KerbalKonstructs/NewInstances/`](runway-mun-kk/GameData/KerbalKonstructs/NewInstances/):
   copy that `GameData` into the folder of KSP, over its own, before loading the save.
+
+On Earth, in Real Solar System, the driving protocol uses
+[`driving-earth-rss.sfs`](driving-earth-rss.sfs), and the protocol of the runway and the grass while
+the world moves [`driving-runway-earth-rss.sfs`](driving-runway-earth-rss.sfs): they load only on the
+install described in [On Real Solar System](#on-real-solar-system), which says what each one holds.
 
 Copy a save into the folder of a sandbox game and load it from that game.
 

@@ -4,11 +4,7 @@ Part of [KSP Diag - Terrain Height](../README.md): the readings taken with
 [the driving protocol](the-protocol-driving.md) — a rover alone on the grass, read just before and
 just after the game moves its whole world, then the same few metres farther on with no move. Nothing is
 loaded at any point: from the first line to the last of a run, it is one single flight. The series runs
-on Kerbin, then on Earth in Real Solar System, much larger. The other series are in
-[The measurements: loading the same save](the-measurements-loading.md),
-[The measurements: coming back to a craft you left](the-measurements-approach.md),
-[The measurements: switching to a craft far away](the-measurements-switching.md) and
-[The measurements: the runway and the grass beside it](the-measurements-runway.md).
+on Kerbin, then on Earth in Real Solar System, much larger.
 
 The saves the protocol uses are [`diag/driving-kerbin.sfs`](../diag/driving-kerbin.sfs) and
 [`diag/driving-earth-rss.sfs`](../diag/driving-earth-rss.sfs), and

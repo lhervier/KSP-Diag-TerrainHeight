@@ -2,10 +2,6 @@
 
 Part of [KSP Diag - Terrain Height](../README.md): how to take the reading yourself, step by step. The columns it fills are in [The window](the-window.md), and the readings it produced are in [The measurements: loading the same save](the-measurements-loading.md).
 
-The two other protocols read the ground under a craft you drive away from and back to —
-[The protocol: coming back to a craft you left](the-protocol-approach.md) — and under a craft you
-switch to — [The protocol: switching to a craft far away](the-protocol-switching.md).
-
 **1. Launch a craft.** Anything will do — the ray does not care what it is made of.
 
 ![A capsule on the runway, the window already reading](../imgs/protocols/reload/00-launching.png)
@@ -65,8 +61,8 @@ same thing again.
 
 ## Played by a script
 
-[`diag/automation/run-loading.py`](../diag/automation/run-loading.py) plays steps 4 to 8 above, on a
-save already made, and takes the screenshot. It drives KSP through
+[`diag/automation/run-loading.py`](../diag/automation/run-loading.py) plays steps 4 to 8 above, on
+[a save already made](../diag/README.md#the-saves-of-the-loading-protocol), and takes the screenshot. It drives KSP through
 [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), a mod that answers requests sent to it over
 HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
 install. Anyone can read it top to bottom: it follows the steps above in the same order.
@@ -74,7 +70,10 @@ install. Anyone can read it top to bottom: it follows the steps above in the sam
 The saves it was played on are in [`diag`](../diag/README.md#the-saves-of-the-loading-protocol), made
 by steps 1 to 3 on each of the four worlds of stock KSP, a lone capsule and the same capsule on a small
 flat fuel tank: `reload-kerbin-1part.sfs`, `reload-kerbin-2parts.sfs`, and the same for `mune`,
-`minmus` and `gilly`.
+`minmus` and `gilly`. On Real Solar System, it was played on the Moon and on Earth, on
+[`reload-moon-rss-resave.sfs`](../diag/reload-moon-rss-resave.sfs) and
+[`reload-earth-rss-resave.sfs`](../diag/reload-earth-rss-resave.sfs), a capsule on an empty fuel tank;
+these load only on the install described in [On Real Solar System](../diag/README.md#on-real-solar-system).
 
 1. Install KSP-MCPServer next to this mod, copy the save into a sandbox game, start KSP and wait for
    the main menu.

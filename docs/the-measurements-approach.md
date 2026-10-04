@@ -3,9 +3,7 @@
 Part of [KSP Diag - Terrain Height](../README.md): the readings taken with
 [the approach protocol](the-protocol-approach.md) — a craft parked on flat ground, a rover driving
 away until the game unloads it, then coming back. Nothing is loaded at any point: from the first line
-to the last, it is one single flight. The other series are in
-[The measurements: loading the same save](the-measurements-loading.md) and
-[The measurements: switching to a craft far away](the-measurements-switching.md).
+to the last, it is one single flight.
 
 The save the protocol uses is [`diag/approach-kerbin.sfs`](../diag/approach-kerbin.sfs), and
 [the protocol page](the-protocol-approach.md#the-save) says what it holds.

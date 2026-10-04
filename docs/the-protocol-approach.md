@@ -5,10 +5,6 @@ loaded into a scene already running, step by step. Nothing is loaded here — fr
 the last, it is one single flight. The columns it fills are in [The window](the-window.md), and what
 it reads is in [The measurements: coming back to a craft you left](the-measurements-approach.md).
 
-The two other protocols read the ground under a craft handed back by a save —
-[The protocol: loading the same save](the-protocol-loading.md) — and under a craft you switch to —
-[The protocol: switching to a craft far away](the-protocol-switching.md).
-
 A craft is parked on flat ground. A rover drives far enough for the game to unload it, then comes
 back, and the window reads the ground under the parked craft throughout.
 
@@ -105,7 +101,7 @@ install. Anyone can read it top to bottom: it follows the steps above in the sam
 
 1. Install KSP-MCPServer next to this mod and [KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel): the
    script records in both windows at the same moment, and waits on the reading of Diag TerrainHeight
-   to know the parked craft has settled. Copy the save into a sandbox game, start KSP and wait for the
+   to know the parked craft has settled. Copy [the save](../diag/approach-kerbin.sfs) into a sandbox game, start KSP and wait for the
    main menu.
 2. Run `python run-approach.py --folder <your sandbox game> --trips 6 --out screenshots`.
 
