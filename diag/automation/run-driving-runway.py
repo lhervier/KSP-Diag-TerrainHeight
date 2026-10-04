@@ -9,7 +9,9 @@ Diag FloatingOrigin installed, wait for the main menu, then run:
 For each move of the floating origin it does what the protocol asks a player to do, in the same order:
 record at G (grass) and P (deck), come back to both with no move, drive on until the origin moves, come
 back to both again. It records in both Diag windows at every stop, takes a screenshot of each table after
-each move, prints what it read, and quits KSP at the end (unless --keep-running is given).
+each move, prints what it read, and quits KSP at the end (unless --keep-running is given). The windows
+of the instruments are hidden once the flight opens, so that the scene shows, and each is shown only for
+its screenshot.
 """
 import argparse
 import json
@@ -97,21 +99,19 @@ def go(spot, name):
 
 
 def screenshots(directory, move):
-    """One screenshot per Diag table, each window alone in the middle of the screen."""
+    """One screenshot per Diag table, each window alone in the middle of the screen: the windows stay hidden
+    but for their own screenshot."""
     width = 1280
-    off_screen = -3000
     # The files keep the names the published pages use: diag3 for Diag FloatingOrigin, diag2 for Diag
     # TerrainHeight.
-    for shown, hidden, name in (("floatingorigin", "terrainheight", "diag3"),
-                                ("terrainheight", "floatingorigin", "diag2")):
-        call(hidden + "_move_window", x=off_screen, y=60)
+    for shown, name in (("floatingorigin", "diag3"), ("terrainheight", "diag2")):
+        call(shown + "_show_window", visible=True)
         size = call(shown + "_move_window", x=0, y=60)["returned"]
         call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
         call("wait", seconds=1)
         call("screenshot", path=os.path.join(os.path.abspath(directory), "move%d-%s.png" % (move, name)),
              return_image=False)
-    size = call("floatingorigin_move_window", x=0, y=60)["returned"]
-    call("floatingorigin_move_window", x=(width - size["width"]) / 2, y=60)
+        call(shown + "_show_window", visible=False)
 
 
 def main():
@@ -134,6 +134,8 @@ def main():
     call("wait", seconds=5)
     call("terrainheight_clear")
     call("floatingorigin_clear")
+    call("terrainheight_show_window", visible=False)
+    call("floatingorigin_show_window", visible=False)
     rows = []
     for move in range(1, options.moves + 1):
         # East along the north edge of the runway, then a quarter turn south. The origin lies (n0, e0)
