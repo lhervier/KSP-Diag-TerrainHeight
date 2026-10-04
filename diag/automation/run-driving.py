@@ -132,9 +132,14 @@ def main():
     rows = []
     for move in range(1, options.moves + 1):
         # 1. Just before: due south until the origin, behind the rover, is --before metres away.
+        # Fast until 20 m short, then at walking pace: on Earth the stop has to fall between 498 and 500 m, and
+        # the rover does not stop that precisely from 15 m/s.
+        distance = call("get_floating_origin")["distance"]
+        if distance < options.before - 20:
+            call("drive", heading=180, speed=15, distance=options.before - 20 - distance)
         distance = call("get_floating_origin")["distance"]
         if distance < options.before:
-            call("drive", heading=180, speed=15, distance=options.before - distance)
+            call("drive", heading=180, speed=1, distance=options.before - distance)
         record("move%d-1" % move, rows)
         before = position()
 
