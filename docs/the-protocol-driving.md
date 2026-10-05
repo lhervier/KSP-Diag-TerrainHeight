@@ -37,7 +37,7 @@ longitude −74.7241°, facing due south. No target is set.
 
 **The rover is alone, and has to be.** While another landed craft is loaded nearby, the game does not
 move the world at all, however far the rover drives; it only catches up when that craft is unloaded,
-2500 m away ([Diag FloatingOrigin, case 3](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/the-measurements.md#case-3-a-rover-near-a-parked-craft-then-on-its-own)).
+2500 m away ([Diag FloatingOrigin, a rover near a parked craft](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/the-measurements-parked-craft.md)).
 With a second craft parked nearby, nothing on this page would happen.
 
 You can make your own: copy [`craft/Diag2-Rover.craft`](../craft/Diag2-Rover.craft) into the

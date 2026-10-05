@@ -77,84 +77,66 @@ table. The table survives scene changes, lives in memory only, and is gone when 
 
 **→ Full chapter: [The window](docs/the-window.md)**
 
-## The protocol
+## The situations
 
-Six protocols, all filling the same window: three for the ways the game sets a craft down on the
-ground, one for the runway, and two for a rover that keeps driving while the game moves its world.
-
-**Loading the same save.** Set a craft down on bare ground, save once, then load that same save six
-times, recording after each loading.
-
-**→ Full chapter: [The protocol: loading the same save](docs/the-protocol-loading.md)**
-
-**Coming back to a craft you left.** In one single flight, drive a rover away from a parked craft
-until the game unloads it, then back until its physics starts again.
-
-**→ Full chapter: [The protocol: coming back to a craft you left](docs/the-protocol-approach.md)**
-
-**Switching to a craft far away.** Load a save holding two craft 1.97 km apart, record, switch to the
-other with the game's own key, and record again; six loadings.
-
-**→ Full chapter: [The protocol: switching to a craft far away](docs/the-protocol-switching.md)**
-
-**The runway and the grass beside it.** The same with two craft, one on the runway and one on the
-grass beside it, on Kerbin, then on the Mun beside a runway placed by Kerbal Konstructs.
-
-**→ Full chapter: [The protocol: the runway and the grass beside it](docs/the-protocol-runway.md)**
-
-**Driving on while the world moves.** A rover alone on flat grass, read just before and just after
-the game moves its world, with [KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin)
-beside this mod to tell when it does.
-
-**→ Full chapter: [The protocol: driving on while the world moves](docs/the-protocol-driving.md)**
-
-**The runway and the grass, while the world moves.** The same, with a rover reading a spot on the
-grass and a spot on the runway deck, before and after the move.
-
-**→ Full chapter: [The protocol: the runway and the grass, while the world moves](docs/the-protocol-driving-runway.md)**
-
-## The measurements
-
-Taken with Harmony, ModuleManager and [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes)
-— what most players run — and this mod, every series played by the script of its protocol through
+Each situation below comes with its protocol, its measurements and what they show, and all of them
+fill the same window: the ways the game sets a craft down on the ground, the runway, and a rover that
+keeps driving while the game moves its world. Every series was taken with Harmony,
+ModuleManager and [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what
+most players run — and this mod, played by the script of its protocol through
 [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). Each page gives its install in full.
 
-**Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). On the four stock
-worlds, then on the Moon and Earth of Real Solar System. On the stock worlds, the computed height comes
-back with the same digits; the ground under the craft never does: up to 43.6 mm apart on Kerbin,
-292.3 mm on Earth.
+## Loading the same save
 
-**→ Full chapter: [The measurements: loading the same save](docs/the-measurements-loading.md)**
+Set a craft down on bare ground, save once, then load that same save six times, recording after each
+loading; on the four stock worlds, then on the Moon and Earth of Real Solar System. On the stock worlds,
+the computed height comes back with the same digits; the ground under the craft never does: up to
+43.6 mm apart on Kerbin, 292.3 mm on Earth.
 
-**Coming back to a craft you left** ([the protocol in full](docs/the-protocol-approach.md)). Six
-round trips on Kerbin, nothing loaded: the ground under the parked craft comes back somewhere else
-every time, by 6.4 to 37.2 mm.
+**→ [The protocol](docs/the-protocol-loading.md) · [The measurements](docs/the-measurements-loading.md) · [What they show](docs/what-the-measurements-show-loading.md)**
 
-**→ Full chapter: [The measurements: coming back to a craft you left](docs/the-measurements-approach.md)**
+## Coming back to a craft you left
 
-**Switching to a craft far away** ([the protocol in full](docs/the-protocol-switching.md)). Six
-rounds on Kerbin: the ground under the capsule moves at every loading, over 112.1 mm, and the switch
-itself moves nothing.
+In one single flight, drive a rover away from a parked craft until the game unloads it, then back
+until its physics starts again; six round trips on Kerbin. Nothing is loaded, yet the ground under the
+parked craft comes back somewhere else every time, by 6.4 to 37.2 mm.
 
-**→ Full chapter: [The measurements: switching to a craft far away](docs/the-measurements-switching.md)**
+**→ [The protocol](docs/the-protocol-approach.md) · [The measurements](docs/the-measurements-approach.md) · [What they show](docs/what-the-measurements-show-approach.md)**
 
-**The runway and the grass beside it** ([the protocol in full](docs/the-protocol-runway.md)). The
-runway deck moves at every loading like the grass, but not with it: the step between them spreads over
-38.3 mm on Kerbin. A runway placed by Kerbal Konstructs on the Mun does the same.
+## Switching to a craft far away
 
-**→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
+Load a save holding two craft 1.97 km apart, record, switch to the other with the game's own key, and
+record again; six rounds on Kerbin. The ground under the capsule moves at every loading, over
+112.1 mm, and the switch itself moves nothing.
 
-**Driving on while the world moves** ([the protocol in full](docs/the-protocol-driving.md)). With
-nothing loaded, the ground under the rover moves at each move of the world: about 25 mm on Kerbin,
-159 to 243 mm on Earth in Real Solar System.
+**→ [The protocol](docs/the-protocol-switching.md) · [The measurements](docs/the-measurements-switching.md) · [What they show](docs/what-the-measurements-show-switching.md)**
 
-**→ Full chapter: [The measurements: driving on while the world moves](docs/the-measurements-driving.md)**
+## The runway and the grass beside it
 
-**The runway and the grass, while the world moves** ([the protocol in full](docs/the-protocol-driving-runway.md)).
-The runway moves at each move of the world, by up to 54.85 mm on Kerbin and 231.84 mm on Earth, but the
-grass beside it moves with it: unlike at a loading, the two are carried together.
+Six loadings of a save holding two craft, one on the runway and one on the grass beside it, on Kerbin,
+then on the Mun beside a runway placed by Kerbal Konstructs. The runway deck moves at every loading
+like the grass, but not with it: the step between them spreads over 38.3 mm on Kerbin. The runway on
+the Mun does the same.
 
-**→ Full chapter: [The measurements: the runway and the grass, while the world moves](docs/the-measurements-driving-runway.md)**
+**→ [The protocol](docs/the-protocol-runway.md) · [The measurements](docs/the-measurements-runway.md) · [What they show](docs/what-the-measurements-show-runway.md)**
+
+## Driving on while the world moves
+
+A rover alone on flat grass, read just before and just after the game moves its world, with
+[KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) beside this mod to
+tell when it does. With nothing loaded, the ground under the rover moves at each move of the world:
+about 25 mm on Kerbin, 159 to 243 mm on Earth in Real Solar System.
+
+**→ [The protocol](docs/the-protocol-driving.md) · [The measurements](docs/the-measurements-driving.md) · [What they show](docs/what-the-measurements-show-driving.md)**
+
+## The runway and the grass, while the world moves
+
+A rover by the runway of the KSC reads a spot on the grass and a spot on the runway deck, just before
+and just after the game moves its world. The runway moves at each move, by up to 54.85 mm on Kerbin
+and 231.84 mm on Earth, but the grass beside it moves with it: unlike at a loading, the two are carried
+together.
+
+**→ [The protocol](docs/the-protocol-driving-runway.md) · [The measurements](docs/the-measurements-driving-runway.md) · [What they show](docs/what-the-measurements-show-driving-runway.md)**
 
 ## Get it
 
