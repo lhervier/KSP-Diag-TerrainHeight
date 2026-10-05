@@ -80,8 +80,8 @@ table. The table survives scene changes, lives in memory only, and is gone when 
 ## The situations
 
 Each situation below comes with its protocol, its measurements and what they show, and all of them
-fill the same window: the ways the game sets a craft down on the ground, the runway, and a rover that
-keeps driving while the game moves its world. Every series was taken with Harmony,
+fill the same window: the ways the game sets a craft down on the ground, the runway, a launch pad of
+Making History, and a rover that keeps driving while the game moves its world. Every series was taken with Harmony,
 ModuleManager and [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what
 most players run — and this mod, played by the script of its protocol through
 [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). Each page gives its install in full.
@@ -119,6 +119,14 @@ like the grass, but not with it: the step between them spreads over 38.3 mm on K
 the Mun does the same.
 
 **→ [The protocol](docs/the-protocol-runway.md) · [The measurements](docs/the-measurements-runway.md) · [What they show](docs/what-the-measurements-show-runway.md)**
+
+## A launch pad of Making History
+
+Launch a capsule from the Desert Launch Site of Making History in six sessions of the game, reading the
+deck under it each time. The launch pad's feet always stand on the ground, but its deck spreads over
+592.8 mm.
+
+**→ [The protocol](docs/the-protocol-launch-pad.md) · [The measurements](docs/the-measurements-launch-pad.md) · [What they show](docs/what-the-measurements-show-launch-pad.md)**
 
 ## Driving on while the world moves
 

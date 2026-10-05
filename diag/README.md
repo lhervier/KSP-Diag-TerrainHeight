@@ -5,15 +5,16 @@ Part of [KSP Diag - Terrain Height](../README.md): the saves and the logs of
 [the approach protocol](../docs/the-protocol-approach.md),
 [the switching protocol](../docs/the-protocol-switching.md),
 [the runway protocol](../docs/the-protocol-runway.md),
-[the driving protocol](../docs/the-protocol-driving.md) and
-[the protocol of the runway and the grass while the world moves](../docs/the-protocol-driving-runway.md),
-and the scripts that play them. What their readings say is in
+[the driving protocol](../docs/the-protocol-driving.md),
+[the protocol of the runway and the grass while the world moves](../docs/the-protocol-driving-runway.md)
+and [the launch pad protocol](../docs/the-protocol-launch-pad.md), and the scripts that play them. What their readings say is in
 [The measurements: loading the same save](../docs/the-measurements-loading.md),
 [The measurements: coming back to a craft you left](../docs/the-measurements-approach.md),
 [The measurements: switching to a craft far away](../docs/the-measurements-switching.md),
 [The measurements: the runway and the grass beside it](../docs/the-measurements-runway.md),
-[The measurements: driving on while the world moves](../docs/the-measurements-driving.md) and
-[The measurements: the runway and the grass, while the world moves](../docs/the-measurements-driving-runway.md).
+[The measurements: driving on while the world moves](../docs/the-measurements-driving.md),
+[The measurements: the runway and the grass, while the world moves](../docs/the-measurements-driving-runway.md)
+and [The measurements: a launch pad of Making History](../docs/the-measurements-launch-pad.md).
 
 ## The saves of the loading protocol
 
@@ -46,6 +47,7 @@ alone; how to run it is at the top of the file, and in the chapter *Played by a 
 - [`automation/run-driving.py`](automation/run-driving.py) — the driving protocol.
 - [`automation/run-driving-runway.py`](automation/run-driving-runway.py) — the protocol of the runway
   and the grass while the world moves.
+- [`automation/run-launch-pad.py`](automation/run-launch-pad.py) — the launch pad protocol.
 
 ## The runs of the loading protocol
 
@@ -91,6 +93,10 @@ install described in [On Real Solar System](#on-real-solar-system), which says w
 
 Copy a save into the folder of a sandbox game and load it from that game.
 
+The launch pad protocol uses no save but a craft, [`Capsule.craft`](../craft/Capsule.craft), launched
+from the Desert Launch Site of the Making History expansion: copy it into the `Ships/VAB` folder of a
+sandbox game.
+
 ## The runs of the other protocols
 
 - [`runs/approach-stock.log`](runs/approach-stock.log) — the `KSP.log` of the session the six round
@@ -118,6 +124,11 @@ Copy a save into the folder of a sandbox game and load it from that game.
   script played the protocol of the runway and the grass in; what the script printed in
   [`runs/driving-runway-stock-script.txt`](runs/driving-runway-stock-script.txt), and every line it
   recorded in [`runs/driving-runway-stock-lines.json`](runs/driving-runway-stock-lines.json).
+- [`runs/launch-pad-stock-1.log`](runs/launch-pad-stock-1.log) to
+  [`runs/launch-pad-stock-6.log`](runs/launch-pad-stock-6.log) — the `KSP.log` of each of the six
+  sessions `run-launch-pad.py` played the launch pad protocol in, one launch each, with KSP-MCPServer
+  installed; what the script printed in [`runs/launch-pad-stock-script.txt`](runs/launch-pad-stock-script.txt),
+  and every line it recorded in [`runs/launch-pad-stock-lines.json`](runs/launch-pad-stock-lines.json).
 
 ## On Real Solar System
 
