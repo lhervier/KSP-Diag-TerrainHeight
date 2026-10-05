@@ -15,7 +15,7 @@ at every loading, with two craft.
 This protocol asks whether the runway moves when the world moves, and whether it moves with the ground
 beside it. It cannot use two craft: while another landed craft is loaded, the game does not move the
 world at all (`Krakensbane.SafeToEngage`, and
-[Diag FloatingOrigin, a rover near a parked craft](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/the-measurements-parked-craft.md)),
+[Diag FloatingOrigin, a rover near a parked craft](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/main/docs/the-measurements-parked-craft.md)),
 whether that craft stands still or rolls. So a single rover reads both spots in turn: before the move,
 then after it. Once the world has moved, its origin is on the rover, so the rover can drive back a few
 tens of metres to the two spots without moving it again.

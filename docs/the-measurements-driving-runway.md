@@ -74,7 +74,7 @@ rolled onto the deck, it raises the distance at which KSP moves the floating ori
 2,700 m, and keeps it there after the craft has left the deck: the rover, which reads P on the deck
 before each move, would never see the world move at 500 m. So Real Solar System is built from the
 sources of its release 20.1.3.0 with that fix kept from doing anything, the one change in
-[`rss-20.1.3-without-its-runway-fix.diff`](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/master/diag/rss-runway-fix/rss-20.1.3-without-its-runway-fix.diff);
+[`rss-20.1.3-without-its-runway-fix.diff`](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/diag/rss-runway-fix/rss-20.1.3-without-its-runway-fix.diff);
 everything else is Real Solar System as released.
 
 One run, played by [the script](the-protocol-driving-runway.md#played-by-a-script) from

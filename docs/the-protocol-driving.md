@@ -9,7 +9,7 @@ KSP keeps the craft you fly near the centre of Unity's world. Every 500 m it dri
 whole world back under it, the ground included: this is called the *floating origin*, and
 [KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) explains it
 and counts those moves
-([What it measures](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/what-it-measures.md)).
+([What it measures](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/main/docs/what-it-measures.md)).
 This protocol reads the ground on either side of one such move, a few metres apart, then the same few
 metres farther on, with no move in between, to tell what the move does from what the few metres do.
 
@@ -37,7 +37,7 @@ longitude −74.7241°, facing due south. No target is set.
 
 **The rover is alone, and has to be.** While another landed craft is loaded nearby, the game does not
 move the world at all, however far the rover drives; it only catches up when that craft is unloaded,
-2500 m away ([Diag FloatingOrigin, a rover near a parked craft](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/master/docs/the-measurements-parked-craft.md)).
+2500 m away ([Diag FloatingOrigin, a rover near a parked craft](https://github.com/lhervier/KSP-Diag-FloatingOrigin/blob/main/docs/the-measurements-parked-craft.md)).
 With a second craft parked nearby, nothing on this page would happen.
 
 You can make your own: copy [`craft/Diag2-Rover.craft`](../craft/Diag2-Rover.craft) into the
