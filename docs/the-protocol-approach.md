@@ -5,7 +5,7 @@ loaded into a scene already running, step by step. Nothing is loaded here — fr
 the last, it is one single flight. The columns it fills are in [The window](the-window.md), and what
 it reads is in [The measurements: coming back to a craft you left](the-measurements-approach.md).
 
-A craft is parked on flat ground. A rover drives far enough for the game to unload it, then comes
+A craft is parked on bare ground. A rover drives far enough for the game to unload it, then comes
 back, and the window reads the ground under the parked craft throughout.
 
 ## The save

@@ -36,6 +36,10 @@ and only `X` closes it again. On some of the screenshots of this page, the throt
 navball is not at zero: they were taken with Shift+Win+S, and its Shift opened the throttle. Take
 yours with F1 or Print Screen, which leave the throttle alone.
 
+⚠️ **If the digits never stop, the craft is sliding**, slowly, throttle closed or not. Go back to
+step 3: before saving, turn SAS on, which can be enough to hold it still, and the save keeps it on. If
+it still slides, pick another spot.
+
 ![The craft settled, about to record](../imgs/protocols/reload/40-record.png)
 
 The first line appears, with the live line carrying on underneath it.
