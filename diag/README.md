@@ -151,7 +151,8 @@ except for the last two.
 - [`driving-runway-earth-rss.sfs`](driving-runway-earth-rss.sfs) — for
   [the protocol of the runway and the grass while the world moves](../docs/the-protocol-driving-runway.md):
   the same rover, alone on the grass by the north edge of the runway of the KSC on Earth. Real Solar
-  System has to be built without its runway fix (see
+  System has to be built without its runway fix, with the change in
+  [`rss-20.1.3-without-its-runway-fix.diff`](rss-20.1.3-without-its-runway-fix.diff) (see
   [The measurements, on Earth](../docs/the-measurements-driving-runway.md#on-earth)).
 
 Copy a save into the folder of a sandbox game and load it from that game.

@@ -60,9 +60,6 @@ drawn afresh every time, and can come out small by luck.
 
 ![Six loadings recorded](../imgs/protocols/reload/80-record-again-and-again.png)
 
-Then install [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) and do the
-same thing again.
-
 ## Played by a script
 
 [`diag/automation/run-loading.py`](../diag/automation/run-loading.py) plays steps 4 to 8 above, on
