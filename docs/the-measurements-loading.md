@@ -101,6 +101,6 @@ move that column is a craft coming to rest somewhere else: see [What the measure
 
 What the craft itself does under that workaround — when it is moved, when it jumps, when it tips over,
 and what happens with the workaround turned off — is measured by KSP Diag - Landed Vessel, in
-[Real Solar System's own workaround](https://github.com/lhervier/KSP-Diag-LandedVessel/blob/main/docs/the-measurements-loading.md#real-solar-systems-own-workaround).
+[The ground workaround](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/non-regression/real-solar-system/the-ground-workaround.md#reloading-until-something-happens), a page of Terrain Precision Fix.
 
 **→ What they show: [What the measurements show: loading the same save](what-the-measurements-show-loading.md)**
