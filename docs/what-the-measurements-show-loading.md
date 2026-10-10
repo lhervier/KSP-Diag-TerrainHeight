@@ -9,7 +9,7 @@ it wanders by a hundredth of a millimetre, on the Mun by a tenth: on ground that
 different point, and that shows. Nothing surprising in any of it. That height is worked out from the
 formulas the world is made of, and reloading a save does not change the world. On Real Solar System it
 moved more, for the same reason: on the Moon, the craft came back inside the ground at every loading
-and was pushed out of it ([KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading.md#the-craft-over-six-loads)
+and was pushed out of it ([KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-ground.md#the-craft-over-six-loads)
 reads it rising at all six), coming to rest a little to one side each time; on Earth, nearly all of
 its 0.697 mm comes from the first loading, where the craft was pushed out the same way, the five others
 staying within 0.06 mm.
