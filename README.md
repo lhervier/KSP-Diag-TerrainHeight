@@ -1,61 +1,22 @@
 # KSP Diag - Terrain Height
 
-**⚠️ Work in progress.** This is an active investigation, not a finished mod. The figures, the code and the conclusions on this page can still change, and several questions are still open.
-
-A measuring instrument for KSP 1.12. It lets you check, on your own install, a claim about the patch
-of ground your craft is parked on:
-
-> **The ground KSP builds under you is never built at the same height twice.** Load the same save five
-> times, and the surface your craft is standing on comes back a little higher or a little lower each
-> time — a few centimetres apart on Kerbin, less on smaller worlds, and up to seventy on Earth in
-> Real Solar System.
+**⚠️ Work in progress.** This is an active investigation, not a finished mod. The code and the pages of this repository can still change.
 
 **How this was made.** Written with Claude, Anthropic's AI assistant, and reviewed line by line by a
 human — me. I am saying so up front, because contributions made with an AI deserve a closer look than
 others, and because some people would rather stop reading here. That look is easy to give here: this
 mod changes nothing in the game, so what there is to check is the reading itself — the two methods that
-take it are quoted in full, the source is public, the protocol runs on a stock install with no
-dependency of any kind, and every figure on these pages is read straight off the screenshot next to it,
-on your own craft if you would rather take them again.
+take it are quoted in full in [This mod's demonstration](docs/this-mods-demonstration.md), and the
+source is public.
 
-## Why it matters
+A measuring instrument for KSP 1.12. It reads, for the spot your craft is standing on, two heights of
+the ground: the one the game computes, and the one it builds, the surface your landing legs touch. It
+lets you check, on your own install, whether the ground under a craft comes back at the same height when
+the game builds it again: at every loading, when you come back to a craft you left parked, when you
+switch to a craft far away, while you drive.
 
-Every time you load, it is a coin toss between two outcomes.
-
-**The ground comes back lower than it was when you saved.** Your craft is now hovering a couple of
-centimetres above it, so it drops those two centimetres. You never notice, and nothing breaks.
-
-**The ground comes back higher than it was when you saved.** Your craft is now *inside* the ground —
-and the physics engine will not leave two solid things overlapping. It pushes them apart, hard, in
-the only direction available: up. Your craft gets launched.
-
-![A craft jumping on its own the moment a save is reloaded](https://raw.githubusercontent.com/lhervier/KSP-TerrainPrecisionFix/main/imgs/Booing-scaled.gif)
-
-*KSP 1.12 with [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) as the only
-mod installed. A pod on an empty fuel tank, parked in the grass at the KSC, saved, then reloaded from the
-pause menu, several times if needed — nothing touched in between.*
-
-That second case is the symptom everybody already knows. The lander that twitches, hops or flips the
-moment the scene finishes loading. The base that sat perfectly flush yesterday and is buried up to
-the hatches today. The big base that tears itself apart the very first time you load it, and never
-again afterwards. A craft with many parts spread over a wide area gives the coin toss more chances
-to land the wrong way up.
-
-### Disclaimer: it is not the only cause
-
-The ground moving is one cause among several, and this page does not claim it is the only one. Plenty
-of other things move a craft when a scene opens. Two well-known examples, among others:
-
-- **suspensions.** Landing legs and wheels come back fully extended, because that is the only state
-  KSP can restore them to. They then compress under the weight of the craft, and the craft moves
-  while they do.
-- **a craft bent to fit the ground.** While you play, physics twists the joints between parts so the
-  craft settles onto the shape of the ground beneath it. That twisting is not saved. On loading, the
-  craft comes back in its original, unbent shape — and if the ground is not flat, part of it really
-  *is* underground, with no measurement error involved.
-
-Neither of them touches the reading below: this instrument measures the ground itself, and does not
-care what the craft standing on it is made of.
+Why that matters, and what was found with it, is told by
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix#why-the-moving-ground-matters).
 
 ## This mod's demonstration
 
@@ -77,74 +38,41 @@ table. The table survives scene changes, lives in memory only, and is gone when 
 
 **→ Full chapter: [The window](docs/the-window.md)**
 
-## The situations
+## Taking a reading
 
-Each situation below comes with its protocol, its measurements and what they show, and all of them
-fill the same window: the ways the game sets a craft down on the ground, the runway, a launch pad of
-Making History, and a rover that keeps driving while the game moves its world. Every series was taken with Harmony,
-ModuleManager and [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what
-most players run — and this mod, played by the script of its protocol through
-[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). Each page gives its install in full.
+Set a craft down where you want the ground read, and save once. Load that save, wait for the digits to
+stop moving, and press *Record*. Load the same save again, and record again. Each line is one loading:
+it is the series that is worth reading, not a line. The craft only marks the spot the ray is fired at,
+and what it is made of does not change the reading. A few rules keep that spot the same:
 
-## Loading the same save
+- **A craft that does not slide.** If the digits never stop, the craft is sliding: turn SAS on before
+  saving, or pick another spot.
+- **Do not touch the throttle.** Open it, even by a few percent, and the game no longer holds a landed
+  craft still: on a slope, it creeps, and the readings creep with it.
+- **Never save during the series.** Every loading must start from the same save.
+- **Bare ground, unless the structure is what you want to read.** The ray stops at the first surface it
+  meets: on a runway, a launch pad or a building, it reads the structure, not the ground.
+- **Watch Ground KSP computes.** A line where it reads differently from the others was taken somewhere
+  else: the craft jumped or tipped over at that loading.
 
-Set a craft down on bare ground, save once, then load that same save six times, recording after each
-loading; on the four stock worlds, then on the Moon and Earth of Real Solar System. On the stock worlds,
-the computed height comes back with the same digits; the ground under the craft never does: up to
-43.6 mm apart on Kerbin, 292.3 mm on Earth.
+The window reads the ground under your target when you have set one on another craft, so a parked craft
+can be followed while you drive away from it and back. Under a rover, it reads the ground while you
+drive: stop before each record.
 
-**→ [The protocol](docs/the-protocol-loading.md) · [The measurements](docs/the-measurements-loading.md) · [What they show](docs/what-the-measurements-show-loading.md)**
+## Measured campaigns
 
-## Coming back to a craft you left
-
-In one single flight, drive a rover away from a parked craft until the game unloads it, then back
-until its physics starts again; six round trips on Kerbin. Nothing is loaded, yet the ground under the
-parked craft comes back somewhere else every time, by 6.4 to 37.2 mm.
-
-**→ [The protocol](docs/the-protocol-approach.md) · [The measurements](docs/the-measurements-approach.md) · [What they show](docs/what-the-measurements-show-approach.md)**
-
-## Switching to a craft far away
-
-Load a save holding two craft 1.97 km apart, record, switch to the other with the game's own key, and
-record again; six rounds on Kerbin. The ground under the capsule moves at every loading, over
-112.1 mm, and the switch itself moves nothing.
-
-**→ [The protocol](docs/the-protocol-switching.md) · [The measurements](docs/the-measurements-switching.md) · [What they show](docs/what-the-measurements-show-switching.md)**
-
-## The runway and the grass beside it
-
-Six loadings of a save holding two craft, one on the runway and one on the grass beside it, on Kerbin,
-then on the Mun beside a runway placed by Kerbal Konstructs. The runway deck moves at every loading
-like the grass, but not with it: the step between them spreads over 38.3 mm on Kerbin. The runway on
-the Mun does the same.
-
-**→ [The protocol](docs/the-protocol-runway.md) · [The measurements](docs/the-measurements-runway.md) · [What they show](docs/what-the-measurements-show-runway.md)**
-
-## A launch pad of Making History
-
-Launch a capsule from the Desert Launch Site of Making History in six sessions of the game, reading the
-deck under it each time. The launch pad's feet always stand on the ground, but its deck spreads over
-592.8 mm.
-
-**→ [The protocol](docs/the-protocol-launch-pad.md) · [The measurements](docs/the-measurements-launch-pad.md) · [What they show](docs/what-the-measurements-show-launch-pad.md)**
-
-## Driving on while the world moves
-
-A rover alone on flat grass, read just before and just after the game moves its world, with
-[KSP Diag - Floating Origin](https://github.com/lhervier/KSP-Diag-FloatingOrigin) beside this mod to
-tell when it does. With nothing loaded, the ground under the rover moves at each move of the world:
-about 25 mm on Kerbin, 159 to 243 mm on Earth in Real Solar System.
-
-**→ [The protocol](docs/the-protocol-driving.md) · [The measurements](docs/the-measurements-driving.md) · [What they show](docs/what-the-measurements-show-driving.md)**
-
-## The runway and the grass, while the world moves
-
-A rover by the runway of the KSC reads a spot on the grass and a spot on the runway deck, just before
-and just after the game moves its world. The runway moves at each move, by up to 54.85 mm on Kerbin
-and 231.84 mm on Earth, but the grass beside it moves with it: unlike at a loading, the two are carried
-together.
-
-**→ [The protocol](docs/the-protocol-driving-runway.md) · [The measurements](docs/the-measurements-driving-runway.md) · [What they show](docs/what-the-measurements-show-driving-runway.md)**
+This instrument reads the ground in the campaigns of
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix), each played without that
+mod and with it, with its protocol, its saves, its scripts and its logs: loading the same save,
+[on bare ground](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-ground.md#the-ground-over-six-loads)
+and [on a runway and the ground beside it](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-statics.md#the-deck-of-a-runway);
+[coming back to a craft left parked](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-approach.md);
+[switching to a craft far away](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-switching.md);
+driving on while the world moves,
+[on the grass](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-driving/the-ground.md)
+and [by the runway](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-driving/the-statics.md);
+and [launching from a launch pad of Making History](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-launch-pad.md).
+The figures read with it are on those pages.
 
 ## Get it
 

@@ -87,8 +87,8 @@ about, and — the part that matters — **none of it should move from one loadi
 shape of the terrain should be worked out the same way every time, so whatever a hillock adds to your
 reading, it ought to add again on the next loading, to the micrometre. Which is what makes the reading
 worth taking on a slope or in a crater just as much as on a lawn — the Kerbin, Mun and Gilly tables
-in [The measurements: loading the same save](the-measurements-loading.md) were taken on ground that
-is anything but flat. Whatever the terrain is doing, it is not what varies.
+of [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-ground.md#the-ground-over-six-loads)
+were taken on ground that is anything but flat. Whatever the terrain is doing, it is not what varies.
 
 A legitimate zero exists, it is simply not something you can aim for: right on a corner, the one place
 where the mesh touches the surface it stands in for, and anywhere between two corners where the ground
