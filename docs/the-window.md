@@ -29,5 +29,4 @@ came to rest, so a craft that jumped or tipped over at a loading gives a line fo
 table does not say so, but **Ground KSP computes** does: it follows the spot, and a line where it reads
 differently from the others was taken somewhere else. Note what you saw next to each line.
 
-That wait is short. It is the craft settling, not the ground: the terrain is built when the scene
-opens and does not move afterwards. Once the craft is still, the numbers are still.
+That wait is the craft settling: once it is still, the digits stop.

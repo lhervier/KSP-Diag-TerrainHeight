@@ -1,19 +1,17 @@
 # This mod's demonstration
 
-Part of [KSP Diag - Terrain Height](../README.md): the two heights the mod reads at every loading, and why a correct reading is not zero.
+Part of [KSP Diag - Terrain Height](../README.md): the two heights the mod reads, and why a correct reading is not zero.
 
 There are two grounds in KSP, and they are not the same object.
 
 One is **computed**. The game works out the height of its terrain, for any spot on any world, from the
 formulas the world is made of. That is the number behind altimeters, maps, and where the sea ends.
 
-The other is **built**. When the scene opens, the game assembles a mesh of triangles for the terrain
-around you. That mesh is what your landing legs touch, what your wheels roll on, what stops you
+The other is **built**. The game assembles a mesh of triangles for the terrain around you. That mesh is what your landing legs touch, what your wheels roll on, what stops you
 falling through.
 
-They should agree. This mod reads both, for the spot your craft is standing on, and records them side
-by side — one line per loading, so that reloading the same save a few times fills a table you can read
-straight down.
+This mod reads both, for the spot your craft is standing on, every frame, and records them side by side
+when you ask.
 
 The built one is read by pointing a ray straight down at it and asking the physics engine where it was
 stopped:
@@ -60,11 +58,11 @@ vessel's own latitude and longitude — whatever the slope, and however the craf
 in double precision from end to end, because reading a few millimetres out of six hundred kilometres
 leaves no room for anything less.
 
-It is the second instrument for the same problem. The first,
+This instrument measures **the ground**: the craft only marks the spot, and what it does is never
+read. Another instrument,
 [KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel), measures the
-**craft**: it shows that a craft set down on the ground does not come to rest where the save left it,
-one loading to the next. This one measures **the ground** itself, and does not care what the craft
-does.
+**craft** itself — where the game places it, and where it comes to rest — and never looks at the
+ground.
 
 ## Why a correct reading is not zero
 
@@ -82,12 +80,8 @@ cuts straight across, and the ray hits it wherever it happens to pass.
 
 So the ray stops short of the computed height, or goes past it, by whatever the mesh left out — on
 broken ground, centimetres. The sign is the ground's to give: under the computed height where the
-ground rises between two corners, over it where it dips. None of that is the defect this page is
-about, and — the part that matters — **none of it should move from one loading to the next**: the
-shape of the terrain should be worked out the same way every time, so whatever a hillock adds to your
-reading, it ought to add again on the next loading, to the micrometre. Which is what makes the reading
-worth taking on a slope or in a crater just as much as on a lawn. Whatever the terrain is doing, it is
-not what varies.
+ground rises between two corners, over it where it dips. None of that is an error: it is what flat
+triangles make of the shape of the ground at that spot.
 
 A legitimate zero exists, it is simply not something you can aim for: right on a corner, the one place
 where the mesh touches the surface it stands in for, and anywhere between two corners where the ground
@@ -99,4 +93,5 @@ happens to cross the flat piece spanning it. Everywhere else there is a gap.
 > every reading, and out on ground as flat as the apron by the runway it is very nearly the whole of a
 > correct one: negative, and known before you take it.
 
-**A zero is not what a healthy reading looks like. A number that repeats across loadings is.**
+**A zero is not what a correct reading looks like. A small number, whose size and sign follow the
+shape of the ground, is.**
