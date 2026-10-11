@@ -9,20 +9,16 @@ mod changes nothing in the game, so what there is to check is the reading itself
 take it are quoted in full in [This mod's demonstration](docs/this-mods-demonstration.md), and the
 source is public.
 
-A measuring instrument for KSP 1.12. It reads, for the spot your craft is standing on, two heights of
-the ground: the one the game computes, and the one it builds, the surface your landing legs touch. It
-lets you check, on your own install, whether the ground under a craft comes back at the same height when
-the game builds it again: at every loading, when you come back to a craft you left parked, when you
-switch to a craft far away, while you drive.
+A measuring instrument for KSP 1.12. It reads two heights of the ground, in millimetres, at the spot
+a craft is standing on — the craft you are flying, or your target: the one the game computes, and the
+one it builds, the surface your landing legs touch. It reads them live, every frame, and records them
+side by side when you ask.
 
 ## This mod's demonstration
 
-There are two grounds in KSP, and they are not the same object: the one the game **computes** for any
-spot on any world, from the formulas that world is made of, and the one it **builds** out of flat
-triangles when the scene opens — the one your landing legs touch. They should agree. This mod reads
-both for the spot your craft is standing on, from two short methods that share nothing but the vessel,
-and records them side by side, one line per loading. A correct reading is not zero, and the shape of
-the ground says how far from it, and on which side.
+KSP has two grounds: the one it **computes** from the formulas a world is made of, and the one it
+**builds** out of triangles, which your landing legs touch. The mod reads both under your craft, from
+two short methods that share nothing but the vessel.
 
 **→ Full chapter: [This mod's demonstration](docs/this-mods-demonstration.md)**
 
