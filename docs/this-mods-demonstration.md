@@ -1,6 +1,6 @@
 # This mod's demonstration
 
-Part of [KSP Diag - Terrain Height](../README.md): the two heights the mod reads, and why a correct reading is not zero.
+Part of [KSP Diag - Terrain Height](../README.md): the two heights the mod reads, why a correct reading is not zero, and what the readings cannot tell.
 
 There are two grounds in KSP, and they are not the same object.
 
@@ -58,12 +58,6 @@ vessel's own latitude and longitude — whatever the slope, and however the craf
 in double precision from end to end, because reading a few millimetres out of six hundred kilometres
 leaves no room for anything less.
 
-This instrument measures **the ground**: the craft only marks the spot, and what it does is never
-read. Another instrument,
-[KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel), measures the
-**craft** itself — where the game places it, and where it comes to rest — and never looks at the
-ground.
-
 ## Why a correct reading is not zero
 
 The two never land on the same number, and they are not supposed to. Zero is the wrong thing to hope
@@ -79,7 +73,7 @@ cuts straight across, and the ray hits it wherever it happens to pass.
 ![On rough ground the mesh cuts straight across whatever the ground does between two corners](../imgs/why-not-zero-rough.svg)
 
 So the ray stops short of the computed height, or goes past it, by whatever the mesh left out — on
-broken ground, centimetres. The sign is the ground's to give: under the computed height where the
+rough ground, centimetres. The sign is the ground's to give: under the computed height where the
 ground rises between two corners, over it where it dips. None of that is an error: it is what flat
 triangles make of the shape of the ground at that spot.
 
@@ -95,3 +89,18 @@ happens to cross the flat piece spanning it. Everywhere else there is a gap.
 
 **A zero is not what a correct reading looks like. A small number, whose size and sign follow the
 shape of the ground, is.**
+
+## What this instrument shows, and what it does not
+
+Both readings are of **the ground**, at the spot the craft marks: the craft itself is never read —
+neither where the game places it, nor where it comes to rest.
+
+**A craft that jumped or tipped over is read somewhere else.** The reading is taken where the craft
+came to rest, so a craft that jumped or tipped over gives a line for another spot. The difference does
+not say so, but **Ground KSP computes** gives it away: it follows the spot, so when it changes, the
+craft is no longer where it was. Note what you saw next to each line.
+
+Another instrument,
+[KSP Diag - Landed Vessel](https://github.com/lhervier/KSP-Diag-LandedVessel), measures the
+**craft** itself — where the game places it, and where it comes to rest — and never looks at the
+ground. You do not need it to follow these readings.

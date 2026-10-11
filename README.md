@@ -24,7 +24,7 @@ two short methods that share nothing but the vessel.
 
 ## The window
 
-In flight, a window shows a table with one line per loading, in millimetres: **Ground under craft**,
+In flight, a window shows a table with one line per reading, in millimetres: **Ground under craft**,
 **Ground KSP computes**, and **Difference**, the first minus the second. The bottom line is the reading
 in progress, measured afresh every frame, until the *Record* button at the end of it freezes it into the
 table. The table survives scene changes, lives in memory only, and is gone when you close the game.
@@ -33,24 +33,23 @@ table. The table survives scene changes, lives in memory only, and is gone when 
 
 ## Taking a reading
 
-Set a craft down where you want the ground read, and save once. Load that save, wait for the digits to
-stop moving, and press *Record*. Load the same save again, and record again. Each line is one loading:
-it is the series that is worth reading, not a line. The craft only marks the spot the ray is fired at,
-and what it is made of does not change the reading. A few rules keep that spot the same:
+Set a craft down where you want the ground read, wait for the digits to stop moving, and press
+*Record*. The craft only marks the spot the ray is fired at, and what it is made of does not change the
+reading.
 
-- **A craft that does not slide.** If the digits never stop, the craft is sliding: turn SAS on before
-  saving, or pick another spot.
-- **Do not touch the throttle.** Open it, even by a few percent, and the game no longer holds a landed
-  craft still: on a slope, it creeps, and the readings creep with it.
-- **Never save during the series.** Every loading must start from the same save.
-- **Bare ground, unless the structure is what you want to read.** The ray stops at the first surface it
-  meets: on a runway, a launch pad or a building, it reads the structure, not the ground.
-- **Watch Ground KSP computes.** A line where it reads differently from the others was taken somewhere
-  else: the craft jumped or tipped over at that loading.
+Some situations change what a reading says, and are worth keeping in mind when you read it. For
+instance:
 
-The window reads the ground under your target when you have set one on another craft, so a parked craft
-can be followed while you drive away from it and back. Under a rover, it reads the ground while you
-drive: stop before each record.
+- **A craft that slides.** The digits never stop. SAS, or another spot, holds it still.
+- **An open throttle**, even by a few percent: the game no longer holds a landed craft still. On a
+  slope, it creeps, and the readings creep with it.
+- **A runway, a launch pad or a building.** The ray stops at the first surface it meets: it reads the
+  structure, not the ground.
+- **A craft that jumped or tipped over.** The reading is of another spot. **Ground KSP computes** gives
+  it away: it follows the spot, so it changes too.
+
+The window reads the ground under your target when you have set one on another craft. Under a rover, it
+reads the ground while you drive: stop before each record.
 
 ## Get it
 
