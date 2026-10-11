@@ -15,9 +15,6 @@ lets you check, on your own install, whether the ground under a craft comes back
 the game builds it again: at every loading, when you come back to a craft you left parked, when you
 switch to a craft far away, while you drive.
 
-Why that matters, and what was found with it, is told by
-[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix#why-the-moving-ground-matters).
-
 ## This mod's demonstration
 
 There are two grounds in KSP, and they are not the same object: the one the game **computes** for any
@@ -58,21 +55,6 @@ and what it is made of does not change the reading. A few rules keep that spot t
 The window reads the ground under your target when you have set one on another craft, so a parked craft
 can be followed while you drive away from it and back. Under a rover, it reads the ground while you
 drive: stop before each record.
-
-## Measured campaigns
-
-This instrument reads the ground in the campaigns of
-[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix), each played without that
-mod and with it, with its protocol, its saves, its scripts and its logs: loading the same save,
-[on bare ground](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-ground.md#the-ground-over-six-loads)
-and [on a runway and the ground beside it](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-statics.md#the-deck-of-a-runway);
-[coming back to a craft left parked](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-approach.md);
-[switching to a craft far away](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-switching.md);
-driving on while the world moves,
-[on the grass](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-driving/the-ground.md)
-and [by the runway](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-driving/the-statics.md);
-and [launching from a launch pad of Making History](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-launch-pad.md).
-The figures read with it are on those pages.
 
 ## Get it
 
