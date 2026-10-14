@@ -209,6 +209,8 @@ namespace com.github.lhervier.ksp.diag.terrainheight
             if (deleteIndex >= 0)
             {
                 READINGS.RemoveAt(deleteIndex);
+                // The window fits the shorter table, as after Clear.
+                windowRect.height = 0f;
             }
 
             // Current line
@@ -266,6 +268,9 @@ namespace com.github.lhervier.ksp.diag.terrainheight
         internal void Clear()
         {
             READINGS.Clear();
+            // GUILayout.Window grows a window to fit its content but never shrinks it: a height of 0 lets it fit
+            // the empty table again.
+            windowRect.height = 0f;
         }
 
         /// <summary>The recorded lines, oldest first.</summary>
